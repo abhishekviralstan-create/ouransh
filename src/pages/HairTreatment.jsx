@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import hairHeroBanner from "../assets/hair-hero-banner.png";
 
 const causes = [
   { title: "Low iron or ferritin.", desc: "The most common cause of diffuse hair fall in Indian women, and the most frequently missed. Your haemoglobin can be normal while your ferritin sits far too low for hair growth." },
@@ -33,21 +34,23 @@ export default function HairTreatment() {
         description="Hair fall treatment in Mohali that finds the cause first. PRP therapy plus nutrition and hormonal assessment. Open 7 days in Sector 117. Book today."
       />
 
-      <section className="bg-cream py-14">
-        <div className="container-x grid lg:grid-cols-[1fr_.9fr] gap-10 items-center">
-          <div>
-          <h1 className="font-serif text-4xl md:text-5xl text-forest mb-5">
-            Hair Fall Treatment in Mohali — Finding the Cause First
-          </h1>
-          <p className="text-forest/70 text-sm leading-relaxed mb-3">
-            Hair fall is a symptom, not a diagnosis. Treating it without knowing why it is happening is why so many people spend months on serums and see nothing change.
-          </p>
-          <p className="text-forest/70 text-sm leading-relaxed">
-            Hair fall treatment addresses shedding and thinning by identifying the underlying cause — nutritional deficiency, hormonal imbalance, thyroid dysfunction or scalp condition — before beginning clinical treatment. It works by correcting the internal driver while supporting regrowth at the scalp. It is most commonly needed after pregnancy, during thyroid or PCOS management, and following rapid weight loss.
-          </p>
-          <div className="flex gap-3 mt-7"><Link to="/contact" className="bg-forest text-white rounded-lg px-5 py-3 text-sm">Book a Hair Consultation</Link><a href="tel:+916239557417" className="border border-gold rounded-lg px-5 py-3 text-sm">Call 062395 57417</a></div>
+      <section className="skin-banner hair-banner">
+        <img className="skin-banner-bg" src={hairHeroBanner} alt="Ouransh premium hair treatment clinic" />
+        <div className="container-x skin-banner-inner">
+          <div className="skin-banner-content hair-banner-content">
+            <span className="skin-banner-mark" aria-hidden="true">✦</span>
+            <h1>Hair Fall Treatment in Mohali — Finding the Cause First</h1>
+            <p className="skin-banner-description">
+              Hair fall is a symptom, not a diagnosis. Treating it without knowing why it is happening is why so many people spend months on serums and see nothing change.
+            </p>
+            <p className="skin-banner-description hair-banner-secondary">
+              Hair fall treatment addresses shedding and thinning by identifying the underlying cause — nutritional deficiency, hormonal imbalance, thyroid dysfunction or scalp condition — before beginning clinical treatment. It works by correcting the internal driver while supporting regrowth at the scalp. It is most commonly needed after pregnancy, during thyroid or PCOS management, and following rapid weight loss.
+            </p>
+            <div className="skin-banner-contact">
+              <Link to="/contact">Book a Hair Consultation</Link>
+              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
+            </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?q=85&w=900&auto=format&fit=crop" alt="Healthy hair consultation" className="hero-portrait" />
         </div>
       </section>
 

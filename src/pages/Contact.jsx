@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import contactHeroBanner from "../assets/contact-hero-banner.png";
 
 const Icon = ({ type }) => {
   const paths = {
@@ -19,13 +20,20 @@ const cards = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", topic: "", message: "" });
-  const [sent, setSent] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSent(true);
+    const message = [
+      "Hello Ouransh, I would like to book a consultation.",
+      "",
+      `Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      `Consultation for: ${form.topic}`,
+      `Message: ${form.message || "Not provided"}`,
+    ].join("\n");
+    window.open(`https://wa.me/916239557417?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -35,22 +43,20 @@ export default function Contact() {
         description="Visit Ouransh for skin, hair and diet consultations at SCO 451 FF, TDI South Ex-2, Sector 117, Mohali. Open 7 days, 11am–8pm. Call 062395 57417."
       />
 
-      <section className="bg-cream py-14">
-        <div className="container-x grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-center">
-          <div>
+      <section className="skin-banner contact-banner">
+        <img className="skin-banner-bg" src={contactHeroBanner} alt="A warm welcome at Ouransh clinic reception" />
+        <div className="container-x skin-banner-inner">
+          <div className="skin-banner-content contact-banner-content">
             <span className="eyebrow">We'd love to see you</span>
-            <h1 className="font-serif text-4xl md:text-5xl text-forest mt-2 mb-3">
-              Visit Ouransh in <span className="text-gold">Sector 117, Mohali</span>
-            </h1>
-            <p className="text-sm text-forest/70 leading-relaxed">
+            <h1>Visit Ouransh in <em>Sector 117, Mohali</em></h1>
+            <p className="skin-banner-description">
               We're here to help you look and feel your best — inside and out. Visit our clinic for expert care in skin, hair and nutrition, all under one roof.
             </p>
+            <div className="skin-banner-contact">
+              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
+              <a href="https://maps.google.com/?q=SCO+451+FF+TDI+South+Ex-2+Sector+117+Mohali" target="_blank" rel="noreferrer">Get Directions →</a>
+            </div>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=85&w=1100&auto=format&fit=crop"
-            alt="Ouransh clinic reception"
-            className="hero-portrait"
-          />
         </div>
       </section>
 
@@ -61,23 +67,22 @@ export default function Contact() {
             <h2>Contact Information</h2>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 md:gap-7">
+          <div className="contact-card-grid">
             {cards.map((c) => (
-              <div key={c.title} className="bg-creamlight rounded-xl p-6 md:p-7">
-                <div className="service-icon" style={{ position: "static", marginBottom: "16px" }}>
+              <article key={c.title} className={`contact-detail-card contact-detail-${c.icon}`}>
+                <div className="contact-detail-icon">
                   <Icon type={c.icon} />
                 </div>
-                <h3 className="font-serif text-lg text-forest mb-2">{c.title}</h3>
-                {c.href ? (
-                  <a href={c.href} className="text-sm text-forest/70 hover:text-gold">{c.body}</a>
-                ) : (
-                  <p className="text-sm text-forest/70 leading-relaxed">{c.body}</p>
-                )}
-              </div>
+                <div>
+                  <span className="contact-detail-label">Contact detail</span>
+                  <h3>{c.title}</h3>
+                  {c.href ? <a href={c.href}>{c.body}</a> : <p>{c.body}</p>}
+                </div>
+              </article>
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4 mt-8">
+          <div className="contact-action-bar">
             <a
               className="btn-outline"
               href="https://maps.google.com/?q=SCO+451+FF+TDI+South+Ex-2+Sector+117+Mohali"
@@ -96,39 +101,16 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 bg-creamlight">
-        <div className="container-x grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <span className="eyebrow">How to find us</span>
-            <h2 className="font-serif text-2xl md:text-3xl text-forest mt-2 mb-3">Getting Here</h2>
-            <p className="text-sm text-forest/70 leading-relaxed">
-              We are in TDI South Ex-2, just off Airport Road in Sector 117. Roughly 10 minutes from Kharar, 15 from New Chandigarh, and easily reached from Zirakpur and central Mohali. Parking is available outside.
-            </p>
-          </div>
-          <div className="rounded-xl overflow-hidden h-64 md:h-80 shadow-sm border border-gold/15">
-            <iframe
-              title="Ouransh location map"
-              className="w-full h-full border-0"
-              loading="lazy"
-              src="https://www.google.com/maps?q=SCO%20451%20FF%20TDI%20South%20Ex-2%20Sector%20117%20Mohali&output=embed"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="container-x">
-          <div className="bg-creamlight rounded-2xl p-6 sm:p-8 md:p-10 max-w-2xl mx-auto">
-            <div className="section-heading" style={{ marginBottom: "28px" }}>
-              <span className="eyebrow">Get in touch</span>
-              <h2>Book a Consultation</h2>
-            </div>
-            {sent ? (
-              <p className="text-center text-forest text-sm py-8">
-                Thank you — we've received your request and will reply the same day.
-              </p>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+      <section className="contact-combined-section py-16 bg-white">
+        <div className="container-x contact-combined-grid">
+          <div className="booking-shell">
+            <div className="booking-form-panel">
+              <div className="booking-form-heading">
+                <span className="eyebrow">Get in touch</span>
+                <h2>Book a Consultation</h2>
+                <p>Fill in your details and continue directly on WhatsApp.</p>
+              </div>
+              <form onSubmit={handleSubmit} className="booking-form">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input
                     name="name"
@@ -169,13 +151,31 @@ export default function Contact() {
                   className="w-full border border-forest/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:border-gold"
                 />
                 <button type="submit" className="btn-gold w-full">
-                  Book →
+                  Continue on WhatsApp →
                 </button>
                 <p className="text-xs text-forest/50 text-center">
-                  We reply the same day. For anything urgent, call or WhatsApp us directly.
+                  Your details will open as a ready-to-send WhatsApp message.
                 </p>
               </form>
-            )}
+            </div>
+          </div>
+          <div className="getting-side">
+            <div className="getting-heading">
+              <span className="eyebrow">How to find us</span>
+              <h2>Getting Here</h2>
+              <p>We are in TDI South Ex-2, just off Airport Road in Sector 117. Roughly 10 minutes from Kharar, 15 from New Chandigarh, and easily reached from Zirakpur and central Mohali. Parking is available outside.</p>
+            </div>
+            <div className="getting-map">
+              <iframe
+                title="Ouransh location map"
+                loading="lazy"
+                src="https://www.google.com/maps?q=SCO%20451%20FF%20TDI%20South%20Ex-2%20Sector%20117%20Mohali&output=embed"
+              />
+            </div>
+            <div className="getting-side-footer">
+              <span><Icon type="pin" /> Sector 117, Mohali</span>
+              <a href="https://maps.google.com/?q=SCO+451+FF+TDI+South+Ex-2+Sector+117+Mohali" target="_blank" rel="noreferrer">Open in Maps →</a>
+            </div>
           </div>
         </div>
       </section>

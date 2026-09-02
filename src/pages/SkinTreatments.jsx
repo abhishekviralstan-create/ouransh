@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import skinHeroBanner from "../assets/skin-hero-banner.png";
 
 const treatments = [
   {
@@ -83,17 +84,21 @@ export default function SkinTreatments() {
         description="Advanced skin treatments in Mohali — HIFU, RF skin tightening, HydraFacial, laser hair reduction, acne and pigmentation correction. Book in Sector 117."
       />
 
-      <section className="bg-cream py-14">
-        <div className="container-x grid lg:grid-cols-[1fr_.9fr] gap-10 items-center">
-          <div>
-          <h1 className="font-serif text-4xl md:text-5xl text-forest mb-5">Skin Treatment in Mohali</h1>
-          <p className="text-forest/70 text-sm leading-relaxed mb-3">
-            Every skin concern has a cause, and treatment only works when it matches that cause. That sounds obvious. It is also why so many people cycle through treatments that never quite hold.
-          </p>
-          <p className="text-forest font-medium text-sm">At Ouransh, a consultation comes before a recommendation. Always.</p>
-          <div className="flex gap-3 mt-7"><Link to="/contact" className="bg-forest text-white rounded-lg px-5 py-3 text-sm">Book a Skin Consultation</Link><a href="tel:+916239557417" className="border border-gold rounded-lg px-5 py-3 text-sm">Call 062395 57417</a></div>
+      <section className="skin-banner">
+        <img className="skin-banner-bg" src={skinHeroBanner} alt="Ouransh premium skin care clinic" />
+        <div className="container-x skin-banner-inner">
+          <div className="skin-banner-content">
+            <span className="skin-banner-mark" aria-hidden="true">✦</span>
+            <h1>Skin Treatment in Mohali</h1>
+            <p className="skin-banner-description">
+              Every skin concern has a cause, and treatment only works when it matches that cause. That sounds obvious. It is also why so many people cycle through treatments that never quite hold.
+            </p>
+            <p className="skin-banner-assurance">At Ouransh, a consultation comes before a recommendation. Always.</p>
+            <div className="skin-banner-contact">
+              <Link to="/contact">Book a Skin Consultation</Link>
+              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
+            </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=85&w=900&auto=format&fit=crop" alt="Ouransh skin treatment" className="hero-portrait" />
         </div>
       </section>
 

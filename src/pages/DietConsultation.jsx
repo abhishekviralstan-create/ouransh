@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import dietHeroBanner from "../assets/diet-hero-banner.png";
 
 const conditions = [
   {
@@ -62,21 +63,23 @@ export default function DietConsultation() {
         description="Experienced dietitians in Mohali offering personalised plans for PCOS, thyroid, diabetes, fatty liver and weight management. Sector 117, open 7 days."
       />
 
-      <section className="bg-cream py-14">
-        <div className="container-x grid lg:grid-cols-[1fr_.9fr] gap-10 items-center">
-          <div>
-          <h1 className="font-serif text-4xl md:text-5xl text-forest mb-5">
-            Dietitian in Mohali — Nutrition That Fits Your Actual Life
-          </h1>
-          <p className="text-forest/70 text-sm leading-relaxed mb-3">
-            Most diet plans fail for the same reason: they were written for someone else's life.
-          </p>
-          <p className="text-forest/70 text-sm leading-relaxed">
-            A personalised nutrition consultation assesses your medical history, routine, preferences and goals before any plan is made. It works by building around foods you already eat rather than replacing them wholesale. It is most commonly used for PCOS, thyroid conditions, diabetes support, fatty liver and weight management.
-          </p>
-          <div className="flex gap-3 mt-7"><Link to="/contact" className="bg-forest text-white rounded-lg px-5 py-3 text-sm">Book a Diet Consultation</Link><a href="tel:+916239557417" className="border border-gold rounded-lg px-5 py-3 text-sm">Call 062395 57417</a></div>
+      <section className="skin-banner diet-banner">
+        <img className="skin-banner-bg" src={dietHeroBanner} alt="Personalised nutrition consultation at Ouransh" />
+        <div className="container-x skin-banner-inner">
+          <div className="skin-banner-content diet-banner-content">
+            <span className="skin-banner-mark" aria-hidden="true">✦</span>
+            <h1>Dietitian in Mohali — Nutrition That Fits Your Actual Life</h1>
+            <p className="skin-banner-description">
+              Most diet plans fail for the same reason: they were written for someone else's life.
+            </p>
+            <p className="skin-banner-description diet-banner-secondary">
+              A personalised nutrition consultation assesses your medical history, routine, preferences and goals before any plan is made. It works by building around foods you already eat rather than replacing them wholesale. It is most commonly used for PCOS, thyroid conditions, diabetes support, fatty liver and weight management.
+            </p>
+            <div className="skin-banner-contact">
+              <Link to="/contact">Book a Diet Consultation</Link>
+              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
+            </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=85&w=900&auto=format&fit=crop" alt="Personalised nutrition consultation" className="hero-portrait" />
         </div>
       </section>
 
