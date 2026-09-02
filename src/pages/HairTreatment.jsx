@@ -43,9 +43,6 @@ export default function HairTreatment() {
             <p className="skin-banner-description">
               Hair fall is a symptom, not a diagnosis. Treating it without knowing why it is happening is why so many people spend months on serums and see nothing change.
             </p>
-            <p className="skin-banner-description hair-banner-secondary">
-              Hair fall treatment addresses shedding and thinning by identifying the underlying cause — nutritional deficiency, hormonal imbalance, thyroid dysfunction or scalp condition — before beginning clinical treatment. It works by correcting the internal driver while supporting regrowth at the scalp. It is most commonly needed after pregnancy, during thyroid or PCOS management, and following rapid weight loss.
-            </p>
             <div className="skin-banner-contact">
               <Link to="/contact">Book a Hair Consultation</Link>
               <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>

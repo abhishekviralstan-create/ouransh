@@ -70,9 +70,6 @@ export default function DietConsultation() {
             <span className="skin-banner-mark" aria-hidden="true">✦</span>
             <h1>Dietitian in Mohali — Nutrition That Fits Your Actual Life</h1>
             <p className="skin-banner-description">
-              Most diet plans fail for the same reason: they were written for someone else's life.
-            </p>
-            <p className="skin-banner-description diet-banner-secondary">
               A personalised nutrition consultation assesses your medical history, routine, preferences and goals before any plan is made. It works by building around foods you already eat rather than replacing them wholesale. It is most commonly used for PCOS, thyroid conditions, diabetes support, fatty liver and weight management.
             </p>
             <div className="skin-banner-contact">

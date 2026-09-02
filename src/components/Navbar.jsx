@@ -84,11 +84,27 @@ export default function Navbar() {
         <div className="lg:hidden bg-creamlight border-t border-black/5 px-6 py-4 flex flex-col gap-4">
           <NavLink to="/" end onClick={() => setMobileOpen(false)} className={linkClass}>Home</NavLink>
           <NavLink to="/about" onClick={() => setMobileOpen(false)} className={linkClass}>About Us</NavLink>
-          {services.map((s) => (
-            <Link key={s.to} to={s.to} onClick={() => setMobileOpen(false)} className="text-sm font-medium text-forest pl-3">
-              {s.label}
-            </Link>
-          ))}
+          <div>
+            <button
+              type="button"
+              onClick={() => setServicesOpen((v) => !v)}
+              className="flex items-center justify-between w-full text-sm font-medium text-forest"
+            >
+              Services
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ transform: servicesOpen ? "rotate(180deg)" : "none", transition: "transform .2s" }}>
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" />
+              </svg>
+            </button>
+            {servicesOpen && (
+              <div className="flex flex-col gap-3 mt-3 pl-3">
+                {services.map((s) => (
+                  <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest/80 hover:text-gold">
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <NavLink to="/contact" onClick={() => setMobileOpen(false)} className={linkClass}>Contact</NavLink>
           <Link
             to="/contact"
