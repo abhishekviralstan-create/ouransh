@@ -69,7 +69,7 @@ export default function HairTreatment() {
       <section className="py-16 bg-creamlight">
         <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
           <img
-            src="https://images.unsplash.com/photo-1631815588090-d1bcbe9a8537?q=80&w=700&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=700&auto=format&fit=crop"
             alt="PRP Therapy"
             className="rounded-xl w-full h-56 object-cover"
           />
