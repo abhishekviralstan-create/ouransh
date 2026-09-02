@@ -15,7 +15,7 @@ const treatments = [
   },
   {
     title: "RF Skin Tightening",
-    img: "https://images.unsplash.com/photo-1616394158624-1d9d1f47f9c8?q=80&w=700&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?q=80&w=700&auto=format&fit=crop",
     paras: [
       "Radiofrequency skin tightening uses controlled heat to stimulate collagen and improve skin firmness. It works by warming the deeper skin layers while keeping the surface comfortable. It is most commonly used for mild laxity, texture improvement and overall skin quality.",
       "RF is gentler than HIFU and typically needs a course of sessions. It is a good option for maintenance, for younger skin showing early changes, and for people who want gradual improvement rather than a single intensive treatment.",
