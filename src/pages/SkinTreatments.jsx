@@ -2,170 +2,27 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import skinHeroBanner from "../assets/skin-hero-banner.png";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
 
-const treatments = [
-  {
-    title: "HIFU — Non-Surgical Skin Lifting",
-    img: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=700&auto=format&fit=crop",
-    paras: [
-      "HIFU (High-Intensity Focused Ultrasound) tightens and lifts skin by delivering focused ultrasound energy to deeper tissue layers. It works by stimulating the body's own collagen production over the following months. It is most commonly used for early sagging along the jawline, cheeks and neck.",
-      "Results build gradually rather than appearing immediately — most people notice change from around eight to twelve weeks as new collagen forms. It suits people wanting firmer skin without surgery or downtime.",
-    ],
-    note: "We will tell you honestly whether HIFU is right for your skin. It works well for early to moderate laxity. For significant sagging it will not match what you are imagining, and we would rather say so upfront.",
-  },
-  {
-    title: "RF Skin Tightening",
-    img: "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?q=80&w=700&auto=format&fit=crop",
-    paras: [
-      "Radiofrequency skin tightening uses controlled heat to stimulate collagen and improve skin firmness. It works by warming the deeper skin layers while keeping the surface comfortable. It is most commonly used for mild laxity, texture improvement and overall skin quality.",
-      "RF is gentler than HIFU and typically needs a course of sessions. It is a good option for maintenance, for younger skin showing early changes, and for people who want gradual improvement rather than a single intensive treatment.",
-    ],
-  },
-  {
-    title: "HydraFacial",
-    img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=700&auto=format&fit=crop",
-    highlight: "Cleansing, exfoliation, extraction and hydration in one session, with no downtime.",
-    paras: [
-      "HydraFacial suits almost every skin type and is genuinely useful for dullness, congestion and general skin health. It is also our most requested treatment before weddings and events — and unlike some treatments, it can be done closer to the date without risk.",
-    ],
-  },
-  {
-    title: "Laser Hair Reduction",
-    img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=700&auto=format&fit=crop",
-    paras: [
-      "Laser hair reduction reduces unwanted hair by targeting pigment in the follicle with focused light. It works across multiple sessions because hair grows in cycles and only actively growing follicles respond. It is most commonly used on the face, underarms, arms, legs and bikini area.",
-      "Most areas need a course of sessions spaced several weeks apart. Facial hair driven by hormones usually needs more, and may need occasional maintenance afterwards.",
-    ],
-    note: "Expect significant long-term reduction, not total permanent removal. Anyone promising permanence in three sessions is not being straight with you.",
-    note2: (
-      <>One thing worth knowing: if your facial hair is linked to PCOS, laser helps considerably but works far better alongside nutritional and hormonal support. <Link to="/diet-consultation" className="text-gold underline">More on PCOS →</Link></>
-    ),
-  },
-  {
-    title: "Acne Correction",
-    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=700&auto=format&fit=crop",
-    paras: [
-      "Acne that keeps returning is not a treatment failure — it usually means the trigger was never identified.",
-    ],
-    list: [
-      "Hormonal acne appears along the jaw and chin and flares with your cycle. Common with PCOS and thyroid conditions.",
-      "Comedonal acne — blackheads and whiteheads from clogged pores.",
-      "Inflammatory acne — deeper, painful lesions that scar if left alone.",
-      "Post-acne marks need entirely different treatment from active acne.",
-    ],
-    paras2: [
-      "We treat according to type, and where acne is hormonal or nutrition-linked we address that too. That is the difference between clearing your skin and keeping it clear.",
-    ],
-    note: "Most people notice change within four to six weeks. Marks and texture take longer.",
-  },
-  {
-    title: "Pigmentation Correction",
-    img: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=700&auto=format&fit=crop",
-    list: [
-      "Melasma — symmetrical brown patches on the cheeks, forehead and upper lip. Often hormonal, common after pregnancy.",
-      "Sun damage — uneven tone from cumulative exposure, and the Punjab summer is unforgiving.",
-      "Post-inflammatory pigmentation — the marks acne leaves behind.",
-      "Under-eye pigmentation — sometimes genetic, sometimes nutritional.",
-    ],
-    paras2: [
-      "An honest note on melasma: it is managed, not cured. Treatment lightens it significantly, but hormones and sun bring it back without maintenance and daily sun protection. Any clinic promising permanent removal is overselling.",
-    ],
-    note: (
-      <>Iron and B12 deficiency both worsen pigmentation and slow response to treatment. If topical treatment has not worked for you, the answer may not be topical. <Link to="/diet-consultation" className="text-gold underline">More on our diet consultation →</Link></>
-    ),
-  },
+// oxlint-disable-next-line react/only-export-components -- shared with the matching detail route
+export const treatments = [
+  { slug: "hifu", title: "HIFU — Non-Surgical Skin Lifting", shortTitle: "HIFU", img: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=900&auto=format&fit=crop", summary: "Focused ultrasound treatment designed to support collagen production and improve early skin laxity.", details: ["HIFU (High-Intensity Focused Ultrasound) delivers focused ultrasound energy to deeper tissue layers to support the body's collagen response. It is commonly considered for early sagging around the jawline, cheeks and neck.", "Results develop gradually over the following weeks. Suitability depends on your skin, age and degree of laxity, so a consultation is always completed before treatment."], note: "We will tell you honestly whether HIFU is suitable for your skin and expectations." },
+  { slug: "rf-skin-tightening", title: "RF Skin Tightening", shortTitle: "RF Skin Tightening", img: "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?q=80&w=900&auto=format&fit=crop", summary: "Controlled radiofrequency care for gradual firmness, texture improvement and overall skin quality.", details: ["Radiofrequency treatment uses controlled heat in the deeper skin layers to support collagen and skin firmness while keeping the surface comfortable.", "RF is generally planned as a course of sessions and may suit people looking for gradual improvement and maintenance."], note: "Your session plan is personalised after assessing your skin and treatment goals." },
+  { slug: "hydrafacial", title: "HydraFacial", shortTitle: "HydraFacial", img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop", summary: "Cleansing, exfoliation, extraction and hydration in one refreshing, no-downtime session.", details: ["HydraFacial combines cleansing, exfoliation, extraction and hydration in one session. It can be useful for dullness, congestion and maintaining general skin health.", "It suits many skin types and is frequently selected before weddings and events because there is generally little to no downtime."], note: "We customise the session according to your skin condition and sensitivity." },
+  { slug: "laser-hair-reduction", title: "Laser Hair Reduction", shortTitle: "Laser Hair Reduction", img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop", summary: "A planned course of laser sessions for significant long-term reduction of unwanted hair.", details: ["Laser hair reduction targets pigment in the hair follicle with focused light. Multiple sessions are needed because hair grows in cycles and only actively growing follicles respond.", "It is commonly used for the face, underarms, arms, legs and bikini area. Hormonal facial hair may require additional sessions and ongoing maintenance."], note: "Expect significant long-term reduction rather than a promise of total permanent removal." },
+  { slug: "acne-correction", title: "Acne Correction", shortTitle: "Acne Correction", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=900&auto=format&fit=crop", summary: "Personalised acne care based on whether the concern is hormonal, comedonal or inflammatory.", details: ["Recurring acne often needs more than surface treatment. We first assess its type, location, triggers, skin routine and possible hormonal or nutrition-related factors.", "Active acne, clogged pores and post-acne marks require different approaches. Your plan is selected according to what your skin actually needs."], note: "Improvement takes time; active acne, marks and texture each have different timelines." },
+  { slug: "pigmentation-correction", title: "Pigmentation Correction", shortTitle: "Pigmentation Correction", img: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=900&auto=format&fit=crop", summary: "Targeted care for melasma, sun damage, post-acne marks and uneven-looking skin tone.", details: ["Pigmentation can have several causes, including sun exposure, inflammation, hormones and nutritional factors. Identifying the pattern helps us select an appropriate plan.", "Melasma is managed rather than permanently cured, and maintenance with daily sun protection remains important after visible improvement."], note: "If topical care has not helped, we may recommend looking at relevant internal factors as well." },
 ];
 
 export default function SkinTreatments() {
   return (
     <Layout>
-      <Seo
-        title="Skin Treatment in Mohali | HIFU, HydraFacial & Laser"
-        description="Advanced skin treatments in Mohali — HIFU, RF skin tightening, HydraFacial, laser hair reduction, acne and pigmentation correction. Book in Sector 117."
-      />
-
-      <section className="skin-banner">
-        <img className="skin-banner-bg" src={skinHeroBanner} alt="Ouransh premium skin care clinic" />
-        <div className="container-x skin-banner-inner">
-          <div className="skin-banner-content">
-            <span className="skin-banner-mark" aria-hidden="true">✦</span>
-            <h1>Skin Treatment in Mohali</h1>
-            <p className="skin-banner-description">
-              Every skin concern has a cause, and treatment only works when it matches that cause. That sounds obvious. It is also why so many people cycle through treatments that never quite hold.
-            </p>
-            <p className="skin-banner-assurance">At Ouransh, a consultation comes before a recommendation. Always.</p>
-            <div className="skin-banner-contact">
-              <Link to="/contact?service=skin">Book a Skin Consultation</Link>
-              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="container-x max-w-4xl space-y-16">
-          {treatments.map((t) => (
-            <div key={t.title} className="grid md:grid-cols-[220px_1fr] gap-8">
-              <img src={t.img} alt={t.title} className="rounded-xl w-full h-40 md:h-full object-cover" />
-              <div>
-                <h2 className="font-serif text-2xl text-forest mb-3">{t.title}</h2>
-                {t.highlight && <p className="text-gold font-medium text-sm mb-3">{t.highlight}</p>}
-                {t.paras?.map((p, i) => (
-                  <p key={i} className="text-sm text-forest/70 leading-relaxed mb-3">{p}</p>
-                ))}
-                {t.list && (
-                  <ul className="space-y-2 mb-3">
-                    {t.list.map((li, i) => (
-                      <li key={i} className="text-sm text-forest/70 leading-relaxed flex gap-2">
-                        <span className="text-gold shrink-0">✓</span> {li}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {t.paras2?.map((p, i) => (
-                  <p key={i} className="text-sm text-forest/70 leading-relaxed mb-3">{p}</p>
-                ))}
-                {t.note && (
-                  <div className="bg-creamlight rounded-lg p-4 text-xs text-forest/70 leading-relaxed mt-3">
-                    ℹ️ {t.note}
-                  </div>
-                )}
-                {t.note2 && (
-                  <div className="bg-creamlight rounded-lg p-4 text-xs text-forest/70 leading-relaxed mt-3">
-                    ℹ️ {t.note2}
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-14 bg-creamlight">
-        <div className="container-x max-w-4xl grid md:grid-cols-[220px_1fr] gap-8 items-center">
-          <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=700&auto=format&fit=crop"
-            alt="Before a wedding or event"
-            className="rounded-xl w-full h-40 object-cover"
-          />
-          <div>
-            <h2 className="font-serif text-xl text-forest mb-3">Before a Wedding or Event</h2>
-            <p className="text-sm text-forest/70 leading-relaxed mb-2">
-              Come in four to six weeks ahead, not the week of. Skin needs time to settle and some treatments cause temporary purging. HydraFacial is the exception and can be done closer to the date.
-            </p>
-            <p className="text-sm text-forest/70 leading-relaxed">
-              We would rather turn away a last-minute booking than send you to your own wedding with reactive skin.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-14 bg-cream">
-        <div className="container-x flex flex-wrap gap-4 justify-center">
-          <Link to="/contact?service=skin" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Skin Consultation</Link>
-          <a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">📞 Call 062395 57417</a>
-        </div>
-      </section>
+      <Seo title="Skin Treatment in Mohali | HIFU, HydraFacial & Laser" description="Explore HIFU, RF skin tightening, HydraFacial, laser hair reduction, acne and pigmentation treatments at Ouransh in Mohali." />
+      <section className="skin-banner"><img className="skin-banner-bg" src={skinHeroBanner} alt="Ouransh premium skin care clinic" /><div className="container-x skin-banner-inner"><div className="skin-banner-content"><span className="skin-banner-mark" aria-hidden="true">✦</span><h1>Skin Treatment in Mohali</h1><p className="skin-banner-description">Every skin concern has a cause, and treatment works best when it matches that cause. Explore our personalised skin services below.</p><p className="skin-banner-assurance">At Ouransh, a consultation comes before a recommendation. Always.</p><div className="skin-banner-contact"><Link to="/contact?service=skin">Book a Skin Consultation</Link><a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a></div></div></div></section>
+      <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Skin Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{treatments.map((t) => <Link key={t.slug} to={`/skin-treatments/${t.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={t.img} alt={t.title} /></div><div className="skin-service-card-body"><span>Ouransh Skin Care</span><h2>{t.title}</h2><p>{t.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
+      <section className="before-after-section py-16 bg-creamlight"><div className="container-x"><div className="section-heading"><span className="eyebrow">Visual comparison</span><h2>Before &amp; After</h2><p>Drag the handle left or right to compare each treatment view.</p></div><div className="before-after-grid">{treatments.map((t) => <article key={t.slug} className="before-after-card"><BeforeAfterSlider src={`/before-after/${t.slug}.png`} title={t.shortTitle} /><div className="before-after-card-copy"><h3>{t.shortTitle}</h3></div></article>)}</div><p className="before-after-disclaimer">Illustrative comparison · Results may vary.</p></div></section>
+      <section className="py-14 bg-creamlight"><div className="container-x max-w-4xl grid md:grid-cols-[220px_1fr] gap-8 items-center"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=700&auto=format&fit=crop" alt="Before a wedding or event" className="rounded-xl w-full h-40 object-cover" /><div><h2 className="font-serif text-xl text-forest mb-3">Before a Wedding or Event</h2><p className="text-sm text-forest/70 leading-relaxed">Come in four to six weeks ahead so your skin has time to settle. HydraFacial may be suitable closer to the event after a skin assessment.</p></div></div></section>
+      <section className="py-14 bg-cream"><div className="container-x flex flex-wrap gap-4 justify-center"><Link to="/contact?service=skin" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">Book a Skin Consultation</Link><a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">Call 062395 57417</a></div></section>
     </Layout>
   );
 }

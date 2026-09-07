@@ -24,7 +24,7 @@ export default function Layout({ children }) {
         element.setAttribute("data-aos", "fade-up");
         element.setAttribute("data-aos-delay", String((index % 3) * 60));
       });
-      main?.querySelectorAll(".service-card, .trust-grid > div").forEach((element, index) => {
+      main?.querySelectorAll(".service-card, .skin-service-card, .trust-grid > div").forEach((element, index) => {
         element.setAttribute("data-aos", "fade-up");
         element.setAttribute("data-aos-delay", String((index % 5) * 85));
       });

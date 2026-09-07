@@ -7,6 +7,15 @@ const services = [
   { label: "Diet & Nutrition", to: "/diet-consultation" },
 ];
 
+const skinServices = [
+  { label: "HIFU", to: "/skin-treatments/hifu" },
+  { label: "RF Skin Tightening", to: "/skin-treatments/rf-skin-tightening" },
+  { label: "HydraFacial", to: "/skin-treatments/hydrafacial" },
+  { label: "Laser Hair Reduction", to: "/skin-treatments/laser-hair-reduction" },
+  { label: "Acne Correction", to: "/skin-treatments/acne-correction" },
+  { label: "Pigmentation Correction", to: "/skin-treatments/pigmentation-correction" },
+];
+
 export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,17 +47,19 @@ export default function Navbar() {
               </svg>
             </button>
             {servicesOpen && (
-              <div className="absolute top-full left-0 pt-3 w-52">
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-black/5">
-                  {services.map((s) => (
-                    <Link
-                      key={s.to}
-                      to={s.to}
-                      className="block px-4 py-3 text-sm text-forest hover:bg-cream hover:text-gold transition-colors"
-                    >
-                      {s.label}
+              <div className="absolute top-full left-0 pt-3 w-72">
+                <div className="bg-white shadow-lg rounded-lg border border-black/5">
+                  <div className="nav-skin-parent relative">
+                    <Link to="/skin-treatments" className="flex items-center justify-between px-4 py-3 text-sm text-forest hover:bg-cream hover:text-gold transition-colors">
+                      Skin Treatments <span className="text-gold">›</span>
                     </Link>
-                  ))}
+                    <div className="nav-skin-submenu absolute left-full top-0 pl-2 w-64">
+                      <div className="overflow-hidden rounded-lg border border-black/5 bg-white shadow-xl">
+                        {skinServices.map((s) => <Link key={s.to} to={s.to} className="block px-4 py-3 text-sm text-forest/80 hover:bg-cream hover:text-gold transition-colors">{s.label}</Link>)}
+                      </div>
+                    </div>
+                  </div>
+                  {services.slice(1).map((s) => <Link key={s.to} to={s.to} className="block px-4 py-3 text-sm text-forest hover:bg-cream hover:text-gold transition-colors">{s.label}</Link>)}
                 </div>
               </div>
             )}
@@ -97,11 +108,11 @@ export default function Navbar() {
             </button>
             {servicesOpen && (
               <div className="flex flex-col gap-3 mt-3 pl-3">
-                {services.map((s) => (
-                  <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest/80 hover:text-gold">
-                    {s.label}
-                  </Link>
-                ))}
+                <Link to="/skin-treatments" onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest">Skin Treatments</Link>
+                <div className="flex flex-col gap-2 pl-4 border-l border-gold/25">
+                  {skinServices.map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-xs font-medium text-forest/70 hover:text-gold">{s.label}</Link>)}
+                </div>
+                {services.slice(1).map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest/80 hover:text-gold">{s.label}</Link>)}
               </div>
             )}
           </div>

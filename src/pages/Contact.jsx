@@ -23,6 +23,12 @@ export default function Contact() {
   const [searchParams] = useSearchParams();
   const serviceNames = {
     skin: "Skin Treatments",
+    hifu: "HIFU — Non-Surgical Skin Lifting",
+    "rf-skin-tightening": "RF Skin Tightening",
+    hydrafacial: "HydraFacial",
+    "laser-hair-reduction": "Laser Hair Reduction",
+    "acne-correction": "Acne Correction",
+    "pigmentation-correction": "Pigmentation Correction",
     hair: "Hair Treatment",
     diet: "Diet & Nutrition",
     "inch-loose": "Inch Loose Therapy",
@@ -150,6 +156,12 @@ export default function Contact() {
                 >
                   <option value="">What would you like to discuss?</option>
                   <option value="Skin Treatments">Skin Treatments</option>
+                  <option value="HIFU — Non-Surgical Skin Lifting">HIFU — Non-Surgical Skin Lifting</option>
+                  <option value="RF Skin Tightening">RF Skin Tightening</option>
+                  <option value="HydraFacial">HydraFacial</option>
+                  <option value="Laser Hair Reduction">Laser Hair Reduction</option>
+                  <option value="Acne Correction">Acne Correction</option>
+                  <option value="Pigmentation Correction">Pigmentation Correction</option>
                   <option value="Hair Treatment">Hair Treatment</option>
                   <option value="Diet & Nutrition">Diet &amp; Nutrition</option>
                   <option value="Inch Loose Therapy">Inch Loose Therapy</option>
