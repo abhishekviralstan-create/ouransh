@@ -54,6 +54,7 @@ const serviceLinks = [
   { label: "Skin Treatments", to: "/skin-treatments" },
   { label: "Hair Treatment", to: "/hair-treatment" },
   { label: "Diet & Nutrition", to: "/diet-consultation" },
+  { label: "Inch Loose Therapy", to: "/contact?service=inch-loose" },
   { label: "Consultation", to: "/contact" },
 ];
 
@@ -75,7 +76,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/ouransh25/" target="_blank" rel="noreferrer" aria-label="Ouransh on Instagram" className="social-brand w-10 h-10 rounded-full border border-gold/50 text-gold flex items-center justify-center hover:bg-gold hover:text-forest transition-colors">
               <InstagramIcon />
             </a>
-            <a href="https://wa.me/916239557417" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="social-brand w-10 h-10 rounded-full border border-gold/50 text-gold flex items-center justify-center hover:bg-gold hover:text-forest transition-colors">
+            <a href="https://wa.me/919815907526?text=Hello%20Ouransh%2C%20I%20am%20reaching%20out%20through%20your%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noreferrer" aria-label="WhatsApp" className="social-brand w-10 h-10 rounded-full border border-gold/50 text-gold flex items-center justify-center hover:bg-gold hover:text-forest transition-colors">
               <WhatsappIcon />
             </a>
           </div>
@@ -114,11 +115,11 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <span className="text-gold"><MailIcon /></span>
-              <a href="mailto:hello@ouransh.com" className="hover:text-gold">hello@ouransh.com</a>
+              <a href="mailto:ouransh25@gmail.com" className="hover:text-gold">ouransh25@gmail.com</a>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-gold"><PinIcon /></span>
-              <span>SCO 451 FF, TDI South Ex-2,<br />Sector 117, Mohali,<br />Punjab 140301</span>
+              <span>451, First Floor, TDI EX-2,<br />Sector 117, Mohali,<br />Punjab</span>
             </li>
           </ul>
         </div>

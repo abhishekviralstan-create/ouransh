@@ -73,7 +73,7 @@ export default function DietConsultation() {
               A personalised nutrition consultation assesses your medical history, routine, preferences and goals before any plan is made. It works by building around foods you already eat rather than replacing them wholesale. It is most commonly used for PCOS, thyroid conditions, diabetes support, fatty liver and weight management.
             </p>
             <div className="skin-banner-contact">
-              <Link to="/contact">Book a Diet Consultation</Link>
+              <Link to="/contact?service=diet">Book a Diet Consultation</Link>
               <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function DietConsultation() {
 
       <section className="py-14 bg-cream">
         <div className="container-x flex flex-wrap gap-4 justify-center">
-          <Link to="/contact" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Nutrition Consultation</Link>
+          <Link to="/contact?service=diet" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Nutrition Consultation</Link>
           <a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">📞 Call 062395 57417</a>
         </div>
       </section>

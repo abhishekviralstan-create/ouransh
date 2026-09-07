@@ -3,9 +3,10 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
 const info = [
-  ["Founder", "Shikha Garg — Dietitian & Nutritionist"],
-  ["Qualification", "Post-Graduate Diploma in Nutrition and Dietetics; trained at Ivy Healthcare, Mohali"],
-  ["Location", "SCO 451 FF, TDI South Ex-2, Sector 117, Mohali"],
+  ["Founder", "Dr. Shikha Garg — Clinic Dietitian & Aesthetic Expert"],
+  ["Qualification", "DDHN, PGDDN, PGDBA, M.A. (PSY.), DIPBNC, CERT. PROF. ESTH & Skin Care, FMC, F/Ship in Med. Cosmetology"],
+  ["WhatsApp", "+91 98159 07526"],
+  ["Location", "451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab"],
   ["Timings", "Open 7 days a week, 11:00 AM – 8:00 PM"],
 ];
 
@@ -33,7 +34,7 @@ export default function About() {
     <Layout>
       <Seo
         title="About Ouransh | Skin, Hair & Diet Clinic in Mohali"
-        description="A personal introduction from Shikha Garg, Founder of Ouransh — Dietitian & Nutritionist bringing practical nutrition and skin care together in Sector 117, Mohali."
+        description="A personal introduction from Dr. Shikha Garg, Founder of Ouransh — Clinic Dietitian & Aesthetic Expert bringing practical nutrition and skin care together in Sector 117, Mohali."
       />
 
       <section className="bg-creamlight py-14">
@@ -41,7 +42,7 @@ export default function About() {
           <div>
             <p className="text-gold text-xs tracking-[0.2em] mb-3">— ABOUT US —</p>
             <h1 className="font-serif text-4xl md:text-5xl text-forest mb-2">A personal introduction</h1>
-            <p className="founder-role">from Shikha Garg, Founder of Ouransh</p>
+            <p className="founder-role">from Dr. Shikha Garg, Clinic Dietitian &amp; Aesthetic Expert</p>
             <div className="w-16 h-px bg-gold my-6" />
             <p className="founder-intro italic">
               "I created Ouransh to bring practical nutrition and thoughtful skin care together, so we can look beyond the surface and understand the bigger picture."
@@ -59,7 +60,7 @@ export default function About() {
           <div className="founder-photo">
             <img
               src="/Dt.%20Sikha%20Garg.png"
-              alt="Shikha Garg, Founder of Ouransh"
+              alt="Dr. Shikha Garg, Founder of Ouransh"
             />
             <div><b>Where Nutrition</b><span>Meets Aesthetics</span></div>
           </div>
@@ -69,7 +70,7 @@ export default function About() {
       {/* Hi, I'm Shikha Garg */}
       <section className="py-16 bg-white">
         <div className="container-x max-w-4xl">
-          <h2 className="font-serif text-3xl text-forest mb-6">Hi, I'm Shikha Garg</h2>
+          <h2 className="font-serif text-3xl text-forest mb-6">Hi, I'm Dr. Shikha Garg</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I'm the founder of Ouransh Diet &amp; Skin Care Clinic in Mohali.
           </p>
@@ -90,7 +91,7 @@ export default function About() {
         <div className="container-x max-w-4xl">
           <h2 className="font-serif text-3xl text-forest mb-6">My Approach to Nutrition</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
-            I am a Dietitian and Nutritionist with a Post-Graduate Diploma in Nutrition and Dietetics, and I have trained at Ivy Healthcare, Mohali.
+            I am a Clinic Dietitian and Aesthetic Expert with qualifications in nutrition, psychology, professional esthetics, skin care and medical cosmetology.
           </p>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I do not believe in giving the same diet chart to everyone. Before creating a plan, I like to understand your medical history, current medications, reports, work schedule, food preferences, family routine and what you can realistically maintain.
@@ -204,7 +205,7 @@ export default function About() {
             <span className="eyebrow">Visit Ouransh in Mohali</span>
             <h2>Ouransh Diet &amp; Skin Care Clinic</h2>
             <p>
-              SCO 451 FF, TDI South Ex-2, Sector 117, Mohali — just off Airport Road, accessible from Kharar, New Chandigarh, Zirakpur and central Mohali.<br />
+              451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab — just off Airport Road, accessible from Kharar, New Chandigarh, Zirakpur and central Mohali.<br />
               Open 7 days a week, 11:00 AM – 8:00 PM.
             </p>
           </div>
@@ -220,7 +221,7 @@ export default function About() {
           <p className="font-serif italic text-lg text-forest/80 mb-3">
             "Sometimes the best place to start is simply understanding what your body actually needs."
           </p>
-          <p className="text-gold text-sm font-medium">— Shikha Garg</p>
+          <p className="text-gold text-sm font-medium">— Dr. Shikha Garg</p>
           <p className="text-forest/60 text-xs mt-1">Founder, Ouransh Diet &amp; Skin Care Clinic</p>
         </div>
       </section>

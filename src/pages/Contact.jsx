@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import contactHeroBanner from "../assets/contact-hero-banner.png";
@@ -13,34 +14,45 @@ const Icon = ({ type }) => {
 };
 
 const cards = [
-  { icon: "pin", title: "Address", body: "Ouransh, SCO 451 FF, TDI South Ex-2, Sector 117, Sahibzada Ajit Singh Nagar, Punjab 140301" },
+  { icon: "pin", title: "Address", body: "Ouransh, 451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab" },
   { icon: "phone", title: "Phone", body: "062395 57417", href: "tel:+916239557417" },
   { icon: "clock", title: "Hours", body: "Open 7 days a week, 11:00 AM – 8:00 PM" },
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", topic: "", message: "" });
+  const [searchParams] = useSearchParams();
+  const serviceNames = {
+    skin: "Skin Treatments",
+    hair: "Hair Treatment",
+    diet: "Diet & Nutrition",
+    "inch-loose": "Inch Loose Therapy",
+  };
+  const selectedService = serviceNames[searchParams.get("service")] || "";
+  const [form, setForm] = useState({ name: "", phone: "", topic: selectedService, message: "" });
+  const quickMessage = selectedService
+    ? `Hello Ouransh, I am reaching out through your website regarding ${selectedService}. Please share more details.`
+    : "Hello Ouransh, I am reaching out through your website. I would like to know more about your services.";
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = [
-      "Hello Ouransh, I would like to book a consultation.",
+      "Hello Ouransh, I am reaching out through your website and would like to book a consultation.",
       "",
       `Name: ${form.name}`,
       `Phone: ${form.phone}`,
       `Consultation for: ${form.topic}`,
       `Message: ${form.message || "Not provided"}`,
     ].join("\n");
-    window.open(`https://wa.me/916239557417?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/919815907526?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
     <Layout>
       <Seo
         title="Contact Ouransh | Skin & Diet Clinic Sector 117 Mohali"
-        description="Visit Ouransh for skin, hair and diet consultations at SCO 451 FF, TDI South Ex-2, Sector 117, Mohali. Open 7 days, 11am–8pm. Call 062395 57417."
+        description="Visit Ouransh for skin, hair and diet consultations at 451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab. Open 7 days, 11am–8pm. Call 062395 57417."
       />
 
       <section className="skin-banner contact-banner">
@@ -94,7 +106,7 @@ export default function Contact() {
             <a className="btn-outline" href="tel:+916239557417">
               <Icon type="phone" /> Call Now
             </a>
-            <a className="btn-dark" href="https://wa.me/916239557417" target="_blank" rel="noreferrer">
+            <a className="btn-dark" href={`https://wa.me/919815907526?text=${encodeURIComponent(quickMessage)}`} target="_blank" rel="noreferrer">
               WhatsApp Us →
             </a>
           </div>
@@ -137,10 +149,11 @@ export default function Contact() {
                   className="w-full border border-forest/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:border-gold"
                 >
                   <option value="">What would you like to discuss?</option>
-                  <option value="skin">Skin</option>
-                  <option value="hair">Hair</option>
-                  <option value="diet">Diet</option>
-                  <option value="combination">Combination</option>
+                  <option value="Skin Treatments">Skin Treatments</option>
+                  <option value="Hair Treatment">Hair Treatment</option>
+                  <option value="Diet & Nutrition">Diet &amp; Nutrition</option>
+                  <option value="Inch Loose Therapy">Inch Loose Therapy</option>
+                  <option value="Combination Consultation">Combination Consultation</option>
                 </select>
                 <textarea
                   name="message"

@@ -22,7 +22,7 @@ export default function SiteTools() {
       </div>
 
       <div className={`floating-contact ${footerVisible ? "over-footer" : ""}`} aria-label="Quick contact">
-        <a className="float-whatsapp" href="https://wa.me/916239557417" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><img src="/whatsapp-brand.svg" alt="" /></a>
+        <a className="float-whatsapp" href="https://wa.me/919815907526?text=Hello%20Ouransh%2C%20I%20am%20reaching%20out%20through%20your%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><img src="/whatsapp-brand.svg" alt="" /></a>
         <a className="float-call" href="tel:+916239557417" aria-label="Call Ouransh"><img src="/phone-solid.svg" alt="" /></a>
       </div>
     </>

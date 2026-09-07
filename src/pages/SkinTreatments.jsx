@@ -95,7 +95,7 @@ export default function SkinTreatments() {
             </p>
             <p className="skin-banner-assurance">At Ouransh, a consultation comes before a recommendation. Always.</p>
             <div className="skin-banner-contact">
-              <Link to="/contact">Book a Skin Consultation</Link>
+              <Link to="/contact?service=skin">Book a Skin Consultation</Link>
               <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function SkinTreatments() {
 
       <section className="py-14 bg-cream">
         <div className="container-x flex flex-wrap gap-4 justify-center">
-          <Link to="/contact" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Skin Consultation</Link>
+          <Link to="/contact?service=skin" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Skin Consultation</Link>
           <a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">📞 Call 062395 57417</a>
         </div>
       </section>

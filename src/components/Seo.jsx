@@ -11,7 +11,7 @@ export default function Seo({ title, description, image = "/Ouransh_Logo.png" })
     "@context": "https://schema.org", "@type": ["HealthAndBeautyBusiness", "MedicalBusiness"],
     name: "Ouransh Diet and Skin Care", url: SITE_URL, logo: `${SITE_URL}/Ouransh_Logo.png`, image: socialImage,
     telephone: "+91-62395-57417", priceRange: "₹₹",
-    address: { "@type": "PostalAddress", streetAddress: "SCO 451 FF, TDI South Ex-2, Sector 117", addressLocality: "Mohali", addressRegion: "Punjab", postalCode: "140301", addressCountry: "IN" },
+    address: { "@type": "PostalAddress", streetAddress: "451, First Floor, TDI EX-2, Sector 117", addressLocality: "Mohali", addressRegion: "Punjab", addressCountry: "IN" },
     openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:00", closes: "20:00" }],
   };
   return <Helmet>
