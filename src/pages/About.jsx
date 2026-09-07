@@ -59,7 +59,7 @@ export default function About() {
           </div>
           <div className="founder-photo">
             <img
-              src="/Dt.%20Sikha%20Garg.png"
+              src="/Dr.%20Sikha%20garag.png"
               alt="Dr. Shikha Garg, Founder of Ouransh"
             />
             <div><b>Where Nutrition</b><span>Meets Aesthetics</span></div>

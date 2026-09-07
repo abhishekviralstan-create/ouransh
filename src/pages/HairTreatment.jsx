@@ -30,8 +30,8 @@ export default function HairTreatment() {
   return (
     <Layout>
       <Seo
-        title="Hair Fall Treatment in Mohali | PRP & Hair Care"
-        description="Hair fall treatment in Mohali that finds the cause first. PRP therapy plus nutrition and hormonal assessment. Open 7 days in Sector 117. Book today."
+        title="Hair Fall Treatment in Mohali | PRP, GFC & Hair Care"
+        description="Hair fall treatment in Mohali that finds the cause first. PRP and GFC treatments plus nutrition and hormonal assessment. Open 7 days in Sector 117. Book today."
       />
 
       <section className="skin-banner hair-banner">
@@ -46,6 +46,29 @@ export default function HairTreatment() {
             <div className="skin-banner-contact">
               <Link to="/contact?service=hair">Book a Hair Consultation</Link>
               <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
+          <div className="rounded-xl w-full h-56 bg-creamlight flex items-center justify-center text-center p-8">
+            <div>
+              <span className="text-gold text-3xl" aria-hidden="true">✦</span>
+              <p className="font-serif text-xl text-forest mt-3">Advanced Hair Care</p>
+            </div>
+          </div>
+          <div>
+            <h2 className="font-serif text-2xl text-forest mb-3">GFC Treatment</h2>
+            <p className="text-sm text-forest/70 leading-relaxed mb-3">
+              GFC (Growth Factor Concentrate) treatment uses a specially prepared concentrate derived from your own blood. It is applied to the scalp to support weakened hair follicles and may help improve hair density and reduce hair fall in suitable cases.
+            </p>
+            <p className="text-sm text-forest/70 leading-relaxed mb-3">
+              The number and spacing of sessions depend on your scalp condition, pattern of hair loss and the underlying cause. We assess your hair and health history before recommending a treatment plan.
+            </p>
+            <div className="bg-creamlight rounded-lg p-4 text-xs text-forest/70 leading-relaxed">
+              GFC works best as part of a personalised plan. Nutritional deficiencies, thyroid concerns, PCOS and other contributing factors should be assessed alongside scalp treatment.
             </div>
           </div>
         </div>
