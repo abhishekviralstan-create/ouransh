@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import hairHeroBanner from "../assets/hair-hero-banner.png";
+import hairHeroBanner from "../assets/hair-hero-banner.webp";
 import ServiceCta from "../components/ServiceCta";
 import ServiceLandingHero from "../components/ServiceLandingHero";
 import Faq from "../components/Faq";
@@ -28,19 +28,28 @@ const faqs = [
   { q: "When should hair loss be medically assessed?", a: "Sudden, patchy, rapidly worsening hair loss, scalp inflammation, scarring, pain or hair loss associated with other symptoms deserves medical evaluation." },
 ];
 
+const hairItemListSchema = {
+  "@type": "ItemList",
+  itemListElement: hairServiceCards.map((s, i) => ({
+    "@type": "ListItem", position: i + 1, name: s.title, url: `https://ouransh.in/hair-treatment/${s.slug}`,
+  })),
+};
+
 export default function HairTreatment() {
   return (
     <Layout>
       <Seo
         title="Hair Treatment in Mohali | GFC, PRP & Hair Fall Care"
         description="Explore hair and scalp care at Ouransh Mohali, including GFC, PRP hair therapy and personalised assessment of common hair fall causes for Tricity clients."
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Hair Treatment" }]}
+        schema={hairItemListSchema}
       />
 
-      <ServiceLandingHero eyebrow="Hair & scalp care" title="Hair Treatment & Hair Fall Care in Mohali" description="Hair fall can have more than one cause. Ouransh combines hair and scalp assessment with consultation-led options such as GFC and PRP therapy, serving clients across Mohali and the Chandigarh Tricity." service="hair" buttonLabel="Book a Hair Consultation" image={hairHeroBanner} imageAlt="Ouransh premium hair treatment clinic" features={[{ icon: "person", label: <>Cause-first<br />assessment</> }, { icon: "shield", label: <>Expert<br />consultation</> }, { icon: "leaf", label: <>Evidence-led<br />hair care</> }]} />
+      <ServiceLandingHero eyebrow="Hair & scalp care" title="Hair Treatment & Hair Fall Care in Mohali" description="Hair fall can have more than one cause. Ouransh combines hair and scalp assessment with consultation-led options such as GFC and PRP therapy, serving clients across Mohali and the Chandigarh Tricity." service="hair" buttonLabel="Book a Hair Consultation" comparisonSrc="/before-after/hair-treatment-hero.png" comparisonTitle="Hair treatment" features={[{ icon: "person", label: <>Cause-first<br />assessment</> }, { icon: "shield", label: <>Expert<br />consultation</> }, { icon: "leaf", label: <>Evidence-led<br />hair care</> }]} />
 
       <section className="py-14 bg-white"><div className="container-x max-w-4xl"><h2 className="font-serif text-xl text-forest mb-3">Hair Fall Is a Symptom, Not a Single Diagnosis</h2><p className="text-sm text-forest/70 leading-relaxed">Hair shedding can be influenced by genetics, stress, nutritional status, hormonal changes, illness, medications, scalp conditions and hair-care practices. That is why choosing a procedure before understanding the pattern of hair loss can lead to unrealistic expectations. At Ouransh, assessment is always the first step — we discuss what you have noticed, how long it has been happening, whether there are scalp symptoms, and whether medical evaluation or laboratory testing may be appropriate.</p></div></section>
 
-      <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Hair Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{hairServiceCards.map((service) => <Link key={service.slug} to={`/hair-treatment/${service.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={service.img} alt={service.title} /></div><div className="skin-service-card-body"><span>Ouransh Hair Care</span><h2>{service.title}</h2><p>{service.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
+      <section className="skin-services-section py-16"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Hair Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{hairServiceCards.map((service) => <Link key={service.slug} to={`/hair-treatment/${service.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={service.img} alt={service.title} /></div><div className="skin-service-card-body"><span>Ouransh Hair Care</span><h2>{service.title}</h2><p>{service.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
 
       <section className="py-16 bg-white">
         <div className="container-x grid md:grid-cols-2 gap-10">

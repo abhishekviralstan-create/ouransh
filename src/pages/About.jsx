@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
@@ -35,6 +34,11 @@ export default function About() {
       <Seo
         title="About Ouransh | Skin, Hair & Diet Clinic in Mohali"
         description="A personal introduction from Dr. Shikha Garg, Founder of Ouransh — Clinic Dietitian & Aesthetic Expert bringing practical nutrition and skin care together in Sector 117, Mohali."
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "About Us" }]}
+        schema={[
+          { "@type": "AboutPage", name: "About Ouransh", url: "https://ouransh.in/about" },
+          { "@type": "Person", name: "Dr. Shikha Garg", jobTitle: "Clinic Dietitian & Aesthetic Expert", worksFor: { "@type": "MedicalBusiness", name: "Ouransh Diet and Skin Care" }, url: "https://ouransh.in/about" },
+        ]}
       />
 
       <section className="bg-creamlight py-14">
@@ -59,7 +63,7 @@ export default function About() {
           </div>
           <div className="founder-photo">
             <img
-              src="/Dr.%20Sikha%20garag.png"
+              src="/dr-shikha-garg.webp"
               alt="Dr. Shikha Garg, Founder of Ouransh"
             />
           </div>
@@ -197,31 +201,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* Visit Ouransh */}
-      <section className="py-16 bg-white">
-        <div className="container-x about-commitment">
-          <div>
-            <span className="eyebrow">Visit Ouransh in Mohali</span>
-            <h2>Ouransh Diet &amp; Skin Care Clinic</h2>
-            <p>
-              451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab — just off Airport Road, accessible from Kharar, New Chandigarh, Zirakpur and central Mohali.<br />
-              Open 7 days a week, 11:00 AM – 8:00 PM.
-            </p>
-          </div>
-          <div>
-            <Link to="/contact" className="btn-gold">Book a Consultation →</Link>
-            <a href="tel:+916239557417" className="btn-outline">Call 062395 57417</a>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-14 bg-creamlight">
-        <div className="container-x max-w-2xl text-center">
-          <p className="font-serif italic text-lg text-forest/80 mb-3">
+      <section className="founder-signoff">
+        <div className="container-x max-w-4xl">
+          <div className="founder-signoff-card text-center">
+            <span className="founder-signoff-mark" aria-hidden="true">“</span>
+          <p className="founder-quote-text">
             "Sometimes the best place to start is simply understanding what your body actually needs."
           </p>
-          <p className="text-gold text-sm font-medium">— Dr. Shikha Garg</p>
-          <p className="text-forest/60 text-xs mt-1">Founder, Ouransh Diet &amp; Skin Care Clinic</p>
+          <p className="founder-quote-signature">Dr. Shikha Garg</p>
+          <p className="founder-quote-role">Founder, Ouransh Diet &amp; Skin Care Clinic</p>
+          </div>
         </div>
       </section>
     </Layout>

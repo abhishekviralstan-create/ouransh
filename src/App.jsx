@@ -8,6 +8,7 @@ import DietConsultation from "./pages/DietConsultation";
 import HairServiceDetail from "./pages/HairServiceDetail";
 import DietServiceDetail from "./pages/DietServiceDetail";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
       <Route path="/diet-consultation" element={<DietConsultation />} />
       <Route path="/diet-consultation/:slug" element={<DietServiceDetail />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import dietHeroBanner from "../assets/diet-hero-banner.png";
 import ServiceCta from "../components/ServiceCta";
 import ServiceLandingHero from "../components/ServiceLandingHero";
 import Faq from "../components/Faq";
@@ -28,6 +27,11 @@ export const conditions = [
       { q: "Can nutrition help with PCOS-related acne or hair fall?", a: "It can support improvement when combined with appropriate skin or hair treatment, since the underlying hormonal picture affects both." },
       { q: "Do you replace my gynaecologist's treatment?", a: "No. We work alongside your treating doctor and ask you to bring recent reports and current medication to your consultation." },
     ],
+    reviews: [
+      { name: "Simran Bhalla", text: "First dietitian who actually explained insulin resistance to me instead of just telling me to eat less. My cycles have become more regular and my skin has calmed down too." },
+      { name: "Radhika Suri", text: "They coordinated with my gynaecologist instead of working in isolation. My weight loss has been slow but it's finally sustainable, not another crash diet." },
+      { name: "Alisha Kohli", text: "PCOS acne and weight both improved once they treated the hormonal side alongside my skin routine. Wish I had found them years ago." },
+    ],
   },
   {
     id: "thyroid-disorders",
@@ -46,6 +50,11 @@ export const conditions = [
       { q: "Can diet cure a thyroid disorder?", a: "No. Thyroid disorders require medical diagnosis and, usually, prescribed medication. Nutrition supports overall health and symptom management alongside that care." },
       { q: "Does thyroid medication need to be taken with food?", a: "Timing instructions vary by medication and are set by your prescribing doctor. We plan meals around your existing instructions rather than changing them." },
       { q: "Why is weight loss harder with hypothyroidism?", a: "An underactive thyroid can slow metabolism and affect energy, which is why timelines and expectations are set individually rather than using a generic plan." },
+    ],
+    reviews: [
+      { name: "Navjot Kaur", text: "They planned my meals around my thyroid medication timing instead of ignoring it like my last dietitian did. My energy levels have genuinely improved." },
+      { name: "Rajat Anand", text: "Realistic about how slow weight loss can be with hypothyroidism. No false promises, just steady, honest progress." },
+      { name: "Preeti Chadha", text: "Continued working with my endocrinologist's reports and built a plan around it. Finally feel like my nutrition and medical care are actually aligned." },
     ],
   },
   {
@@ -66,6 +75,11 @@ export const conditions = [
       { q: "Can nutrition replace my diabetes medication?", a: "No. Nutrition is coordinated with your doctor's treatment and monitoring, not used as a replacement." },
       { q: "Is this suitable for type 1 diabetes?", a: "Our plans are most commonly used for type 2 diabetes and pre-diabetes. Any plan for type 1 diabetes is closely coordinated with your treating physician." },
     ],
+    reviews: [
+      { name: "Baljeet Singh", text: "Was told I'd have to give up roti and rice completely elsewhere. Ouransh just adjusted my portions and timing and my sugar levels are far more stable now." },
+      { name: "Shalini Kapur", text: "They worked directly with what my doctor had already prescribed instead of contradicting it. Genuinely practical, household-friendly meal plans." },
+      { name: "Deepak Sharma", text: "Pre-diabetic reports scared me, but the plan they built fit my daily routine without feeling restrictive. My last checkup showed real improvement." },
+    ],
   },
   {
     id: "fatty-liver",
@@ -84,6 +98,11 @@ export const conditions = [
       { q: "Can fatty liver be reversed through diet?", a: "In earlier stages, dietary and lifestyle changes often support meaningful improvement. Your physician's monitoring remains important throughout." },
       { q: "Is a crash diet a faster way to improve fatty liver?", a: "No. Rapid weight loss does not help fatty liver and can worsen it in some cases. A gradual, sustainable approach is safer and more effective." },
       { q: "Do I need to avoid all fats?", a: "No. The focus is on reducing refined carbohydrates and added sugars and building an overall sustainable pattern, not eliminating fat entirely." },
+    ],
+    reviews: [
+      { name: "Amanpreet Sidhu", text: "My liver function reports improved after a few months of the gradual plan they built. No crash dieting, just consistent, sustainable changes." },
+      { name: "Varun Chawla", text: "They kept in touch with my physician's monitoring the whole time instead of working separately. Reassuring to have both sides aligned." },
+      { name: "Komal Trehan", text: "Cutting down refined sugar felt manageable with the way they structured my meals. My latest ultrasound showed real improvement." },
     ],
   },
   {
@@ -106,6 +125,11 @@ export const conditions = [
       { q: "Can I follow the plan while taking medication?", a: "Yes, and it should be coordinated with your prescribing clinician when food choices, meal timing or weight changes could affect medication needs." },
       { q: "What happens after I reach my goal?", a: "We plan for maintenance from the start, since a plan that ends abruptly is one of the most common reasons weight is regained." },
     ],
+    reviews: [
+      { name: "Jaspreet Brar", text: "I'd lost and regained weight three times before this. The difference here was a maintenance plan built in from day one, not just a diet chart." },
+      { name: "Rohit Aggarwal", text: "They found out I had mild insulin resistance before writing my plan, which explained why nothing had worked before. Actually seeing steady results now." },
+      { name: "Nandini Rawat", text: "No starvation, no extreme restriction — just food from my own kitchen adjusted properly. Down several kilos and it's actually staying off." },
+    ],
   },
 ];
 
@@ -125,15 +149,24 @@ const dietFaqs = [
   { q: "Can clients from Chandigarh or Panchkula book?", a: "Yes. Our clinic is based in Mohali and welcomes clients from across the Chandigarh Tricity." },
 ];
 
+const dietItemListSchema = {
+  "@type": "ItemList",
+  itemListElement: conditions.map((c, i) => ({
+    "@type": "ListItem", position: i + 1, name: c.shortTitle, url: `https://ouransh.in/diet-consultation/${c.id}`,
+  })),
+};
+
 export default function DietConsultation() {
   return (
     <Layout>
       <Seo
         title="Diet & Nutrition in Mohali | Personalised Plans | Ouransh"
         description="Get personalised nutrition support at Ouransh Mohali for PCOS, thyroid concerns, diabetes, fatty liver and sustainable weight management across the Tricity."
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Diet & Nutrition" }]}
+        schema={dietItemListSchema}
       />
 
-      <ServiceLandingHero eyebrow="Practical nutrition support" title="Personalised Diet & Nutrition Support in Mohali" description="Build practical food and lifestyle habits around your health goals with personalised nutrition support at Ouransh in Mohali. Plans are designed to complement appropriate medical care, not replace it." service="diet" buttonLabel="Book a Diet Consultation" image={dietHeroBanner} imageAlt="Personalised nutrition consultation at Ouransh" features={[{ icon: "person", label: <>Personalised<br />plans</> }, { icon: "shield", label: <>Health-aware<br />guidance</> }, { icon: "leaf", label: <>Practical<br />nutrition</> }]} />
+      <ServiceLandingHero eyebrow="Practical nutrition support" title="Personalised Diet & Nutrition Support in Mohali" description="Build practical food and lifestyle habits around your health goals with personalised nutrition support at Ouransh in Mohali. Plans are designed to complement appropriate medical care, not replace it." service="diet" buttonLabel="Book a Diet Consultation" comparisonSrc="/before-after/diet-consultation-hero.png" comparisonTitle="Nutrition and lifestyle support" features={[{ icon: "person", label: <>Personalised<br />plans</> }, { icon: "shield", label: <>Health-aware<br />guidance</> }, { icon: "leaf", label: <>Practical<br />nutrition</> }]} />
 
       <section className="py-14 bg-white"><div className="container-x max-w-4xl"><h2 className="font-serif text-xl text-forest mb-3">Nutrition That Fits Real Life</h2><p className="text-sm text-forest/70 leading-relaxed">A useful nutrition plan should work with your routine, food preferences, culture, work schedule, health conditions and budget. We avoid restrictive templates presented as universal solutions and instead emphasise realistic, sustainable changes. For health conditions such as PCOS, thyroid disorders, diabetes and fatty liver, nutrition can be an important part of care, but diagnosis, medication and medical monitoring remain the responsibility of the appropriate healthcare professional.</p></div></section>
 

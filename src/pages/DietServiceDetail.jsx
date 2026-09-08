@@ -3,7 +3,9 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import { conditions } from "./DietConsultation";
 import ServiceCta from "../components/ServiceCta";
+import ServiceLandingHero from "../components/ServiceLandingHero";
 import Faq from "../components/Faq";
+import Testimonials from "../components/Testimonials";
 
 export default function DietServiceDetail() {
   const { slug } = useParams();
@@ -11,5 +13,23 @@ export default function DietServiceDetail() {
   if (!condition) return <Navigate to="/diet-consultation" replace />;
 
   const summary = condition.paras[0];
-  return <Layout><Seo title={condition.metaTitle || `${condition.shortTitle} Diet Consultation in Mohali | Ouransh`} description={condition.metaDescription || summary} /><div className="skin-detail-page"><section className="skin-detail-hero"><div className="container-x skin-detail-grid"><div className="skin-detail-copy"><Link to="/diet-consultation" className="skin-detail-back">← All Diet Services</Link><span className="eyebrow">Personalised Nutrition</span><h1>{condition.title}</h1><p>{summary}</p><div className="skin-detail-actions"><Link to="/contact?service=diet" className="btn-gold">Book Consultation →</Link><a href="tel:+916239557417" className="btn-outline">Call 062395 57417</a></div></div><aside className="hair-detail-highlight"><span>Ouransh Nutrition</span><h2>Built around your life</h2><p>Practical nutrition plans based on your health, routine and everyday food.</p></aside></div></section><section className="skin-detail-content"><div className="container-x"><article><span className="eyebrow">About the service</span><h2>Nutrition support that fits</h2>{condition.paras.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{condition.helps && <><h3 className="font-serif text-lg text-forest mt-6 mb-2">What This Can Help With</h3><ul>{condition.helps.map((item) => <li key={item}>{item}</li>)}</ul></>}<div className="skin-detail-note">✦ {condition.note}</div></article><aside><h3>What To Expect</h3><p>Your plan begins with a detailed assessment rather than a generic diet chart.</p><ul><li>Medical-history review</li><li>Routine-based meal planning</li><li>Practical household foods</li><li>Follow-up adjustments</li></ul><Link to="/contact?service=diet">Book nutrition support →</Link></aside></div></section><Faq title="Frequently Asked Questions" items={condition.faqs} /><ServiceCta eyebrow="Practical nutrition, personalised for you" title={`Ready to get support for ${condition.shortTitle}?`} copy="Start with a detailed consultation and receive clear, realistic nutrition guidance built around your health and daily routine." service="diet" buttonLabel="Book a Nutrition Consultation" /></div></Layout>;
+  const serviceSchema = {
+    "@type": "MedicalTherapy",
+    name: `${condition.shortTitle} Nutrition Support`,
+    description: summary,
+    url: `https://ouransh.in/diet-consultation/${condition.id}`,
+    provider: { "@type": "MedicalBusiness", name: "Ouransh Diet and Skin Care", url: "https://ouransh.in" },
+  };
+  return <Layout><Seo title={condition.metaTitle || `${condition.shortTitle} Diet Consultation in Mohali | Ouransh`} description={condition.metaDescription || summary} breadcrumbs={[{ name: "Home", path: "/" }, { name: "Diet & Nutrition", path: "/diet-consultation" }, { name: condition.shortTitle }]} schema={serviceSchema} /><div className="skin-detail-page skin-detail-diet">
+    <ServiceLandingHero
+      eyebrow="Personalised Nutrition"
+      title={condition.title}
+      description={summary}
+      service="diet"
+      buttonLabel="Book a Nutrition Consultation"
+      comparisonSrc={`/before-after/diet-${condition.id}.png`}
+      comparisonTitle={condition.shortTitle}
+      features={[{ icon: "person", label: <>Personalised<br />plans</> }, { icon: "shield", label: <>Health-aware<br />guidance</> }, { icon: "leaf", label: <>Practical<br />nutrition</> }]}
+    />
+    <section className="skin-detail-content"><div className="container-x"><article><span className="eyebrow">About the service</span><h2>Nutrition support that fits</h2>{condition.paras.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{condition.helps && <><h3 className="font-serif text-lg text-forest mt-6 mb-2">What This Can Help With</h3><ul>{condition.helps.map((item) => <li key={item}>{item}</li>)}</ul></>}<div className="skin-detail-note">✦ {condition.note}</div></article><aside><h3>What To Expect</h3><p>Your plan begins with a detailed assessment rather than a generic diet chart.</p><ul><li>Medical-history review</li><li>Routine-based meal planning</li><li>Practical household foods</li><li>Follow-up adjustments</li></ul><Link to="/contact?service=diet">Book nutrition support →</Link></aside></div></section><Faq title="Frequently Asked Questions" items={condition.faqs} /><Testimonials title={`What Clients Say About ${condition.shortTitle} Support`} reviews={condition.reviews} /><ServiceCta eyebrow="Practical nutrition, personalised for you" title={`Ready to get support for ${condition.shortTitle}?`} copy="Start with a detailed consultation and receive clear, realistic nutrition guidance built around your health and daily routine." service="diet" buttonLabel="Book a Nutrition Consultation" /></div></Layout>;
 }

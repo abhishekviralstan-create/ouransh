@@ -40,6 +40,11 @@ export const treatments = [
       { q: "How many HIFU sessions do I need?", a: "There is no single number for everyone. We recommend a plan after examining the treatment area and discussing your goals." },
       { q: "Can HIFU be combined with other skin treatments?", a: "Sometimes, but the sequence and spacing should be planned by a qualified provider to avoid unnecessary irritation or conflicting timing." },
     ],
+    reviews: [
+      { name: "Priya Malhotra", text: "My jawline was starting to lose its shape and I didn't want anything surgical. Ouransh explained exactly what HIFU could and couldn't do before I started, and the gradual tightening over two months has been exactly what they promised." },
+      { name: "Rohan Kapoor", text: "Honest consultation before anything else. They didn't push me into extra sessions and the improvement around my jaw and neck looks completely natural." },
+      { name: "Simran Kaur", text: "No downtime, mild warmth during the session, and visible firmness by the second month. Genuinely glad I chose Ouransh in Mohali for this." },
+    ],
   },
   {
     slug: "rf-skin-tightening",
@@ -68,6 +73,11 @@ export const treatments = [
       { q: "How many RF sessions are recommended?", a: "It depends on the technology, area, skin condition and goals. A personalised schedule is more appropriate than a universal session count." },
       { q: "Is RF suitable for everyone?", a: "No aesthetic procedure is suitable for everyone. Medical history, implants, pregnancy status, active skin issues and prior procedures are discussed before treatment." },
     ],
+    reviews: [
+      { name: "Ananya Sharma", text: "The warming sensation was very manageable and my skin genuinely feels firmer around the cheeks and neck after a few sessions. No exaggerated claims, just steady improvement." },
+      { name: "Vikram Chauhan", text: "I was skeptical about RF at first but the team explained the science clearly and set realistic expectations. Texture has visibly improved over two months." },
+      { name: "Neha Bansal", text: "Comfortable sessions, no downtime, and my skin looks noticeably tighter than before. Would recommend to anyone in Mohali looking for a non-surgical option." },
+    ],
   },
   {
     slug: "hydrafacial",
@@ -95,6 +105,11 @@ export const treatments = [
       { q: "Can I get HydraFacial before a wedding or event?", a: "Yes, many clients use it as a pre-event refresh, but it is better to plan in advance rather than try any new treatment immediately before an important date." },
       { q: "Does HydraFacial remove blackheads?", a: "The extraction step may help with visible congestion, but results depend on the type and depth of the blockage. Persistent acne or comedones may need a broader plan." },
       { q: "Can HydraFacial treat acne?", a: "It may support cleansing and hydration for some acne-prone skin, but active or significant acne can require a dedicated acne plan." },
+    ],
+    reviews: [
+      { name: "Ritu Verma", text: "Booked a HydraFacial before my sister's wedding and my skin looked so much brighter and cleaner within a week. Zero irritation and the team explained aftercare properly." },
+      { name: "Karan Mehta", text: "Quick, relaxing and no downtime at all. My skin felt hydrated and smooth immediately after the first session." },
+      { name: "Ishita Sood", text: "I get one every couple of months for maintenance now. Ouransh always checks my skin condition first instead of just running the same protocol every time." },
     ],
   },
   {
@@ -125,6 +140,11 @@ export const treatments = [
       { q: "Can I wax between sessions?", a: "Usually, removing hair from the root is avoided because the follicle target needs to be present. Follow our specific preparation instructions." },
       { q: "Does laser hair reduction hurt?", a: "Most people describe brief heat, snapping or stinging sensations. Cooling and device settings affect comfort." },
       { q: "Can laser be done on darker skin tones?", a: "Many modern systems can treat a wide range of skin tones when the correct technology and settings are used; suitability is confirmed at assessment." },
+    ],
+    reviews: [
+      { name: "Diksha Rana", text: "Started my underarm and arms sessions six months ago and the reduction is very noticeable now. The team is upfront that it's a gradual process, not a one-time fix." },
+      { name: "Arjun Thakur", text: "Went for facial hair reduction and they were honest that hormonal hair needs maintenance sessions. Appreciated the transparency instead of overpromising." },
+      { name: "Meera Nanda", text: "Comfortable sessions with proper cooling, and the difference after a full course has been huge. Booking again for touch-ups." },
     ],
   },
   {
@@ -157,6 +177,11 @@ export const treatments = [
       { q: "Can diet cause acne?", a: "Diet may influence acne in some people, but acne is multifactorial. A balanced approach and medical assessment are more useful than extreme restriction." },
       { q: "When should I see a dermatologist or doctor?", a: "Seek medical assessment for severe, painful, rapidly worsening or scarring acne, or if you suspect a medication or hormonal condition is contributing." },
     ],
+    reviews: [
+      { name: "Tanya Grover", text: "Years of trying random products and finally someone looked at the actual cause of my breakouts instead of just prescribing another cream. My skin is calmer now." },
+      { name: "Aditya Bhatia", text: "They referred me for a medical check when they suspected something hormonal instead of just continuing facials. That honesty is rare and I really valued it." },
+      { name: "Pooja Ahluwalia", text: "My acne marks have faded noticeably with the routine they built for me. Slow but steady, exactly as they said it would be." },
+    ],
   },
   {
     slug: "pigmentation-correction",
@@ -184,6 +209,11 @@ export const treatments = [
       { q: "How long does pigmentation correction take?", a: "Timelines depend on the type, depth and cause of the pigmentation. We set realistic expectations after assessment." },
       { q: "Can pigmentation come back after treatment?", a: "It can, especially melasma and sun-triggered pigmentation, which is why maintenance and sun protection matter even after visible improvement." },
     ],
+    reviews: [
+      { name: "Kavita Oberoi", text: "My melasma was getting worse with every summer. Ouransh set realistic expectations from day one and the improvement plus sun-care routine has genuinely helped." },
+      { name: "Nikhil Bajaj", text: "Tanning and dark patches from years of travel finally started fading with a consistent plan. They kept reminding me sunscreen was non-negotiable, which paid off." },
+      { name: "Ritika Chopra", text: "Appreciated that they didn't promise instant results and instead explained why pigmentation needs patience. My skin tone looks far more even now." },
+    ],
   },
 ];
 
@@ -196,10 +226,17 @@ const skinFaqs = [
   { q: "Can I book through WhatsApp?", a: "Yes. WhatsApp, phone call and consultation booking are all available as quick ways to reach our team." },
 ];
 
+const skinItemListSchema = {
+  "@type": "ItemList",
+  itemListElement: treatments.map((t, i) => ({
+    "@type": "ListItem", position: i + 1, name: t.shortTitle, url: `https://ouransh.in/skin-treatments/${t.slug}`,
+  })),
+};
+
 export default function SkinTreatments() {
   return (
     <Layout>
-      <Seo title="Skin Treatments in Mohali | Aesthetic Care | Ouransh" description="Explore personalised skin and aesthetic treatments at Ouransh in Mohali, including HIFU, RF tightening, HydraFacial, laser hair reduction, acne and pigmentation care." />
+      <Seo title="Skin Treatments in Mohali | Aesthetic Care | Ouransh" description="Explore personalised skin and aesthetic treatments at Ouransh in Mohali, including HIFU, RF tightening, HydraFacial, laser hair reduction, acne and pigmentation care." breadcrumbs={[{ name: "Home", path: "/" }, { name: "Skin Treatments" }]} schema={skinItemListSchema} />
       <section className="skin-banner skin-showcase"><div className="container-x skin-banner-inner skin-banner-grid"><div className="skin-banner-content"><span className="skin-showcase-eyebrow">Personalised skin care</span><h1>Personalised Skin & Aesthetic Treatments in Mohali</h1><p className="skin-banner-description">Explore consultation-led options for skin firmness, hydration, unwanted hair, acne, pigmentation and overall skin quality at Ouransh in Sector 117, Mohali — serving clients across Chandigarh, Panchkula and the Tricity.</p><div className="skin-banner-contact"><Link to="/contact?service=skin">Book a Skin Consultation <span aria-hidden="true">→</span></Link><a href="tel:+916239557417"><span aria-hidden="true">☎</span> 062395 57417</a></div><div className="skin-showcase-features"><div><span><FeatureIcon type="person" /></span><p>Personalised<br />plans</p></div><div><span><FeatureIcon type="shield" /></span><p>Expert<br />consultation</p></div><div><span><FeatureIcon type="leaf" /></span><p>Evidence-led<br />treatments</p></div></div></div><div className="skin-showcase-visual"><div className="skin-banner-comparison"><BeforeAfterSlider src="/before-after/acne-correction.png" title="Acne correction" /></div></div></div></section>
 
       <section className="py-14 bg-white"><div className="container-x max-w-4xl"><h2 className="font-serif text-xl text-forest mb-3">Start With Your Skin Concern</h2><p className="text-sm text-forest/70 leading-relaxed mb-3">Good aesthetic care starts with understanding what you want to improve — not simply choosing a machine or a trending treatment. At Ouransh, we begin with your current skin condition, routine, medical history and expectations before recommending an appropriate plan.</p><p className="text-sm text-forest/70 leading-relaxed">Whether your goal is brighter-looking skin, better hydration, smoother texture, improved firmness, fewer breakouts, more even-looking tone or reduced unwanted hair, the right approach can differ from person to person.</p></div></section>

@@ -61,7 +61,7 @@ const serviceLinks = [
 export default function Footer() {
   return (
     <footer className="ouransh-footer bg-forest text-white pt-14 pb-8">
-      <div className="container-x grid grid-cols-2 md:grid-cols-6 gap-y-10 gap-x-6">
+      <div className="container-x grid grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-6">
         <div className="col-span-2 md:col-span-2">
           <Link to="/" className="inline-block mb-4">
             <img src="/Ouransh_Logo.png" alt="Ouransh Diet and Skin Care" className="footer-logo h-14 w-auto" />
@@ -119,16 +119,16 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-gold"><PinIcon /></span>
-              <span>451, First Floor, TDI EX-2,<br />Sector 117, Mohali,<br />Punjab</span>
+              <a
+                href="https://www.google.com/maps?q=Ouransh+Diet+And+Skin+Care+Clinic+In+Mohali&ll=30.7220898,76.6745497&z=17"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-gold"
+              >
+                451, First Floor, TDI EX-2,<br />Sector 117, Mohali,<br />Punjab
+              </a>
             </li>
           </ul>
-        </div>
-
-        <div className="md:border-l md:border-white/10 md:pl-6">
-          <h4 className="text-gold font-serif text-lg mb-4">Hours</h4>
-          <p className="text-sm text-white/70 leading-relaxed">Monday – Sunday<br />11:00 AM – 8:00 PM</p>
-          <div className="w-10 h-px bg-white/15 my-3" />
-          <p className="text-gold text-sm">Open All Days</p>
         </div>
       </div>
 

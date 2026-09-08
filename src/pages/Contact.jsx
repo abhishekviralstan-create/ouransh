@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import contactHeroBanner from "../assets/contact-hero-banner.png";
+import contactHeroBanner from "../assets/contact-hero-banner.webp";
 
 const Icon = ({ type }) => {
   const paths = {
@@ -59,6 +59,8 @@ export default function Contact() {
       <Seo
         title="Contact Ouransh | Skin & Diet Clinic Sector 117 Mohali"
         description="Visit Ouransh for skin, hair and diet consultations at 451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab. Open 7 days, 11am–8pm. Call 062395 57417."
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Contact" }]}
+        schema={{ "@type": "ContactPage", name: "Contact Ouransh", url: "https://ouransh.in/contact" }}
       />
 
       <section className="skin-banner contact-banner">
@@ -194,7 +196,8 @@ export default function Contact() {
               <iframe
                 title="Ouransh location map"
                 loading="lazy"
-                src="https://www.google.com/maps?q=SCO%20451%20FF%20TDI%20South%20Ex-2%20Sector%20117%20Mohali&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.272476711088!2d76.6745497!3d30.722089800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fefd33746cb0d%3A0x980cde28887e753f!2sOuransh%20%7C%20Diet%20And%20Skin%20Care%20Clinic%20In%20Mohali!5e1!3m2!1sen!2sin!4v1788858612786!5m2!1sen!2sin"
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             </div>
             <div className="getting-side-footer">

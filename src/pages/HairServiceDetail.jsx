@@ -2,11 +2,15 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import ServiceCta from "../components/ServiceCta";
+import ServiceLandingHero from "../components/ServiceLandingHero";
 import Faq from "../components/Faq";
+import Testimonials from "../components/Testimonials";
+import hairHeroBanner from "../assets/hair-hero-banner.webp";
 
 // oxlint-disable-next-line react/only-export-components -- shared with the hair hub route
 export const hairServices = {
   "gfc-treatment": {
+    img: hairHeroBanner,
     title: "GFC Hair Treatment in Mohali for Selected Hair-Fall Concerns",
     shortTitle: "GFC Treatment",
     metaTitle: "GFC Hair Treatment in Mohali | Ouransh",
@@ -29,8 +33,14 @@ export const hairServices = {
       { q: "How many GFC sessions will I need?", a: "It depends on your scalp condition, pattern of hair loss and response. A personalised schedule is confirmed after assessment." },
       { q: "How soon will I see results?", a: "Hair growth cycles are slow, so change is usually assessed over months rather than weeks. Results vary by individual." },
     ],
+    reviews: [
+      { name: "Harpreet Singh", text: "My hairline thinning had me worried but they were clear that GFC works for specific patterns and assessed mine first. Shedding has visibly reduced after a few sessions." },
+      { name: "Sanya Gill", text: "Liked that they looked at my ferritin and thyroid levels before recommending GFC instead of jumping straight to treatment. Feels like a proper plan, not just a procedure." },
+      { name: "Yuvraj Sethi", text: "Painless process since it's from your own blood, and the scalp feels healthier already. Honest about the timeline too." },
+    ],
   },
   "prp-therapy": {
+    img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=900&auto=format&fit=crop",
     title: "PRP Hair Therapy in Mohali for Selected Hair-Loss Patterns",
     shortTitle: "PRP Therapy",
     metaTitle: "PRP Hair Treatment in Mohali | Ouransh",
@@ -53,8 +63,14 @@ export const hairServices = {
       { q: "Can nutrition affect how well PRP works?", a: "Yes. Nutritional deficiencies can limit results, which is why we assess diet and relevant blood markers alongside treatment." },
       { q: "How many PRP sessions are needed?", a: "PRP is generally planned as a course of sessions with maintenance afterwards. The exact schedule depends on your scalp and response." },
     ],
+    reviews: [
+      { name: "Ramanpreet Kaur", text: "Post-pregnancy hair fall was scaring me and PRP alongside nutrition correction has made a real difference in just a few months." },
+      { name: "Devansh Malhotra", text: "They explained PRP wouldn't work if my iron levels stayed low, so they fixed that first. Density has genuinely improved since." },
+      { name: "Anjali Dutta", text: "Course of sessions was well spaced out and they kept checking my scalp condition throughout. Thinning has noticeably slowed down." },
+    ],
   },
   "hair-fall-causes": {
+    img: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop",
     title: "Hair Fall Causes: Why Am I Losing More Hair?",
     shortTitle: "Hair Fall Causes",
     metaTitle: "Hair Fall Causes in Mohali | Assessment | Ouransh",
@@ -78,6 +94,11 @@ export const hairServices = {
       { q: "My hair started falling after I lost weight. Is that connected?", a: "Almost certainly. Rapid weight loss commonly triggers shedding two to three months afterwards, and it usually recovers once nutrition is properly corrected." },
       { q: "When should hair loss be medically assessed?", a: "Sudden, patchy, rapidly worsening hair loss, scalp inflammation, scarring, pain or hair loss associated with other symptoms deserves medical evaluation." },
     ],
+    reviews: [
+      { name: "Gurleen Kaur", text: "Finally someone checked my ferritin and vitamin D instead of just recommending random serums. Turns out that was the real reason behind my shedding." },
+      { name: "Manav Khanna", text: "The assessment was thorough — diet, stress, sleep, everything was discussed. Felt like they actually wanted to find the cause, not just sell a treatment." },
+      { name: "Simone D'Souza", text: "They caught early signs of thyroid-related hair fall and referred me for tests before recommending anything. That kind of honesty builds real trust." },
+    ],
   },
 };
 
@@ -86,5 +107,26 @@ export default function HairServiceDetail() {
   const service = hairServices[slug];
   if (!service) return <Navigate to="/hair-treatment" replace />;
 
-  return <Layout><Seo title={service.metaTitle} description={service.metaDescription} /><div className="skin-detail-page"><section className="skin-detail-hero"><div className="container-x skin-detail-grid"><div className="skin-detail-copy"><Link to="/hair-treatment" className="skin-detail-back">← All Hair Treatments</Link><span className="eyebrow">Personalised Hair Care</span><h1>{service.title}</h1><p>{service.summary}</p><div className="skin-detail-actions"><Link to="/contact?service=hair" className="btn-gold">Book Consultation →</Link><a href="tel:+916239557417" className="btn-outline">Call 062395 57417</a></div></div><aside className="hair-detail-highlight"><span>Ouransh Hair Care</span><h2>Cause-first treatment</h2><p>We assess your scalp and internal health before recommending sessions.</p></aside></div></section><section className="skin-detail-content"><div className="container-x"><article><span className="eyebrow">About the service</span><h2>A plan made for your hair</h2>{service.details.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{service.helps && <><h3 className="font-serif text-lg text-forest mt-6 mb-2">What This Can Help With</h3><ul>{service.helps.map((item) => <li key={item}>{item}</li>)}</ul></>}<div className="skin-detail-note">✦ {service.note}</div></article><aside><h3>Before We Recommend It</h3><p>We review your hair-loss pattern, scalp health, medical history and expectations.</p><ul><li>Personalised consultation</li><li>Cause and scalp assessment</li><li>Honest treatment timelines</li><li>Aftercare guidance</li></ul><Link to="/contact?service=hair">Ask about this treatment →</Link></aside></div></section><Faq title="Frequently Asked Questions" items={service.faqs} /><ServiceCta eyebrow="Stronger hair starts with the right plan" title={`Ready to discuss ${service.shortTitle}?`} copy="Book a cause-first consultation and get clear guidance based on your scalp, health history and expectations." service="hair" buttonLabel="Book a Hair Consultation" /></div></Layout>;
+  const serviceSchema = {
+    "@type": "MedicalProcedure",
+    name: service.shortTitle,
+    description: service.summary,
+    procedureType: "https://schema.org/NoninvasiveProcedure",
+    bodyLocation: "Scalp",
+    url: `https://ouransh.in/hair-treatment/${slug}`,
+    provider: { "@type": "MedicalBusiness", name: "Ouransh Diet and Skin Care", url: "https://ouransh.in" },
+  };
+
+  return <Layout><Seo title={service.metaTitle} description={service.metaDescription} breadcrumbs={[{ name: "Home", path: "/" }, { name: "Hair Treatment", path: "/hair-treatment" }, { name: service.shortTitle }]} schema={serviceSchema} /><div className="skin-detail-page skin-detail-hair">
+    <ServiceLandingHero
+      eyebrow="Personalised Hair Care"
+      title={service.title}
+      description={service.summary}
+      service="hair"
+      buttonLabel="Book a Hair Consultation"
+      comparisonSrc={`/before-after/${slug}.png`}
+      comparisonTitle={service.shortTitle}
+      features={[{ icon: "person", label: <>Cause-first<br />assessment</> }, { icon: "shield", label: <>Expert<br />consultation</> }, { icon: "leaf", label: <>Evidence-led<br />hair care</> }]}
+    />
+    <section className="skin-detail-content"><div className="container-x"><article><span className="eyebrow">About the service</span><h2>A plan made for your hair</h2>{service.details.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{service.helps && <><h3 className="font-serif text-lg text-forest mt-6 mb-2">What This Can Help With</h3><ul>{service.helps.map((item) => <li key={item}>{item}</li>)}</ul></>}<div className="skin-detail-note">✦ {service.note}</div></article><aside><h3>Before We Recommend It</h3><p>We review your hair-loss pattern, scalp health, medical history and expectations.</p><ul><li>Personalised consultation</li><li>Cause and scalp assessment</li><li>Honest treatment timelines</li><li>Aftercare guidance</li></ul><Link to="/contact?service=hair">Ask about this treatment →</Link></aside></div></section><Faq title="Frequently Asked Questions" items={service.faqs} /><Testimonials title={`What Clients Say About ${service.shortTitle}`} reviews={service.reviews} /><ServiceCta eyebrow="Stronger hair starts with the right plan" title={`Ready to discuss ${service.shortTitle}?`} copy="Book a cause-first consultation and get clear guidance based on your scalp, health history and expectations." service="hair" buttonLabel="Book a Hair Consultation" /></div></Layout>;
 }

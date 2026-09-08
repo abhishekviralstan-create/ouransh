@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import homeHeroWoman from "../assets/home-hero-woman.png";
+import homeHeroWoman from "../assets/home-hero-woman.webp";
+import Faq from "../components/Faq";
 
 const Icon = ({ type }) => {
   const paths = {
@@ -44,9 +45,21 @@ const reviews = [
   ["Richa Sharma", "I had a great experience with Dr. Shikha Garg at Shikha's Diet Clinic in Mohali. She listened carefully, understood my routine, and suggested a practical diet plan that was easy to follow. Her guidance was supportive and helped me improve my eating habits without extreme dieting. Highly recommended for anyone looking for a trusted dietitian in Mohali."],
 ];
 
+const homeFaqs = [
+  { q: "Which skin treatment should I choose?", a: "The best option depends on your concern, skin type, current routine, medical history and expectations. A consultation is the right first step before selecting HIFU, RF, HydraFacial, laser or a correction plan." },
+  { q: "Is HIFU the same as a facelift?", a: "No. HIFU is a non-surgical aesthetic procedure. It cannot remove excess skin or reproduce the degree of change possible with surgery." },
+  { q: "Is laser hair reduction permanent?", a: "It is more accurate to describe the goal as long-term hair reduction. Regrowth can occur, and some clients need maintenance sessions." },
+  { q: "How much hair fall is normal?", a: "Losing 50 to 100 strands a day is normal. Handfuls in the shower, visible scalp, or a noticeably thinner ponytail are worth investigating." },
+  { q: "Is PRP suitable for every type of hair loss?", a: "No. PRP may be considered for selected patterns of hair loss, but it is not appropriate or effective for every cause. Suitability should be assessed by a qualified professional." },
+  { q: "Do I need blood tests for hair fall?", a: "Often, yes. Ferritin, B12, vitamin D and thyroid function tell us more in one report than months of guessing. Bring any recent reports to your first visit." },
+  { q: "Can diet cure PCOS, thyroid disease or diabetes?", a: "No. Nutrition can support health goals and symptom management, but these conditions require appropriate medical diagnosis and care. We do not make cure claims." },
+  { q: "Do you offer weight-loss guarantees?", a: "No. Sustainable weight management varies by person, and credible care should not promise a fixed amount of weight loss in a fixed time." },
+  { q: "Do you serve clients outside Mohali?", a: "Yes. Ouransh welcomes clients from Chandigarh, Panchkula and the wider Tricity, in addition to Mohali." },
+];
+
 export default function Home() {
   return <Layout>
-    <Seo title="Diet and Skin Care Clinic in Mohali | Ouransh, Sector 117" description="Diet and skin care clinic in Mohali offering HIFU, HydraFacial, PRP, laser and personalised nutrition plans. Sector 117, open 7 days. Book a visit." />
+    <Seo title="Diet and Skin Care Clinic in Mohali | Ouransh, Sector 117" description="Diet and skin care clinic in Mohali offering HIFU, HydraFacial, PRP, laser and personalised nutrition plans. Sector 117, open 7 days. Book a visit." schema={{ "@type": "WebSite", name: "Ouransh Diet and Skin Care", url: "https://ouransh.in" }} />
     <section className="home-hero"><div className="container-x home-hero-grid">
       <div className="hero-copy"><span className="eyebrow">Diet · Skin · Hair · Wellness</span><h1>Your skin and hair reflect the <span>choices your body is making every day.</span></h1><p className="hero-lead"></p><p>Ouransh is a diet and skin care clinic in Mohali that combines personalised nutrition with advanced aesthetic treatments. Because acne, pigmentation and hair fall usually begin somewhere deeper than the surface.</p>
         <div className="hero-facts"><div><Icon type="pin"/><span><b>Local TDI Market</b>Front Side, South-Ex</span></div><div><Icon type="clock"/><span><b>Open 7 Days</b>A Week</span></div><div><Icon type="clock"/><span><b>11:00 AM</b>to 8:00 PM</span></div></div>
@@ -62,6 +75,8 @@ export default function Home() {
 
     <section className="reviews-section"><div className="container-x"><div className="section-heading"><span className="eyebrow">Real words, real journeys</span><h2>What Our Patients Say</h2></div><div className="reviews-layout"><div className="review-score"><strong>5.0</strong><span>★★★★★</span><small>Rated on Google</small><a href="https://www.google.com/search?q=Ouransh+Mohali+reviews" target="_blank" rel="noreferrer">Read all reviews on Google →</a></div><div className="review-marquee"><div className="review-track">{[...reviews,...reviews].map(([name,text],i)=><article key={name+i}><div className="review-top"><span>★★★★★</span><svg className="google-g" viewBox="0 0 48 48" width="20" height="20" aria-label="Google"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg></div><p>“{text}”</p><strong>— {name}</strong></article>)}</div></div></div></div></section>
 
-    <section className="visit-section"><div className="container-x"><div className="section-heading"><span className="eyebrow">We’re easy to reach</span><h2>Visit Us</h2></div><div className="visit-card"><div className="visit-details"><div><Icon type="pin"/><p><b>Ouransh</b>451, First Floor, TDI EX-2,<br/>Sector 117, Mohali,<br/>Punjab</p></div><div><Icon type="phone"/><p><b>Call us</b><a href="tel:+916239557417">062395 57417</a></p></div><div><Icon type="clock"/><p><b>Clinic hours</b>Open 7 days, 11:00 AM – 8:00 PM</p></div></div><div className="visit-map"><iframe title="Ouransh location" src="https://www.google.com/maps?q=451%20First%20Floor%20TDI%20EX-2%20Sector%20117%20Mohali%20Punjab&output=embed" loading="lazy"/></div><div className="visit-actions"><a className="btn-outline" href="https://maps.google.com/?q=451+First+Floor+TDI+EX-2+Sector+117+Mohali+Punjab" target="_blank" rel="noreferrer"><Icon type="pin"/> Get Directions</a><a className="btn-dark" href="https://wa.me/919815907526?text=Hello%20Ouransh%2C%20I%20am%20reaching%20out%20through%20your%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noreferrer">WhatsApp Us →</a><small>Open all days · Parking available</small></div></div></div></section>
+    <Faq title="Frequently Asked Questions" items={homeFaqs} />
+
+    <section className="visit-section"><div className="container-x"><div className="section-heading"><span className="eyebrow">We’re easy to reach</span><h2>Visit Us</h2></div><div className="visit-card"><div className="visit-details"><div><Icon type="pin"/><p><b>Ouransh</b>451, First Floor, TDI EX-2,<br/>Sector 117, Mohali,<br/>Punjab</p></div><div><Icon type="phone"/><p><b>Call us</b><a href="tel:+916239557417">062395 57417</a></p></div><div><Icon type="clock"/><p><b>Clinic hours</b>Open 7 days, 11:00 AM – 8:00 PM</p></div></div><div className="visit-map"><iframe title="Ouransh location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.272476711088!2d76.6745497!3d30.722089800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fefd33746cb0d%3A0x980cde28887e753f!2sOuransh%20%7C%20Diet%20And%20Skin%20Care%20Clinic%20In%20Mohali!5e1!3m2!1sen!2sin!4v1788858612786!5m2!1sen!2sin" loading="lazy"/></div><div className="visit-actions"><a className="btn-outline" href="https://maps.google.com/?q=451+First+Floor+TDI+EX-2+Sector+117+Mohali+Punjab" target="_blank" rel="noreferrer"><Icon type="pin"/> Get Directions</a><a className="btn-dark" href="https://wa.me/919815907526?text=Hello%20Ouransh%2C%20I%20am%20reaching%20out%20through%20your%20website.%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noreferrer">WhatsApp Us →</a><small>Open all days · Parking available</small></div></div></div></section>
   </Layout>;
 }
