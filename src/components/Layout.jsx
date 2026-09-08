@@ -7,11 +7,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Layout({ children }) {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      window.setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView(), 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {

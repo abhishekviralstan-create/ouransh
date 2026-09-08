@@ -356,8 +356,12 @@ main.page-contact > section:nth-of-type(4) { padding-top:64px; padding-bottom:64
 .skin-service-card:hover .skin-service-card-body i{transform:translateX(4px);background:transparent}
 
 /* Skin services appear only as a nested flyout from Skin Treatments. */
-.nav-skin-submenu{display:none}
-.nav-skin-parent:hover>.nav-skin-submenu,.nav-skin-parent:focus-within>.nav-skin-submenu{display:block}
+.nav-skin-submenu,.nav-service-submenu{display:none}
+.nav-skin-parent:hover>.nav-skin-submenu,.nav-skin-parent:focus-within>.nav-skin-submenu,.nav-service-parent:hover>.nav-service-submenu,.nav-service-parent:focus-within>.nav-service-submenu{display:block}
+[id]{scroll-margin-top:100px}
+.hair-detail-highlight{display:flex;min-height:330px;align-items:center;justify-content:center;flex-direction:column;padding:45px;text-align:center;border-radius:90px 18px 90px 18px;color:#fff;background:radial-gradient(circle at 50% 20%,rgba(222,180,99,.22),transparent 38%),#173328;box-shadow:0 24px 55px rgba(44,35,23,.16)}
+.hair-detail-highlight span{color:#deb463;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.hair-detail-highlight h2{margin:12px 0;color:#fff;font-family:'Playfair Display',serif;font-size:34px}.hair-detail-highlight p{max-width:330px;color:rgba(255,255,255,.72);font-size:13px;line-height:1.8}
+@media(max-width:800px){.hair-detail-highlight{min-height:260px;border-radius:60px 16px 60px 16px}}
 
 /* Interactive treatment comparison */
 .before-after{--compare-position:50%;height:250px;position:relative;overflow:hidden;background:#ddd;cursor:ew-resize;isolation:isolate}.before-after-panel{position:absolute;inset:0;background-repeat:no-repeat;background-size:200% 100%}.before-after-before{background-position:left center}.before-after-after{background-position:right center;clip-path:inset(0 0 0 var(--compare-position))}.before-after-label{position:absolute;z-index:4;top:14px;padding:6px 10px;border-radius:999px;color:#fff;background:rgba(23,51,40,.78);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 3px 12px rgba(0,0,0,.15);pointer-events:none}.before-label{left:14px}.after-label{right:14px}.before-after-divider{width:2px;height:100%;position:absolute;z-index:3;left:var(--compare-position);top:0;transform:translateX(-50%);background:#fff;box-shadow:0 0 10px rgba(0,0,0,.3);pointer-events:none}.before-after-divider span{width:38px;height:38px;display:grid;place-items:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;color:#173328;background:#e4b65d;box-shadow:0 4px 15px rgba(0,0,0,.25);font-size:15px;font-weight:800;letter-spacing:-2px}.before-after input{width:100%;height:100%;position:absolute;z-index:5;inset:0;margin:0;opacity:0;cursor:ew-resize}.before-after-disclaimer{max-width:760px;margin:25px auto 0;text-align:center;color:#7b847f;font-size:10px;line-height:1.6}.skin-service-card .before-after{flex:0 0 250px}.skin-service-card:hover .before-after-panel{filter:saturate(1.02)}
@@ -378,6 +382,11 @@ main.page-contact > section:nth-of-type(4) { padding-top:64px; padding-bottom:64
 .before-after-grid{max-width:1500px;margin-inline:auto;gap:16px}.before-after-card{width:230px;flex:0 1 230px}.before-after-card .before-after{height:205px}.before-after-panel{background-size:200% auto;background-position-y:center}.before-after input{-webkit-appearance:none;appearance:none;padding:0;border:0;background:transparent}.before-after input::-webkit-slider-runnable-track{width:100%;height:100%;background:transparent}.before-after input::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:1px;height:100%;background:transparent}.before-after input::-moz-range-track{width:100%;height:100%;background:transparent}.before-after input::-moz-range-thumb{width:1px;height:100%;border:0;background:transparent}.before-after-divider{left:clamp(0%,var(--compare-position),100%)}
 @media(max-width:540px){.before-after-card{width:calc((100% - 12px)/2);flex:0 0 calc((100% - 12px)/2)}.before-after-card .before-after{height:190px}.before-after-grid{gap:12px}.before-after-card-copy h3{font-size:13px}}
 @media(max-width:360px){.before-after-card{width:min(100%,260px);flex-basis:min(100%,260px)}.before-after-card .before-after{height:220px}}
+
+/* Keep comparison portraits natural rather than vertically compressed. */
+.before-after-card .before-after{height:auto;aspect-ratio:3/4}
+@media(max-width:540px){.before-after-card .before-after{height:auto;aspect-ratio:3/4}}
+@media(max-width:360px){.before-after-card .before-after{height:auto;aspect-ratio:3/4}}
 html body #root main.page-skin-treatments > section.skin-banner{min-height:0!important;height:430px!important;padding:0!important;display:block!important;overflow:hidden!important;background:#fbede3!important}
 .page-skin-treatments .skin-banner .skin-banner-bg{object-position:center top}
 html body #root main.page-hair-treatment > section.hair-banner{min-height:0!important;height:430px!important;padding:0!important;display:block!important;overflow:hidden!important;background:#fbede3!important}
@@ -438,6 +447,16 @@ html body #root main.page-contact > section.contact-banner{overflow:visible!impo
 .page-contact .booking-form-heading h2{font-size:30px}
 .page-contact .booking-form button{background:#c78d2e;box-shadow:0 10px 24px rgba(181,137,58,.2)}
 @media(max-width:640px){.page-contact .getting-section{padding:52px 0 28px!important}.page-contact .getting-map{height:260px}.page-contact .booking-section{padding:25px 0 55px!important}.page-contact .booking-form-panel{padding:27px 20px}.page-contact .booking-form-heading h2{font-size:27px}}
+
+/* Interactive comparison in the Skin Treatments hero. */
+.page-skin-treatments .skin-banner{background:linear-gradient(112deg,#fff7ed 0%,#f7e8d8 58%,#ead8c6 100%)!important}
+.skin-banner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.skin-banner-grid .skin-banner-content{width:100%;max-width:none}
+.skin-banner-comparison{width:100%;height:390px;position:relative;margin-left:0;overflow:hidden;border:1px solid rgba(181,137,58,.18);border-radius:22px;box-shadow:0 0 30px rgba(55,39,25,.16);background:#ddd}
+.skin-banner-comparison .before-after{width:100%;height:100%;border-radius:inherit}
+.skin-banner-comparison .before-after-panel{background-size:200% auto;background-position-y:center}
+@media(max-width:900px){.skin-banner-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.skin-banner-comparison{height:342px;margin-left:0}}
+@media(max-width:640px){html body #root main.page-skin-treatments>section.skin-banner{padding:34px 0 52px!important}.skin-banner-grid{display:grid!important;grid-template-columns:1fr!important;gap:28px!important}.skin-banner-comparison{width:min(100%,344px);height:454px;margin:0 auto;border-radius:18px}.skin-banner-comparison .before-after-label{top:14px;padding:6px 10px;font-size:9px}.skin-banner-comparison .before-label{left:14px}.skin-banner-comparison .after-label{right:14px}.skin-banner-comparison .before-after-divider span{width:38px;height:38px;border-width:3px;font-size:15px}}
 
 .page-contact .contact-combined-section{padding:72px 0!important}
 .contact-combined-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:22px;align-items:stretch}

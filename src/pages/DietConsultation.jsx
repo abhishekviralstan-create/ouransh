@@ -3,8 +3,10 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import dietHeroBanner from "../assets/diet-hero-banner.png";
 
-const conditions = [
+// oxlint-disable-next-line react/only-export-components -- shared with diet detail routes
+export const conditions = [
   {
+    id: "pcos",
     title: "PCOS",
     paras: [
       "PCOS shows up on your skin, your hair, your cycle, your weight and your energy at the same time. Most clinics treat one of those.",
@@ -14,6 +16,7 @@ const conditions = [
     note: "PCOS is managed, not cured. We work alongside your gynaecologist rather than around them — bring your reports and current medication to your first visit.",
   },
   {
+    id: "thyroid-disorders",
     title: "Thyroid Disorders",
     paras: [
       "Hypothyroidism affects weight, energy, hair and skin simultaneously, and it is widely under-diagnosed.",
@@ -22,6 +25,7 @@ const conditions = [
     note: "Continue your prescribed medication and endocrinologist follow-ups. Bring your recent TSH reports.",
   },
   {
+    id: "diabetes-support",
     title: "Diabetes Support",
     paras: [
       "Nutritional support for diabetes focuses on blood sugar stability through meal composition, timing and portion structure. It works alongside your doctor's treatment plan, never as a replacement for it. It is most commonly used for type 2 diabetes and pre-diabetes management.",
@@ -30,6 +34,7 @@ const conditions = [
     note: "We do not adjust medication and we do not replace your treating physician. Nutrition is one part of diabetes management, and we work with your doctor's plan, not around it.",
   },
   {
+    id: "fatty-liver",
     title: "Fatty Liver Management",
     paras: [
       "Fatty liver is increasingly common and, in its earlier stages, often responds well to dietary and lifestyle change.",
@@ -38,6 +43,7 @@ const conditions = [
     note: "Continue your hepatologist or physician's follow-ups and monitoring. Bring recent liver function tests and ultrasound reports.",
   },
   {
+    id: "weight-management",
     title: "Weight Management",
     paras: [
       "Most people we see have already lost weight before. Several times. Losing it was never the problem.",
@@ -83,7 +89,7 @@ export default function DietConsultation() {
       <section className="py-16 bg-white">
         <div className="container-x max-w-4xl space-y-14">
           {conditions.map((c) => (
-            <div key={c.title}>
+            <div key={c.title} id={c.id}>
               <h2 className="font-serif text-2xl text-forest mb-3">{c.title}</h2>
               {c.paras.map((p, i) => (
                 <p key={i} className="text-sm text-forest/70 leading-relaxed mb-3">{p}</p>

@@ -16,6 +16,25 @@ const skinServices = [
   { label: "Pigmentation Correction", to: "/skin-treatments/pigmentation-correction" },
 ];
 
+const hairServices = [
+  { label: "GFC Treatment", to: "/hair-treatment/gfc-treatment" },
+  { label: "PRP Therapy", to: "/hair-treatment/prp-therapy" },
+  { label: "Hair Fall Causes", to: "/hair-treatment/hair-fall-causes" },
+];
+
+const dietServices = [
+  { label: "PCOS", to: "/diet-consultation/pcos" },
+  { label: "Thyroid Disorders", to: "/diet-consultation/thyroid-disorders" },
+  { label: "Diabetes Support", to: "/diet-consultation/diabetes-support" },
+  { label: "Fatty Liver", to: "/diet-consultation/fatty-liver" },
+  { label: "Weight Management", to: "/diet-consultation/weight-management" },
+];
+
+const serviceGroups = services.map((service, index) => ({
+  ...service,
+  children: [skinServices, hairServices, dietServices][index],
+}));
+
 export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -49,17 +68,22 @@ export default function Navbar() {
             {servicesOpen && (
               <div className="absolute top-full left-0 pt-3 w-72">
                 <div className="bg-white shadow-lg rounded-lg border border-black/5">
-                  <div className="nav-skin-parent relative">
+                  <div className="nav-service-parent relative">
                     <Link to="/skin-treatments" className="flex items-center justify-between px-4 py-3 text-sm text-forest hover:bg-cream hover:text-gold transition-colors">
                       Skin Treatments <span className="text-gold">›</span>
                     </Link>
-                    <div className="nav-skin-submenu absolute left-full top-0 pl-2 w-64">
+                    <div className="nav-service-submenu absolute left-full top-0 pl-2 w-64">
                       <div className="overflow-hidden rounded-lg border border-black/5 bg-white shadow-xl">
                         {skinServices.map((s) => <Link key={s.to} to={s.to} className="block px-4 py-3 text-sm text-forest/80 hover:bg-cream hover:text-gold transition-colors">{s.label}</Link>)}
                       </div>
                     </div>
                   </div>
-                  {services.slice(1).map((s) => <Link key={s.to} to={s.to} className="block px-4 py-3 text-sm text-forest hover:bg-cream hover:text-gold transition-colors">{s.label}</Link>)}
+                  {serviceGroups.slice(1).map((group) => <div key={group.to} className="nav-service-parent relative">
+                    <Link to={group.to} className="flex items-center justify-between px-4 py-3 text-sm text-forest hover:bg-cream hover:text-gold transition-colors">{group.label} <span className="text-gold">›</span></Link>
+                    <div className="nav-service-submenu absolute left-full top-0 pl-2 w-64"><div className="overflow-hidden rounded-lg border border-black/5 bg-white shadow-xl">
+                      {group.children.map((s) => <Link key={s.to} to={s.to} className="block px-4 py-3 text-sm text-forest/80 hover:bg-cream hover:text-gold transition-colors">{s.label}</Link>)}
+                    </div></div>
+                  </div>)}
                 </div>
               </div>
             )}
@@ -112,7 +136,12 @@ export default function Navbar() {
                 <div className="flex flex-col gap-2 pl-4 border-l border-gold/25">
                   {skinServices.map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-xs font-medium text-forest/70 hover:text-gold">{s.label}</Link>)}
                 </div>
-                {services.slice(1).map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest/80 hover:text-gold">{s.label}</Link>)}
+                {serviceGroups.slice(1).map((group) => <div key={group.to} className="flex flex-col gap-2">
+                  <Link to={group.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest/80 hover:text-gold">{group.label}</Link>
+                  <div className="flex flex-col gap-2 pl-4 border-l border-gold/25">
+                    {group.children.map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-xs font-medium text-forest/70 hover:text-gold">{s.label}</Link>)}
+                  </div>
+                </div>)}
               </div>
             )}
           </div>

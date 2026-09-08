@@ -51,7 +51,7 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section id="gfc-treatment" className="py-16 bg-white">
         <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
           <div className="rounded-xl w-full h-56 bg-creamlight flex items-center justify-center text-center p-8">
             <div>
@@ -74,7 +74,7 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section id="hair-fall-causes" className="py-16 bg-white">
         <div className="container-x">
           <h2 className="font-serif text-2xl text-forest mb-2">Why Your Hair Is Falling</h2>
           <p className="text-sm text-forest/60 mb-8">Most hair fall, especially in women, has an internal cause. These are the ones we see most often.</p>
@@ -89,7 +89,7 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section className="py-16 bg-creamlight">
+      <section id="prp-therapy" className="py-16 bg-creamlight">
         <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
           <img
             src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=700&auto=format&fit=crop"
