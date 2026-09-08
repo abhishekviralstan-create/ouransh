@@ -43,8 +43,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const updateNavbar = () => {
-      const hero = document.querySelector("main > section:first-of-type");
-      setPastHero(hero ? hero.getBoundingClientRect().bottom <= 76 : window.scrollY > 20);
+      setPastHero(window.scrollY > 10);
     };
     updateNavbar();
     window.addEventListener("scroll", updateNavbar, { passive: true });

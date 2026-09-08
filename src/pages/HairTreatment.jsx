@@ -4,107 +4,43 @@ import Seo from "../components/Seo";
 import hairHeroBanner from "../assets/hair-hero-banner.png";
 import ServiceCta from "../components/ServiceCta";
 import ServiceLandingHero from "../components/ServiceLandingHero";
+import Faq from "../components/Faq";
+import { hairServices } from "./HairServiceDetail";
 
-const causes = [
-  { title: "Low iron or ferritin.", desc: "The most common cause of diffuse hair fall in Indian women, and the most frequently missed. Your haemoglobin can be normal while your ferritin sits far too low for hair growth." },
-  { title: "Post-pregnancy shedding.", desc: "Usually starts two to four months after delivery and feels alarming. Typically temporary, but nutritional support during breastfeeding makes a real difference to how quickly it recovers." },
-  { title: "Thyroid conditions.", desc: "Hypothyroidism causes diffuse thinning across the scalp and is widely under-diagnosed." },
-  { title: "PCOS.", desc: "Thinning at the crown alongside unwanted facial hair — the same hormonal picture producing opposite effects in different places." },
-  { title: "B12 and vitamin D deficiency.", desc: "Both common, both correctable, both routinely overlooked." },
-  { title: "After rapid weight loss.", desc: "Crash dieting triggers shedding roughly two to three months later. It is one reason we do not run aggressive weight loss plans." },
-  { title: "Scalp conditions.", desc: "Dandruff, seborrheic dermatitis and fungal infections all cause hair fall and need treating directly." },
-];
-
-const hairServices = [
-  { slug: "gfc-treatment", title: "GFC Treatment", img: hairHeroBanner, summary: "Growth Factor Concentrate treatment designed to support weakened follicles, improve density and reduce hair fall in suitable cases." },
-  { slug: "prp-therapy", title: "PRP Therapy", img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=900&auto=format&fit=crop", summary: "Platelet-Rich Plasma therapy planned for diffuse thinning and reduced hair density where active follicles remain." },
-  { slug: "hair-fall-causes", title: "Hair Fall Causes & Assessment", img: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop", summary: "A cause-first assessment covering scalp health, nutrition, hormones, deficiencies, medication and lifestyle factors." },
+const hairServiceCards = [
+  { slug: "gfc-treatment", title: hairServices["gfc-treatment"].shortTitle, img: hairHeroBanner, summary: hairServices["gfc-treatment"].summary },
+  { slug: "prp-therapy", title: hairServices["prp-therapy"].shortTitle, img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=900&auto=format&fit=crop", summary: hairServices["prp-therapy"].summary },
+  { slug: "hair-fall-causes", title: hairServices["hair-fall-causes"].shortTitle, img: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop", summary: hairServices["hair-fall-causes"].summary },
 ];
 
 const approach = [
-  { title: "We start with why.", desc: "Your consultation covers medical history, recent illness or pregnancy, medication, diet, stress and sleep. If your picture suggests a deficiency or thyroid issue, we will recommend testing before you spend anything on treatment." },
+  { title: "We start with why.", desc: "Your consultation covers medical history, recent illness or pregnancy, medication, diet, stress and sleep. If your picture suggests a deficiency or thyroid issue, we recommend testing before you spend on treatment." },
   { title: "We treat the cause and the scalp together.", desc: "Clinical treatment works considerably better when the internal picture is corrected alongside it." },
   { title: "We give honest timelines.", desc: "Hair grows slowly. Reduced shedding shows in six to eight weeks. Visible regrowth takes three to six months. Anyone promising faster is selling you something." },
 ];
 
 const faqs = [
-  { q: "How much hair fall is normal?", a: "Losing 50 to 100 strands a day is normal. Handfuls in the shower, visible scalp, or a noticeably thinner ponytail are worth investigating." },
-  { q: "Will my hair grow back?", a: "It depends on the cause. Deficiency-related and post-pregnancy hair loss usually recover well once corrected. Long-standing pattern hair loss is a different picture, and we will be straight with you about which one you have." },
-  { q: "Do I need blood tests?", a: "Often, yes. Ferritin, B12, vitamin D and thyroid function tell us more in one report than months of guessing. Bring any recent reports to your first visit." },
-  { q: "My hair started falling after I lost weight. Is that connected?", a: "Almost certainly. Rapid weight loss commonly triggers shedding two to three months afterwards. It usually recovers once nutrition is properly corrected." },
+  { q: "What is the first step for hair fall?", a: "Start with an assessment of the pattern, duration, scalp condition, medical history and possible triggers. A procedure should only be chosen after understanding what may be contributing." },
+  { q: "Is PRP suitable for every type of hair loss?", a: "No. PRP may be considered for selected patterns of hair loss, but it is not appropriate or effective for every cause. Suitability should be assessed by a qualified professional." },
+  { q: "What is the difference between PRP and GFC?", a: "Both are prepared from your own blood, but the preparation process and final product differ. We explain the exact protocol and why one option may be suggested." },
+  { q: "How quickly will I see results?", a: "Hair growth cycles are slow, so any change is typically assessed over time rather than in days. Results vary and should not be guaranteed." },
+  { q: "Can nutrition affect hair fall?", a: "Nutritional deficiencies can contribute to hair shedding in some people. Testing and supplementation should be based on individual need rather than routine high-dose supplements." },
+  { q: "When should hair loss be medically assessed?", a: "Sudden, patchy, rapidly worsening hair loss, scalp inflammation, scarring, pain or hair loss associated with other symptoms deserves medical evaluation." },
 ];
 
 export default function HairTreatment() {
   return (
     <Layout>
       <Seo
-        title="Hair Fall Treatment in Mohali | PRP, GFC & Hair Care"
-        description="Hair fall treatment in Mohali that finds the cause first. PRP and GFC treatments plus nutrition and hormonal assessment. Open 7 days in Sector 117. Book today."
+        title="Hair Treatment in Mohali | GFC, PRP & Hair Fall Care"
+        description="Explore hair and scalp care at Ouransh Mohali, including GFC, PRP hair therapy and personalised assessment of common hair fall causes for Tricity clients."
       />
 
-      <ServiceLandingHero eyebrow="Healthy hair. Stronger you" title="Hair Fall Treatment in Mohali" description="Hair fall is a symptom, not a diagnosis. We understand the cause, assess your scalp and health, and create a personalised treatment plan that fits your needs." service="hair" buttonLabel="Book a Hair Consultation" image={hairHeroBanner} imageAlt="Ouransh premium hair treatment clinic" features={[{ icon: "person", label: <>Cause-first<br />assessment</> }, { icon: "shield", label: <>Expert<br />consultation</> }, { icon: "leaf", label: <>Evidence-led<br />hair care</> }]} />
+      <ServiceLandingHero eyebrow="Hair & scalp care" title="Hair Treatment & Hair Fall Care in Mohali" description="Hair fall can have more than one cause. Ouransh combines hair and scalp assessment with consultation-led options such as GFC and PRP therapy, serving clients across Mohali and the Chandigarh Tricity." service="hair" buttonLabel="Book a Hair Consultation" image={hairHeroBanner} imageAlt="Ouransh premium hair treatment clinic" features={[{ icon: "person", label: <>Cause-first<br />assessment</> }, { icon: "shield", label: <>Expert<br />consultation</> }, { icon: "leaf", label: <>Evidence-led<br />hair care</> }]} />
 
-      <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Hair Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{hairServices.map((service) => <Link key={service.slug} to={`/hair-treatment/${service.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={service.img} alt={service.title} /></div><div className="skin-service-card-body"><span>Ouransh Hair Care</span><h2>{service.title}</h2><p>{service.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
+      <section className="py-14 bg-white"><div className="container-x max-w-4xl"><h2 className="font-serif text-xl text-forest mb-3">Hair Fall Is a Symptom, Not a Single Diagnosis</h2><p className="text-sm text-forest/70 leading-relaxed">Hair shedding can be influenced by genetics, stress, nutritional status, hormonal changes, illness, medications, scalp conditions and hair-care practices. That is why choosing a procedure before understanding the pattern of hair loss can lead to unrealistic expectations. At Ouransh, assessment is always the first step — we discuss what you have noticed, how long it has been happening, whether there are scalp symptoms, and whether medical evaluation or laboratory testing may be appropriate.</p></div></section>
 
-      <section id="gfc-treatment" className="hidden">
-        <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
-          <div className="rounded-xl w-full h-56 bg-creamlight flex items-center justify-center text-center p-8">
-            <div>
-              <span className="text-gold text-3xl" aria-hidden="true">✦</span>
-              <p className="font-serif text-xl text-forest mt-3">Advanced Hair Care</p>
-            </div>
-          </div>
-          <div>
-            <h2 className="font-serif text-2xl text-forest mb-3">GFC Treatment</h2>
-            <p className="text-sm text-forest/70 leading-relaxed mb-3">
-              GFC (Growth Factor Concentrate) treatment uses a specially prepared concentrate derived from your own blood. It is applied to the scalp to support weakened hair follicles and may help improve hair density and reduce hair fall in suitable cases.
-            </p>
-            <p className="text-sm text-forest/70 leading-relaxed mb-3">
-              The number and spacing of sessions depend on your scalp condition, pattern of hair loss and the underlying cause. We assess your hair and health history before recommending a treatment plan.
-            </p>
-            <div className="bg-creamlight rounded-lg p-4 text-xs text-forest/70 leading-relaxed">
-              GFC works best as part of a personalised plan. Nutritional deficiencies, thyroid concerns, PCOS and other contributing factors should be assessed alongside scalp treatment.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="hair-fall-causes" className="hidden">
-        <div className="container-x">
-          <h2 className="font-serif text-2xl text-forest mb-2">Why Your Hair Is Falling</h2>
-          <p className="text-sm text-forest/60 mb-8">Most hair fall, especially in women, has an internal cause. These are the ones we see most often.</p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {causes.map((c) => (
-              <div key={c.title} className="bg-creamlight rounded-xl p-5">
-                <h3 className="font-medium text-forest text-sm mb-2">{c.title}</h3>
-                <p className="text-xs text-forest/60 leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="prp-therapy" className="hidden">
-        <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
-          <img
-            src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=700&auto=format&fit=crop"
-            alt="PRP Therapy"
-            className="rounded-xl w-full h-56 object-cover"
-          />
-          <div>
-            <h2 className="font-serif text-2xl text-forest mb-3">PRP Therapy</h2>
-            <p className="text-sm text-forest/70 leading-relaxed mb-3">
-              PRP (Platelet-Rich Plasma) therapy uses a concentrated preparation from your own blood, applied to the scalp to support hair follicle activity. It works by delivering growth factors directly to the treatment area. It is most commonly used for diffuse thinning and reduced hair density rather than for areas with no remaining follicles.
-            </p>
-            <p className="text-sm text-forest/70 leading-relaxed mb-3">
-              PRP is done as a course of sessions spaced several weeks apart, with maintenance sessions afterwards. Because it uses your own blood, there is no compatibility concern.
-            </p>
-            <div className="bg-white rounded-lg p-4 text-xs text-forest/70 leading-relaxed">
-              ℹ️ It works best when the underlying cause is corrected at the same time. PRP into a scalp starved of iron is money spent working against your own physiology — which is exactly why we assess nutrition alongside it.
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Hair Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{hairServiceCards.map((service) => <Link key={service.slug} to={`/hair-treatment/${service.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={service.img} alt={service.title} /></div><div className="skin-service-card-body"><span>Ouransh Hair Care</span><h2>{service.title}</h2><p>{service.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
 
       <section className="py-16 bg-white">
         <div className="container-x grid md:grid-cols-2 gap-10">
@@ -134,21 +70,9 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section className="py-16 bg-creamlight">
-        <div className="container-x max-w-3xl">
-          <h2 className="font-serif text-2xl text-forest mb-8">Common Questions</h2>
-          <div className="space-y-6">
-            {faqs.map((f) => (
-              <div key={f.q}>
-                <h3 className="text-sm font-medium text-forest mb-1">❓ {f.q}</h3>
-                <p className="text-xs text-forest/60 leading-relaxed pl-6">{f.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Faq title="Common Questions" items={faqs} />
 
-      <ServiceCta eyebrow="Stronger hair starts with the right assessment" title="Ready to understand your hair fall?" copy="Begin with a cause-first consultation. We assess your hair, scalp and health history before recommending the treatment that genuinely fits." service="hair" buttonLabel="Book a Hair Consultation" />
+      <ServiceCta eyebrow="Stronger hair starts with the right assessment" title="Start With a Hair & Scalp Assessment" copy="Book a consultation at Ouransh Mohali to discuss hair fall, possible causes and suitable next steps." service="hair" buttonLabel="Book a Hair Consultation" />
     </Layout>
   );
 }
