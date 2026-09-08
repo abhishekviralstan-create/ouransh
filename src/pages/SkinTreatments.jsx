@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import ServiceCta from "../components/ServiceCta";
+
+function FeatureIcon({ type }) {
+  if (type === "person") return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"/><path d="M5.5 20v-2.5a6.5 6.5 0 0 1 13 0V20z"/></svg>;
+  if (type === "shield") return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 19 5v5.5c0 4.8-2.8 8.7-7 11-4.2-2.3-7-6.2-7-11V5z"/><path d="m9 12 2 2 4-4"/></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4C11 4 5 8.5 5 15c0 2.5 1.7 4 4 4 6.5 0 10-6 11-15Z"/><path d="M4 21c3.5-6 7.5-9.5 12-12"/></svg>;
+}
 
 // oxlint-disable-next-line react/only-export-components -- shared with the matching detail route
 export const treatments = [
@@ -17,10 +24,10 @@ export default function SkinTreatments() {
   return (
     <Layout>
       <Seo title="Skin Treatment in Mohali | HIFU, HydraFacial & Laser" description="Explore HIFU, RF skin tightening, HydraFacial, laser hair reduction, acne and pigmentation treatments at Ouransh in Mohali." />
-      <section className="skin-banner"><div className="container-x skin-banner-inner skin-banner-grid"><div className="skin-banner-content"><span className="skin-banner-mark" aria-hidden="true">✦</span><h1>Skin Treatment in Mohali</h1><p className="skin-banner-description">Every skin concern has a cause, and treatment works best when it matches that cause. Explore our personalised skin services below.</p><p className="skin-banner-assurance">At Ouransh, a consultation comes before a recommendation. Always.</p><div className="skin-banner-contact"><Link to="/contact?service=skin">Book a Skin Consultation</Link><a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a></div></div><div className="skin-banner-comparison"><BeforeAfterSlider src="/before-after/acne-correction.png" title="Acne correction" /></div></div></section>
+      <section className="skin-banner skin-showcase"><div className="container-x skin-banner-inner skin-banner-grid"><div className="skin-banner-content"><span className="skin-showcase-eyebrow">Healthy skin. A brighter you</span><h1>Personalised Skin Treatments in Mohali</h1><p className="skin-banner-description">At Ouransh, every journey begins with a consultation. We understand your skin, find the cause and create a personalised treatment plan that delivers real, lasting results.</p><div className="skin-banner-contact"><Link to="/contact?service=skin">Book a Skin Consultation <span aria-hidden="true">→</span></Link><a href="tel:+916239557417"><span aria-hidden="true">☎</span> 062395 57417</a></div><div className="skin-showcase-features"><div><span><FeatureIcon type="person" /></span><p>Personalised<br />plans</p></div><div><span><FeatureIcon type="shield" /></span><p>Expert<br />consultation</p></div><div><span><FeatureIcon type="leaf" /></span><p>Evidence-led<br />treatments</p></div></div></div><div className="skin-showcase-visual"><div className="skin-banner-comparison"><BeforeAfterSlider src="/before-after/acne-correction.png" title="Acne correction" /></div></div></div></section>
       <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Skin Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{treatments.map((t) => <Link key={t.slug} to={`/skin-treatments/${t.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={t.img} alt={t.title} /></div><div className="skin-service-card-body"><span>Ouransh Skin Care</span><h2>{t.title}</h2><p>{t.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
       <section className="py-14 bg-creamlight"><div className="container-x max-w-4xl grid md:grid-cols-[220px_1fr] gap-8 items-center"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=700&auto=format&fit=crop" alt="Before a wedding or event" className="rounded-xl w-full h-40 object-cover" /><div><h2 className="font-serif text-xl text-forest mb-3">Before a Wedding or Event</h2><p className="text-sm text-forest/70 leading-relaxed">Come in four to six weeks ahead so your skin has time to settle. HydraFacial may be suitable closer to the event after a skin assessment.</p></div></div></section>
-      <section className="py-14 bg-cream"><div className="container-x flex flex-wrap gap-4 justify-center"><Link to="/contact?service=skin" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">Book a Skin Consultation</Link><a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">Call 062395 57417</a></div></section>
+      <ServiceCta eyebrow="Your skin deserves a personalised plan" title="Ready to feel confident in your skin?" copy="Start with an honest consultation. We will understand your concern, explain suitable options and recommend only what your skin actually needs." service="skin" buttonLabel="Book a Skin Consultation" />
     </Layout>
   );
 }

@@ -363,6 +363,107 @@ main.page-contact > section:nth-of-type(4) { padding-top:64px; padding-bottom:64
 .hair-detail-highlight span{color:#deb463;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.hair-detail-highlight h2{margin:12px 0;color:#fff;font-family:'Playfair Display',serif;font-size:34px}.hair-detail-highlight p{max-width:330px;color:rgba(255,255,255,.72);font-size:13px;line-height:1.8}
 @media(max-width:800px){.hair-detail-highlight{min-height:260px;border-radius:60px 16px 60px 16px}}
 
+/* Final Skin hero containment: keep the next section outside and CTAs crisp. */
+.page-skin-treatments>section.skin-showcase{overflow:hidden!important}
+.page-skin-treatments>section.skin-showcase::after{display:none!important;content:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.skin-showcase>.skin-banner-inner{width:100%!important;max-width:1360px!important;margin-inline:auto!important;padding-inline:28px!important}
+@media(max-width:900px){.skin-showcase>.skin-banner-inner{height:auto!important;min-height:0!important;padding-inline:24px!important}.page-skin-treatments>.skin-services-section{position:relative;z-index:1;clear:both}}
+@media(max-width:640px){.skin-showcase>.skin-banner-inner{padding-inline:18px!important}}
+
+/* Shared contained CTA across every service page. */
+html body #root main>section.skin-final-cta{padding:22px 24px 34px!important;color:#173328!important;background:transparent!important}
+html body #root main>section.skin-final-cta::before,html body #root main>section.skin-final-cta::after{display:none!important;content:none!important}
+html body #root main>section.skin-final-cta>.skin-final-cta-inner{max-width:1360px!important;margin-inline:auto!important;padding:58px 32px!important;overflow:hidden;border:1px solid rgba(23,51,40,.18);border-radius:26px;background:radial-gradient(circle at 18% 15%,rgba(255,245,210,.3),transparent 25%),radial-gradient(circle at 84% 82%,rgba(91,57,12,.13),transparent 27%),linear-gradient(125deg,#d6a849 0%,#c28a2d 52%,#a86f1f 100%)!important;box-shadow:0 18px 44px rgba(74,49,18,.13)}
+.skin-detail-page>section.skin-final-cta{padding:22px 24px 34px!important;color:#173328;background:transparent!important}.skin-detail-page>section.skin-final-cta::before,.skin-detail-page>section.skin-final-cta::after{display:none!important;content:none!important}.skin-detail-page>section.skin-final-cta>.skin-final-cta-inner{max-width:1360px!important;margin-inline:auto!important;padding:58px 32px!important;overflow:hidden;border:1px solid rgba(23,51,40,.18);border-radius:26px;background:radial-gradient(circle at 18% 15%,rgba(255,245,210,.3),transparent 25%),radial-gradient(circle at 84% 82%,rgba(91,57,12,.13),transparent 27%),linear-gradient(125deg,#d6a849 0%,#c28a2d 52%,#a86f1f 100%)!important;box-shadow:0 18px 44px rgba(74,49,18,.13)}
+@media(max-width:640px){html body #root main>section.skin-final-cta,.skin-detail-page>section.skin-final-cta{padding:16px 14px 24px!important}html body #root main>section.skin-final-cta>.skin-final-cta-inner,.skin-detail-page>section.skin-final-cta>.skin-final-cta-inner{padding:44px 20px!important;border-radius:20px}}
+
+/* Shared 6/6 landing hero for Hair and Diet services. */
+html body #root main>section.service-showcase{height:560px!important;padding:0!important;overflow:hidden!important;background:transparent!important}
+html body #root main>section.service-showcase::after{display:none!important;content:none!important}
+.service-showcase>.skin-banner-inner{width:100%!important;max-width:1360px!important;margin-inline:auto!important;padding-inline:28px!important}
+.service-showcase-visual{height:410px;overflow:hidden;border:2px solid rgba(255,255,255,.9);border-radius:18px;box-shadow:0 18px 48px rgba(66,50,33,.15)}
+.service-showcase-visual>img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+@media(max-width:900px){html body #root main>section.service-showcase{height:auto!important;padding:48px 0 62px!important}.service-showcase>.skin-banner-inner{height:auto!important;min-height:0!important;padding-inline:24px!important}.service-showcase-visual{width:min(100%,620px);height:430px;margin:auto}}
+@media(max-width:640px){html body #root main>section.service-showcase{padding:38px 0 52px!important}.service-showcase>.skin-banner-inner{padding-inline:18px!important}.service-showcase-visual{width:100%;height:auto;aspect-ratio:1.4;border-radius:14px}}
+
+/* Normal founder photograph without cutout or decorative badge. */
+.page-about .founder-photo{height:540px;overflow:hidden;border-radius:20px;background:transparent;box-shadow:0 18px 44px rgba(44,35,23,.14)}
+.page-about .founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center;filter:none;transform:none}
+@media(max-width:900px){.page-about .founder-photo{height:460px}}
+@media(max-width:640px){.page-about .founder-photo{height:380px;border-radius:16px}}
+
+/* Keep the closing CTA high-contrast despite generic inner-section backgrounds. */
+html body #root main.page-skin-treatments>section.skin-final-cta{padding:78px 24px!important;background:radial-gradient(circle at 15% 20%,rgba(222,180,99,.16),transparent 26%),radial-gradient(circle at 86% 80%,rgba(222,180,99,.11),transparent 24%),linear-gradient(125deg,#10291f 0%,#1d4636 55%,#15372a 100%)!important}
+html body #root main.page-skin-treatments>section.skin-final-cta .skin-final-cta-inner{max-width:880px!important;margin-inline:auto!important}
+@media(max-width:640px){html body #root main.page-skin-treatments>section.skin-final-cta{padding:64px 20px!important}}
+
+/* Logo-gold CTA palette with the former forest background used for content. */
+html body #root main.page-skin-treatments>section.skin-final-cta{color:#173328!important;background:radial-gradient(circle at 15% 20%,rgba(255,244,205,.3),transparent 25%),radial-gradient(circle at 86% 80%,rgba(91,57,12,.13),transparent 27%),linear-gradient(125deg,#d6a849 0%,#c28a2d 52%,#a86f1f 100%)!important}
+main.page-skin-treatments>section.skin-final-cta::before{border-color:rgba(23,51,40,.2)!important}
+main.page-skin-treatments>section.skin-final-cta::after{border-color:rgba(23,51,40,.12)!important;box-shadow:0 0 0 70px rgba(23,51,40,.035),0 0 0 140px rgba(23,51,40,.022)!important}
+.skin-final-cta .skin-cta-mark{border-color:rgba(23,51,40,.3);color:#173328;background:rgba(255,255,255,.14)}
+.skin-final-cta .skin-cta-eyebrow,.skin-final-cta h2{color:#173328!important}
+.skin-final-cta .skin-cta-copy{color:rgba(23,51,40,.76)}
+.skin-final-cta .skin-cta-actions>a:first-child{color:#e7bc62;background:#173328;box-shadow:0 13px 30px rgba(23,51,40,.25)}
+.skin-final-cta .skin-cta-actions>a:last-child{border-color:rgba(23,51,40,.3);color:#173328;background:rgba(255,255,255,.18)}
+.skin-final-cta .skin-cta-actions>a:last-child>span:first-child{color:#173328}.skin-final-cta .skin-cta-actions small{color:rgba(23,51,40,.6)}
+.skin-final-cta .skin-cta-trust{color:rgba(23,51,40,.72)}
+.skin-final-cta .skin-cta-orb{border-color:rgba(23,51,40,.16)}
+
+/* Keep the gold treatment inside a contained CTA card. */
+html body #root main.page-skin-treatments>section.skin-final-cta{padding:22px 24px 34px!important;background:transparent!important}
+html body #root main.page-skin-treatments>section.skin-final-cta::before,html body #root main.page-skin-treatments>section.skin-final-cta::after{display:none!important;content:none!important}
+html body #root main.page-skin-treatments>section.skin-final-cta .skin-final-cta-inner{max-width:1360px!important;padding:58px 32px!important;overflow:hidden;border:1px solid rgba(23,51,40,.18);border-radius:26px;background:radial-gradient(circle at 18% 15%,rgba(255,245,210,.3),transparent 25%),radial-gradient(circle at 84% 82%,rgba(91,57,12,.13),transparent 27%),linear-gradient(125deg,#d6a849 0%,#c28a2d 52%,#a86f1f 100%)!important;box-shadow:0 18px 44px rgba(74,49,18,.13)}
+@media(max-width:640px){html body #root main.page-skin-treatments>section.skin-final-cta{padding:16px 14px 24px!important}html body #root main.page-skin-treatments>section.skin-final-cta .skin-final-cta-inner{padding:44px 20px!important;border-radius:20px}}
+
+/* Premium closing CTA for Skin Treatments. */
+.skin-final-cta{position:relative;overflow:hidden;padding:86px 24px;color:#fff;background:radial-gradient(circle at 12% 18%,rgba(222,180,99,.2),transparent 24%),radial-gradient(circle at 88% 82%,rgba(181,137,58,.18),transparent 26%),linear-gradient(125deg,#122c22 0%,#1d4636 52%,#173328 100%)}
+main.page-skin-treatments>section.skin-final-cta::before{content:"";display:block!important;position:absolute;inset:14px;border:1px solid rgba(222,180,99,.2);border-radius:26px;pointer-events:none}
+main.page-skin-treatments>section.skin-final-cta::after{content:"";display:block!important;position:absolute;left:50%;top:-170px;width:520px;height:520px;transform:translateX(-50%);border:1px solid rgba(222,180,99,.1);border-radius:50%;box-shadow:0 0 0 70px rgba(222,180,99,.025),0 0 0 140px rgba(222,180,99,.018);pointer-events:none}
+.skin-final-cta-inner{position:relative;z-index:2;display:flex;max-width:900px;align-items:center;flex-direction:column;text-align:center}
+.skin-cta-mark{display:grid;width:42px;height:42px;place-items:center;margin-bottom:15px;border:1px solid rgba(222,180,99,.35);border-radius:50%;color:#e1b866;background:rgba(255,255,255,.05);font-size:17px}
+.skin-cta-eyebrow{color:#ddb567;font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.skin-final-cta h2{max-width:720px;margin:12px 0 15px;color:#fff;font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,52px);line-height:1.08}
+.skin-final-cta h2::after{display:none}
+.skin-cta-copy{max-width:670px;color:rgba(255,255,255,.72);font-size:12px;line-height:1.8}
+.skin-cta-actions{display:flex;align-items:stretch;justify-content:center;gap:13px;margin-top:28px}
+.skin-cta-actions>a{display:flex;min-height:54px;align-items:center;justify-content:center;border-radius:28px;transition:transform .25s ease,background .25s ease}
+.skin-cta-actions>a:hover{transform:translateY(-3px)}
+.skin-cta-actions>a:first-child{min-width:245px;gap:30px;padding:0 25px;color:#173328;background:linear-gradient(110deg,#edc77a,#c99338);box-shadow:0 13px 30px rgba(0,0,0,.2);font-size:11px;font-weight:700}
+.skin-cta-actions>a:first-child span{font-size:19px}
+.skin-cta-actions>a:last-child{min-width:205px;gap:10px;padding:0 22px;border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.07);font-size:12px;backdrop-filter:blur(8px)}
+.skin-cta-actions>a:last-child>span:first-child{color:#e3b860;font-size:18px}.skin-cta-actions>a:last-child>span:last-child{display:flex;align-items:flex-start;flex-direction:column;font-weight:600}.skin-cta-actions small{color:rgba(255,255,255,.55);font-size:7px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.skin-cta-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 28px;margin-top:24px;color:rgba(255,255,255,.58);font-size:9px}.skin-cta-trust span::first-letter{color:#dcb25e}
+.skin-cta-orb{position:absolute;border:1px solid rgba(222,180,99,.16);border-radius:50%;pointer-events:none}.skin-cta-orb-one{width:240px;height:240px;left:-95px;bottom:-105px}.skin-cta-orb-two{width:170px;height:170px;right:-55px;top:-70px}
+@media(max-width:640px){.skin-final-cta{padding:70px 22px}.skin-final-cta::before{inset:9px;border-radius:20px}.skin-final-cta h2{font-size:36px}.skin-cta-copy{font-size:11px}.skin-cta-actions{width:100%;flex-direction:column}.skin-cta-actions>a{width:100%;min-width:0!important}.skin-cta-trust{align-items:center;flex-direction:column;gap:9px}}
+
+/* Editorial Skin Treatments hero. */
+html body #root main.page-skin-treatments>section.skin-showcase{height:560px!important;background:radial-gradient(ellipse at 75% 12%,rgba(211,190,160,.28) 0 24%,transparent 24.3%),radial-gradient(ellipse at 48% 105%,rgba(228,213,190,.42) 0 32%,transparent 32.3%),linear-gradient(112deg,#fffdf8,#f7efe4)!important}
+.skin-showcase .skin-banner-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.skin-showcase .skin-banner-content{padding:0;text-align:left;color:#173328}
+.skin-showcase-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#9a6047;font-size:9px;font-weight:600;letter-spacing:.34em;text-transform:uppercase}
+.skin-showcase-eyebrow::after{content:"";width:88px;height:1px;background:#c6a57d}
+.skin-showcase .skin-banner-content h1{max-width:630px!important;color:#7b412e!important;font-size:clamp(43px,4vw,61px)!important;line-height:1.04!important;letter-spacing:-.045em!important}
+.skin-showcase .skin-banner-description{max-width:590px!important;margin:15px 0 20px!important;color:#665b56!important;font-size:12px!important;line-height:1.65!important}
+.skin-showcase .skin-banner-contact{gap:11px}
+.skin-showcase .skin-banner-contact a{min-height:45px;padding:0 22px;border-radius:24px;font-size:11px}
+.skin-showcase .skin-banner-contact a:first-child{justify-content:space-between;min-width:230px;background:#b57d28}
+.skin-showcase .skin-banner-contact a:last-child{min-width:178px;justify-content:center;background:rgba(255,255,255,.72)}
+.skin-showcase-features{display:grid;grid-template-columns:repeat(3,1fr);max-width:575px;margin-top:24px}
+.skin-showcase-features>div{display:flex;align-items:center;gap:10px;padding-right:16px}
+.skin-showcase-features>div+div{padding-left:20px;border-left:1px solid rgba(23,51,40,.16)}
+.skin-showcase-features span{display:grid;width:39px;height:39px;flex:0 0 39px;place-items:center;border-radius:50%;color:#31533f;background:#f3eee3;font-size:20px}
+.skin-showcase-features svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.skin-showcase-features p{color:#554943;font-size:10px;line-height:1.25}
+.skin-showcase-signoff{display:block;margin:23px 0 0 182px;padding-left:15px;border-left:1px solid #a67a43;color:#9a8166;font-size:7px;line-height:1.8;letter-spacing:.28em;text-transform:uppercase}
+.skin-showcase-visual{position:relative;align-self:center;padding-bottom:0}
+.skin-showcase .skin-banner-comparison{height:410px;border:2px solid rgba(255,255,255,.9);border-radius:18px;box-shadow:0 18px 48px rgba(66,50,33,.15)}
+.skin-showcase-caption{position:absolute;z-index:8;left:50%;bottom:0;width:265px;padding:12px 20px;transform:translateX(-50%);text-align:center;border-radius:13px;background:#fffaf3;box-shadow:0 8px 24px rgba(49,37,25,.1)}
+.skin-showcase-caption strong{display:block;color:#35261d;font-family:'Playfair Display',serif;font-size:15px}.skin-showcase-caption small{display:block;margin-top:3px;color:#8b8c88;font-size:8px}
+.skin-signoff-mobile{display:none}
+@media(max-width:900px){html body #root main.page-skin-treatments>section.skin-showcase{height:auto!important;padding:48px 0 62px!important}.skin-showcase .skin-banner-grid{grid-template-columns:1fr!important;gap:38px}.skin-showcase .skin-banner-content{text-align:center!important}.skin-showcase-eyebrow,.skin-showcase .skin-banner-contact{justify-content:center}.skin-showcase .skin-banner-description{margin-left:auto!important;margin-right:auto!important}.skin-showcase-features{margin-left:auto;margin-right:auto;text-align:left}.skin-showcase-signoff{width:max-content;margin-left:auto;margin-right:auto;text-align:left}.skin-showcase-visual{width:min(100%,620px);margin:auto}.skin-showcase .skin-banner-comparison{height:430px}}
+@media(max-width:640px){html body #root main.page-skin-treatments>section.skin-showcase{padding:38px 0 52px!important}.skin-showcase .skin-banner-grid{gap:34px}.skin-showcase .skin-banner-content{text-align:left!important}.skin-showcase .skin-banner-content h1{font-size:42px!important;line-height:1.05!important}.skin-showcase-eyebrow{justify-content:flex-start;font-size:7px;letter-spacing:.24em}.skin-showcase-eyebrow::after{width:52px}.skin-showcase .skin-banner-description{margin:20px 0 26px!important;font-size:14px!important;line-height:1.6!important}.skin-showcase .skin-banner-contact{align-items:stretch;flex-direction:column;gap:10px}.skin-showcase .skin-banner-contact a{width:100%;min-height:52px;justify-content:center!important;font-size:13px}.skin-showcase-features{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:100%;max-width:none;margin-top:28px;text-align:center}.skin-showcase-features>div{display:flex;justify-content:flex-start;flex-direction:column;gap:8px;padding:0 8px}.skin-showcase-features>div+div{padding-left:8px;border-left:1px solid rgba(23,51,40,.2)}.skin-showcase-features span{width:48px;height:48px;flex-basis:48px}.skin-showcase-features p{font-size:11px}.skin-showcase-visual{width:100%;padding:0}.skin-showcase .skin-banner-comparison{width:100%;height:auto;aspect-ratio:1.4;border-radius:14px}}
+
 /* Interactive treatment comparison */
 .before-after{--compare-position:50%;height:250px;position:relative;overflow:hidden;background:#ddd;cursor:ew-resize;isolation:isolate}.before-after-panel{position:absolute;inset:0;background-repeat:no-repeat;background-size:200% 100%}.before-after-before{background-position:left center}.before-after-after{background-position:right center;clip-path:inset(0 0 0 var(--compare-position))}.before-after-label{position:absolute;z-index:4;top:14px;padding:6px 10px;border-radius:999px;color:#fff;background:rgba(23,51,40,.78);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 3px 12px rgba(0,0,0,.15);pointer-events:none}.before-label{left:14px}.after-label{right:14px}.before-after-divider{width:2px;height:100%;position:absolute;z-index:3;left:var(--compare-position);top:0;transform:translateX(-50%);background:#fff;box-shadow:0 0 10px rgba(0,0,0,.3);pointer-events:none}.before-after-divider span{width:38px;height:38px;display:grid;place-items:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;color:#173328;background:#e4b65d;box-shadow:0 4px 15px rgba(0,0,0,.25);font-size:15px;font-weight:800;letter-spacing:-2px}.before-after input{width:100%;height:100%;position:absolute;z-index:5;inset:0;margin:0;opacity:0;cursor:ew-resize}.before-after-disclaimer{max-width:760px;margin:25px auto 0;text-align:center;color:#7b847f;font-size:10px;line-height:1.6}.skin-service-card .before-after{flex:0 0 250px}.skin-service-card:hover .before-after-panel{filter:saturate(1.02)}
 @media(max-width:640px){.before-after,.skin-service-card .before-after{height:235px;flex-basis:235px}}
@@ -486,3 +587,10 @@ main, section, .container-x { max-width:100%; }
   .booking-form-panel,.getting-side,.contact-combined-grid .booking-form-panel { padding:20px 16px!important; }
   .founder-values,.belief-grid,.deeper-features { grid-template-columns:1fr!important; }
 }
+
+/* Skin showcase must own its content; disable the generic hero blur seam. */
+html body #root main.page-skin-treatments>section.skin-showcase{height:560px!important;overflow:hidden!important;background:transparent!important}
+html body #root main.page-skin-treatments>section.skin-showcase::after{display:none!important;content:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.skin-showcase>.skin-banner-inner{width:100%!important;max-width:1360px!important;margin-inline:auto!important;padding-inline:28px!important}
+@media(max-width:900px){html body #root main.page-skin-treatments>section.skin-showcase{height:auto!important}.skin-showcase>.skin-banner-inner{height:auto!important;min-height:0!important;padding-inline:24px!important}.page-skin-treatments>.skin-services-section{position:relative;z-index:1;clear:both}}
+@media(max-width:640px){.skin-showcase>.skin-banner-inner{padding-inline:18px!important}}

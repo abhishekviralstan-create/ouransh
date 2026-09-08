@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const services = [
   { label: "Skin Treatments", to: "/skin-treatments" },
@@ -38,6 +38,24 @@ const serviceGroups = services.map((service, index) => ({
 export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const updateNavbar = () => {
+      const hero = document.querySelector("main > section:first-of-type");
+      setPastHero(hero ? hero.getBoundingClientRect().bottom <= 76 : window.scrollY > 20);
+    };
+    updateNavbar();
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+    window.addEventListener("resize", updateNavbar);
+    const timer = window.setTimeout(updateNavbar, 100);
+    return () => {
+      window.removeEventListener("scroll", updateNavbar);
+      window.removeEventListener("resize", updateNavbar);
+      window.clearTimeout(timer);
+    };
+  }, [pathname]);
 
   const linkClass = ({ isActive }) =>
     `text-sm font-medium transition-colors hover:text-gold ${
@@ -45,7 +63,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-creamlight/95 backdrop-blur border-b border-black/5">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300 ${pastHero || mobileOpen ? "bg-creamlight/95 backdrop-blur border-b border-black/5 shadow-sm" : "bg-transparent border-b border-transparent"}`}>
       <div className="container-x flex items-center justify-between py-3">
         <Link to="/" className="flex items-center">
           <img src="/Ouransh_Logo.png" alt="Ouransh Diet and Skin Care" className="h-14 w-auto" />

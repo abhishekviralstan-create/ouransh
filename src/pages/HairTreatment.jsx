@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import hairHeroBanner from "../assets/hair-hero-banner.png";
+import ServiceCta from "../components/ServiceCta";
+import ServiceLandingHero from "../components/ServiceLandingHero";
 
 const causes = [
   { title: "Low iron or ferritin.", desc: "The most common cause of diffuse hair fall in Indian women, and the most frequently missed. Your haemoglobin can be normal while your ferritin sits far too low for hair growth." },
@@ -11,6 +13,12 @@ const causes = [
   { title: "B12 and vitamin D deficiency.", desc: "Both common, both correctable, both routinely overlooked." },
   { title: "After rapid weight loss.", desc: "Crash dieting triggers shedding roughly two to three months later. It is one reason we do not run aggressive weight loss plans." },
   { title: "Scalp conditions.", desc: "Dandruff, seborrheic dermatitis and fungal infections all cause hair fall and need treating directly." },
+];
+
+const hairServices = [
+  { slug: "gfc-treatment", title: "GFC Treatment", img: hairHeroBanner, summary: "Growth Factor Concentrate treatment designed to support weakened follicles, improve density and reduce hair fall in suitable cases." },
+  { slug: "prp-therapy", title: "PRP Therapy", img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=900&auto=format&fit=crop", summary: "Platelet-Rich Plasma therapy planned for diffuse thinning and reduced hair density where active follicles remain." },
+  { slug: "hair-fall-causes", title: "Hair Fall Causes & Assessment", img: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop", summary: "A cause-first assessment covering scalp health, nutrition, hormones, deficiencies, medication and lifestyle factors." },
 ];
 
 const approach = [
@@ -34,24 +42,11 @@ export default function HairTreatment() {
         description="Hair fall treatment in Mohali that finds the cause first. PRP and GFC treatments plus nutrition and hormonal assessment. Open 7 days in Sector 117. Book today."
       />
 
-      <section className="skin-banner hair-banner">
-        <img className="skin-banner-bg" src={hairHeroBanner} alt="Ouransh premium hair treatment clinic" />
-        <div className="container-x skin-banner-inner">
-          <div className="skin-banner-content hair-banner-content">
-            <span className="skin-banner-mark" aria-hidden="true">✦</span>
-            <h1>Hair Fall Treatment in Mohali — Finding the Cause First</h1>
-            <p className="skin-banner-description">
-              Hair fall is a symptom, not a diagnosis. Treating it without knowing why it is happening is why so many people spend months on serums and see nothing change.
-            </p>
-            <div className="skin-banner-contact">
-              <Link to="/contact?service=hair">Book a Hair Consultation</Link>
-              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceLandingHero eyebrow="Healthy hair. Stronger you" title="Hair Fall Treatment in Mohali" description="Hair fall is a symptom, not a diagnosis. We understand the cause, assess your scalp and health, and create a personalised treatment plan that fits your needs." service="hair" buttonLabel="Book a Hair Consultation" image={hairHeroBanner} imageAlt="Ouransh premium hair treatment clinic" features={[{ icon: "person", label: <>Cause-first<br />assessment</> }, { icon: "shield", label: <>Expert<br />consultation</> }, { icon: "leaf", label: <>Evidence-led<br />hair care</> }]} />
 
-      <section id="gfc-treatment" className="py-16 bg-white">
+      <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our treatments</span><h2>Hair Care Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{hairServices.map((service) => <Link key={service.slug} to={`/hair-treatment/${service.slug}`} className="skin-service-card"><div className="skin-service-image"><img src={service.img} alt={service.title} /></div><div className="skin-service-card-body"><span>Ouransh Hair Care</span><h2>{service.title}</h2><p>{service.summary}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
+
+      <section id="gfc-treatment" className="hidden">
         <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
           <div className="rounded-xl w-full h-56 bg-creamlight flex items-center justify-center text-center p-8">
             <div>
@@ -74,7 +69,7 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section id="hair-fall-causes" className="py-16 bg-white">
+      <section id="hair-fall-causes" className="hidden">
         <div className="container-x">
           <h2 className="font-serif text-2xl text-forest mb-2">Why Your Hair Is Falling</h2>
           <p className="text-sm text-forest/60 mb-8">Most hair fall, especially in women, has an internal cause. These are the ones we see most often.</p>
@@ -89,7 +84,7 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section id="prp-therapy" className="py-16 bg-creamlight">
+      <section id="prp-therapy" className="hidden">
         <div className="container-x grid md:grid-cols-[280px_1fr] gap-10 items-start">
           <img
             src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=700&auto=format&fit=crop"
@@ -153,12 +148,7 @@ export default function HairTreatment() {
         </div>
       </section>
 
-      <section className="py-14 bg-cream">
-        <div className="container-x flex flex-wrap gap-4 justify-center">
-          <Link to="/contact?service=hair" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Hair Consultation</Link>
-          <a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">📞 Call 062395 57417</a>
-        </div>
-      </section>
+      <ServiceCta eyebrow="Stronger hair starts with the right assessment" title="Ready to understand your hair fall?" copy="Begin with a cause-first consultation. We assess your hair, scalp and health history before recommending the treatment that genuinely fits." service="hair" buttonLabel="Book a Hair Consultation" />
     </Layout>
   );
 }

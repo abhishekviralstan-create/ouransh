@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import dietHeroBanner from "../assets/diet-hero-banner.png";
+import ServiceCta from "../components/ServiceCta";
+import ServiceLandingHero from "../components/ServiceLandingHero";
 
 // oxlint-disable-next-line react/only-export-components -- shared with diet detail routes
 export const conditions = [
   {
     id: "pcos",
     title: "PCOS",
+    img: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=900&auto=format&fit=crop",
     paras: [
       "PCOS shows up on your skin, your hair, your cycle, your weight and your energy at the same time. Most clinics treat one of those.",
       "Insulin resistance makes weight loss genuinely harder. That is physiology, not willpower, whatever you may have been told. Jawline acne, oiliness, unwanted facial hair, scalp thinning and irregular cycles all trace back to the same underlying picture.",
@@ -18,6 +21,7 @@ export const conditions = [
   {
     id: "thyroid-disorders",
     title: "Thyroid Disorders",
+    img: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=900&auto=format&fit=crop",
     paras: [
       "Hypothyroidism affects weight, energy, hair and skin simultaneously, and it is widely under-diagnosed.",
       "Nutrition does not replace thyroid medication — it supports it. What we can do is build a plan that works with your condition rather than against it: nutrient timing around your medication, addressing the deficiencies that commonly accompany thyroid conditions, and setting realistic expectations about weight, which behaves differently with an underactive thyroid.",
@@ -27,6 +31,7 @@ export const conditions = [
   {
     id: "diabetes-support",
     title: "Diabetes Support",
+    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=900&auto=format&fit=crop",
     paras: [
       "Nutritional support for diabetes focuses on blood sugar stability through meal composition, timing and portion structure. It works alongside your doctor's treatment plan, never as a replacement for it. It is most commonly used for type 2 diabetes and pre-diabetes management.",
       "The plans we build are practical: Punjabi household food, adjusted rather than replaced. Most people arrive expecting to give up roti and rice entirely. That is rarely necessary and rarely sustainable.",
@@ -36,6 +41,7 @@ export const conditions = [
   {
     id: "fatty-liver",
     title: "Fatty Liver Management",
+    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=900&auto=format&fit=crop",
     paras: [
       "Fatty liver is increasingly common and, in its earlier stages, often responds well to dietary and lifestyle change.",
       "We focus on what the evidence supports: gradual weight reduction where appropriate, reducing refined carbohydrates and added sugars, and building a pattern you can maintain long-term. Crash approaches do not help fatty liver and can make things worse.",
@@ -45,6 +51,7 @@ export const conditions = [
   {
     id: "weight-management",
     title: "Weight Management",
+    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=900&auto=format&fit=crop",
     paras: [
       "Most people we see have already lost weight before. Several times. Losing it was never the problem.",
       "Plans fail because they are too restrictive to sustain, they ignore your work schedule and your family's meals, and they end — with nothing planned for afterwards.",
@@ -69,24 +76,11 @@ export default function DietConsultation() {
         description="Experienced dietitians in Mohali offering personalised plans for PCOS, thyroid, diabetes, fatty liver and weight management. Sector 117, open 7 days."
       />
 
-      <section className="skin-banner diet-banner">
-        <img className="skin-banner-bg" src={dietHeroBanner} alt="Personalised nutrition consultation at Ouransh" />
-        <div className="container-x skin-banner-inner">
-          <div className="skin-banner-content diet-banner-content">
-            <span className="skin-banner-mark" aria-hidden="true">✦</span>
-            <h1>Dietitian in Mohali — Nutrition That Fits Your Actual Life</h1>
-            <p className="skin-banner-description">
-              A personalised nutrition consultation assesses your medical history, routine, preferences and goals before any plan is made. It works by building around foods you already eat rather than replacing them wholesale. It is most commonly used for PCOS, thyroid conditions, diabetes support, fatty liver and weight management.
-            </p>
-            <div className="skin-banner-contact">
-              <Link to="/contact?service=diet">Book a Diet Consultation</Link>
-              <a href="tel:+916239557417"><span aria-hidden="true">☎</span> Call 062395 57417</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceLandingHero eyebrow="Better nutrition. Healthier you" title="Dietitian in Mohali — Nutrition That Fits Your Life" description="We assess your medical history, routine, preferences and goals before creating a practical nutrition plan built around foods you already eat." service="diet" buttonLabel="Book a Diet Consultation" image={dietHeroBanner} imageAlt="Personalised nutrition consultation at Ouransh" features={[{ icon: "person", label: <>Personalised<br />plans</> }, { icon: "shield", label: <>Health-aware<br />guidance</> }, { icon: "leaf", label: <>Practical<br />nutrition</> }]} />
 
-      <section className="py-16 bg-white">
+      <section className="skin-services-section py-16 bg-white"><div className="container-x"><div className="section-heading"><span className="eyebrow">Explore our programmes</span><h2>Diet &amp; Nutrition Services</h2><p>Select any service to see complete details.</p></div><div className="skin-service-grid">{conditions.map((condition) => <Link key={condition.id} to={`/diet-consultation/${condition.id}`} className="skin-service-card"><div className="skin-service-image"><img src={condition.img} alt={condition.title} /></div><div className="skin-service-card-body"><span>Ouransh Nutrition</span><h2>{condition.title}</h2><p>{condition.paras[0]}</p><b>Explore Service <i>→</i></b></div></Link>)}</div></div></section>
+
+      <section className="hidden">
         <div className="container-x max-w-4xl space-y-14">
           {conditions.map((c) => (
             <div key={c.title} id={c.id}>
@@ -133,12 +127,7 @@ export default function DietConsultation() {
         </div>
       </section>
 
-      <section className="py-14 bg-cream">
-        <div className="container-x flex flex-wrap gap-4 justify-center">
-          <Link to="/contact?service=diet" className="bg-gold text-white rounded-lg px-6 py-3 text-sm">📅 Book a Nutrition Consultation</Link>
-          <a href="tel:+916239557417" className="border border-gold/40 rounded-lg px-6 py-3 text-sm text-forest">📞 Call 062395 57417</a>
-        </div>
-      </section>
+      <ServiceCta eyebrow="Practical nutrition built around your life" title="Ready for a plan you can actually follow?" copy="Start with a detailed consultation. We understand your health, routine and food preferences before building a realistic personalised plan." service="diet" buttonLabel="Book a Nutrition Consultation" />
     </Layout>
   );
 }
