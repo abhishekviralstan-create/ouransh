@@ -18,8 +18,8 @@ const Icon = ({ type }) => {
 };
 
 const services = [
-  { title: "Skin Treatments", img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=85&w=900&auto=format&fit=crop", desc: "HIFU · RF Skin Tightening · HydraFacial · Laser Hair Reduction · Acne Correction · Pigmentation Correction", to: "/skin-treatments", label: "View skin treatments" },
-  { title: "Hair Treatment", img: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=85&w=900&auto=format&fit=crop", desc: "PRP Therapy · Hair Fall Assessment · Post-Pregnancy Hair Loss · PCOS & Thyroid-Related Thinning", to: "/hair-treatment", label: "View hair treatment" },
+  { title: "Skin Treatments", img: "/Subservices/skin%20treatment.jpg", desc: "HIFU · RF Skin Tightening · HydraFacial · Laser Hair Reduction · Acne Correction · Pigmentation Correction", to: "/skin-treatments", label: "View skin treatments" },
+  { title: "Hair Treatment", img: "/Subservices/hair%20Treatments.jpg", desc: "PRP Therapy · Hair Fall Assessment · Post-Pregnancy Hair Loss · PCOS & Thyroid-Related Thinning", to: "/hair-treatment", label: "View hair treatment" },
   { title: "Diet & Nutrition", img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=85&w=900&auto=format&fit=crop", desc: "PCOS · Thyroid Disorders · Diabetes Support · Fatty Liver Management · Weight Management", to: "/diet-consultation", label: "View diet consultation" },
 ];
 
