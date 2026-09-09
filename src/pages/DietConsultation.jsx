@@ -13,7 +13,7 @@ export const conditions = [
     shortTitle: "PCOS",
     metaTitle: "PCOS Nutrition Support in Mohali | Ouransh",
     metaDescription: "Personalised PCOS nutrition support at Ouransh Mohali to help manage weight, skin, hair and cycle-related symptoms alongside your gynaecologist's care.",
-    img: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/PCOS%20diet.webp",
     paras: [
       "PCOS shows up on your skin, your hair, your cycle, your weight and your energy at the same time. Most clinics treat one of those.",
       "Insulin resistance makes weight loss genuinely harder. That is physiology, not willpower, whatever you may have been told. Jawline acne, oiliness, unwanted facial hair, scalp thinning and irregular cycles all trace back to the same underlying picture.",
@@ -39,7 +39,7 @@ export const conditions = [
     shortTitle: "Thyroid Disorders",
     metaTitle: "Thyroid Nutrition Support in Mohali | Ouransh",
     metaDescription: "Get practical thyroid nutrition support at Ouransh Mohali that works alongside your prescribed medication, not as a replacement for it.",
-    img: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/thyroid%20disorders.jpg",
     paras: [
       "Hypothyroidism affects weight, energy, hair and skin simultaneously, and it is widely under-diagnosed.",
       "Nutrition does not replace thyroid medication — it supports it. What we can do is build a plan that works with your condition rather than against it: nutrient timing around your medication, addressing the deficiencies that commonly accompany thyroid conditions, and setting realistic expectations about weight, which behaves differently with an underactive thyroid.",
@@ -63,7 +63,7 @@ export const conditions = [
     shortTitle: "Diabetes Support",
     metaTitle: "Diabetes Nutrition Support in Mohali | Ouransh",
     metaDescription: "Practical, glucose-aware meal planning at Ouransh Mohali for type 2 diabetes and pre-diabetes, coordinated with your doctor's treatment plan.",
-    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/diabetes%20support.jpg",
     paras: [
       "Nutritional support for diabetes focuses on blood sugar stability through meal composition, timing and portion structure. It works alongside your doctor's treatment plan, never as a replacement for it. It is most commonly used for type 2 diabetes and pre-diabetes management.",
       "The plans we build are practical: Punjabi household food, adjusted rather than replaced. Most people arrive expecting to give up roti and rice entirely. That is rarely necessary and rarely sustainable.",
@@ -87,7 +87,7 @@ export const conditions = [
     shortTitle: "Fatty Liver",
     metaTitle: "Fatty Liver Nutrition Support in Mohali | Ouransh",
     metaDescription: "Sustainable, evidence-based fatty liver nutrition support at Ouransh Mohali, coordinated with your physician's monitoring and follow-up.",
-    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/fatty%20liver.jpg",
     paras: [
       "Fatty liver is increasingly common and, in its earlier stages, often responds well to dietary and lifestyle change.",
       "We focus on what the evidence supports: gradual weight reduction where appropriate, reducing refined carbohydrates and added sugars, and building a pattern you can maintain long-term. Crash approaches do not help fatty liver and can make things worse.",
@@ -111,7 +111,7 @@ export const conditions = [
     shortTitle: "Weight Management",
     metaTitle: "Weight Management in Mohali | Ouransh",
     metaDescription: "Personalised, sustainable weight management at Ouransh Mohali built around your household food and routine — no crash diets or guaranteed numbers.",
-    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/weight%20management.jpg",
     paras: [
       "Most people we see have already lost weight before. Several times. Losing it was never the problem.",
       "Plans fail because they are too restrictive to sustain, they ignore your work schedule and your family's meals, and they end — with nothing planned for afterwards.",
@@ -166,7 +166,7 @@ export default function DietConsultation() {
         schema={dietItemListSchema}
       />
 
-      <ServiceLandingHero eyebrow="Practical nutrition support" title="Personalised Diet & Nutrition Support in Mohali" description="Build practical food and lifestyle habits around your health goals with personalised nutrition support at Ouransh in Mohali. Plans are designed to complement appropriate medical care, not replace it." service="diet" buttonLabel="Book a Diet Consultation" comparisonSrc="/before-after/diet-consultation-hero.png" comparisonTitle="Nutrition and lifestyle support" features={[{ icon: "person", label: <>Personalised<br />plans</> }, { icon: "shield", label: <>Health-aware<br />guidance</> }, { icon: "leaf", label: <>Practical<br />nutrition</> }]} />
+      <ServiceLandingHero eyebrow="Practical nutrition support" title="Personalised Diet & Nutrition Support in Mohali" description="Build practical food and lifestyle habits around your health goals with personalised nutrition support at Ouransh in Mohali. Plans are designed to complement appropriate medical care, not replace it." service="diet" buttonLabel="Book a Diet Consultation" comparisonSrc="/before-after/diet-weightloss-journey.png" comparisonTitle="Client weight-loss journey" features={[{ icon: "person", label: <>Personalised<br />plans</> }, { icon: "shield", label: <>Health-aware<br />guidance</> }, { icon: "leaf", label: <>Practical<br />nutrition</> }]} />
 
       <section className="py-14 bg-white"><div className="container-x max-w-4xl"><h2 className="font-serif text-xl text-forest mb-3">Nutrition That Fits Real Life</h2><p className="text-sm text-forest/70 leading-relaxed">A useful nutrition plan should work with your routine, food preferences, culture, work schedule, health conditions and budget. We avoid restrictive templates presented as universal solutions and instead emphasise realistic, sustainable changes. For health conditions such as PCOS, thyroid disorders, diabetes and fatty liver, nutrition can be an important part of care, but diagnosis, medication and medical monitoring remain the responsibility of the appropriate healthcare professional.</p></div></section>
 

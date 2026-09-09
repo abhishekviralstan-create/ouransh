@@ -54,7 +54,7 @@ const serviceLinks = [
   { label: "Skin Treatments", to: "/skin-treatments" },
   { label: "Hair Treatment", to: "/hair-treatment" },
   { label: "Diet & Nutrition", to: "/diet-consultation" },
-  { label: "Inch Loose Therapy", to: "/contact?service=inch-loose" },
+  { label: "Inch Loss Therapy", to: "/skin-treatments/inch-loss-therapy" },
   { label: "Consultation", to: "/contact" },
 ];
 

@@ -1,23 +1,20 @@
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { treatments } from "./SkinTreatments";
+import { hairServiceCards } from "./HairTreatment";
+import { conditions } from "./DietConsultation";
+
+const allServices = [
+  ...treatments.map((t) => ({ key: `skin-${t.slug}`, to: `/skin-treatments/${t.slug}`, img: t.img, title: t.shortTitle, summary: t.summary, category: "Ouransh Skin Care" })),
+  ...hairServiceCards.map((s) => ({ key: `hair-${s.slug}`, to: `/hair-treatment/${s.slug}`, img: s.img, title: s.title, summary: s.summary, category: "Ouransh Hair Care" })),
+  ...conditions.map((c) => ({ key: `diet-${c.id}`, to: `/diet-consultation/${c.id}`, img: c.img, title: c.shortTitle, summary: c.paras[0], category: "Ouransh Nutrition" })),
+];
 
 const info = [
   ["Founder", "Dr. Shikha Garg — Clinic Dietitian & Aesthetic Expert"],
   ["Qualification", "DDHN, PGDDN, PGDBA, M.A. (PSY.), DIPBNC, CERT. PROF. ESTH & Skin Care, FMC, F/Ship in Med. Cosmetology"],
-  ["WhatsApp", "+91 98159 07526"],
-  ["Location", "451, First Floor, TDI EX-2, Sector 117, Mohali, Punjab"],
-  ["Timings", "Open 7 days a week, 11:00 AM – 8:00 PM"],
-];
-
-const areas = [
-  "Weight management",
-  "PCOS and hormonal-health nutrition",
-  "Thyroid-related nutrition support",
-  "Diabetes and blood-sugar management support",
-  "Fatty liver and metabolic health",
-  "Vitamin and mineral deficiencies",
-  "Nutrition for skin and hair health",
-  "Lifestyle and practical meal planning",
 ];
 
 const expect = [
@@ -29,6 +26,20 @@ const expect = [
 ];
 
 export default function About() {
+  const signatureRef = useRef(null);
+  const [signatureVisible, setSignatureVisible] = useState(false);
+
+  useEffect(() => {
+    const signature = signatureRef.current;
+    if (!signature) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setSignatureVisible(entry.isIntersecting);
+    }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+
+    observer.observe(signature);
+    return () => observer.disconnect();
+  }, []);
   return (
     <Layout>
       <Seo
@@ -41,22 +52,25 @@ export default function About() {
         ]}
       />
 
-      <section className="bg-creamlight py-14">
+      <section className="about-hero">
         <div className="container-x founder-hero">
           <div>
-            <p className="text-gold text-xs tracking-[0.2em] mb-3">— ABOUT US —</p>
+            <span className="skin-showcase-eyebrow">About Us</span>
             <h1 className="font-serif text-4xl md:text-5xl text-forest mb-2">A personal introduction</h1>
             <p className="founder-role">from Dr. Shikha Garg, Clinic Dietitian &amp; Aesthetic Expert</p>
-            <div className="w-16 h-px bg-gold my-6" />
-            <p className="founder-intro italic">
-              "I created Ouransh to bring practical nutrition and thoughtful skin care together, so we can look beyond the surface and understand the bigger picture."
-            </p>
 
-            <dl className="mt-8 space-y-3">
+            <div className="about-hero-quote">
+              <span aria-hidden="true">“</span>
+              <p className="founder-intro">
+                I created Ouransh to bring practical nutrition and thoughtful skin care together, so we can look beyond the surface and understand the bigger picture.
+              </p>
+            </div>
+
+            <dl className="about-hero-info about-hero-info-single">
               {info.map(([label, value]) => (
-                <div key={label} className="flex flex-col sm:flex-row sm:gap-4 text-sm border-t border-gold/15 pt-3">
-                  <dt className="w-32 shrink-0 font-semibold text-forest tracking-wide uppercase text-[11px] pt-0.5">{label}</dt>
-                  <dd className="text-forest/70">{value}</dd>
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
                 </div>
               ))}
             </dl>
@@ -71,8 +85,8 @@ export default function About() {
       </section>
 
       {/* Hi, I'm Shikha Garg */}
-      <section className="py-16 bg-white">
-        <div className="container-x max-w-4xl">
+      <section className="about-content-section">
+        <div className="container-x max-w-4xl about-content-card">
           <h2 className="font-serif text-3xl text-forest mb-6">Hi, I'm Dr. Shikha Garg</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I'm the founder of Ouransh Diet &amp; Skin Care Clinic in Mohali.
@@ -90,8 +104,8 @@ export default function About() {
       </section>
 
       {/* My Approach to Nutrition */}
-      <section className="py-16 bg-creamlight">
-        <div className="container-x max-w-4xl">
+      <section className="about-content-section">
+        <div className="container-x max-w-4xl about-content-card">
           <h2 className="font-serif text-3xl text-forest mb-6">My Approach to Nutrition</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I am a Clinic Dietitian and Aesthetic Expert with qualifications in nutrition, psychology, professional esthetics, skin care and medical cosmetology.
@@ -108,27 +122,33 @@ export default function About() {
         </div>
       </section>
 
-      {/* Areas Commonly Supported */}
-      <section className="py-16 bg-white">
+      {/* Our Services */}
+      <section className="skin-services-section about-services-section">
         <div className="container-x">
           <div className="section-heading">
-            <span className="eyebrow">What I help with</span>
-            <h2>Areas I Commonly Support</h2>
+            <span className="eyebrow">What we offer</span>
+            <h2>Our Services</h2>
+            <p>Select any service to see complete details.</p>
           </div>
-          <div className="belief-grid" style={{ maxWidth: "1000px" }}>
-            {areas.map((a, i) => (
-              <article key={a}>
-                <span>0{i + 1}</span>
-                <div><h3 style={{ fontSize: "15px" }}>{a}</h3></div>
-              </article>
+          <div className="skin-service-grid">
+            {allServices.map((s) => (
+              <Link key={s.key} to={s.to} className="skin-service-card">
+                <div className="skin-service-image"><img src={s.img} alt={s.title} /></div>
+                <div className="skin-service-card-body">
+                  <span>{s.category}</span>
+                  <h2>{s.title}</h2>
+                  <p>{s.summary}</p>
+                  <b>Explore Service <i>→</i></b>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Diet and Skin Together */}
-      <section className="py-16 bg-creamlight">
-        <div className="container-x max-w-4xl">
+      <section className="about-content-section">
+        <div className="container-x max-w-4xl about-content-card">
           <h2 className="font-serif text-3xl text-forest mb-6">Why Diet and Skin Care Together?</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             At Ouransh, we bring nutrition support and skin care together under one roof because the two can sometimes overlap.
@@ -143,7 +163,7 @@ export default function About() {
       </section>
 
       {/* What You Can Expect */}
-      <section className="py-16 bg-white">
+      <section className="about-expect-section">
         <div className="container-x">
           <div className="section-heading">
             <span className="eyebrow">Your first visit and beyond</span>
@@ -160,24 +180,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* No Unrealistic Promises */}
-      <section className="py-16 bg-creamlight">
-        <div className="container-x max-w-4xl">
-          <div className="founder-quote" style={{ background: "#173328", borderRadius: "18px", padding: "40px" }}>
-            <span>"</span>
-            <p style={{ marginBottom: "14px" }}>
-              We do not promise a fixed number of kilograms in a fixed number of days, and we do not guarantee instant skin or hair results. Age, health conditions, hormones, medications, lifestyle, stress, sleep and your starting point all influence progress.
-            </p>
-            <p style={{ position: "relative", color: "rgba(255,255,255,.8)", fontStyle: "normal", fontSize: "13px" }}>
-              Our focus is on changes that are practical, responsible and sustainable.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Clinic where you can ask questions */}
-      <section className="py-16 bg-white">
-        <div className="container-x max-w-4xl">
+      <section className="about-content-section">
+        <div className="container-x max-w-4xl about-content-card">
           <h2 className="font-serif text-3xl text-forest mb-6">A Clinic Where You Can Ask Questions</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I wanted Ouransh to feel different from a place where you simply walk in, take a package and leave. I want you to understand why something is being recommended and feel comfortable asking questions about your diet, skin, hair, lifestyle or treatment options.
@@ -189,8 +194,8 @@ export default function About() {
       </section>
 
       {/* What We Don't Do */}
-      <section className="py-16 bg-creamlight">
-        <div className="container-x max-w-4xl">
+      <section className="about-content-section">
+        <div className="container-x max-w-4xl about-content-card">
           <h2 className="font-serif text-3xl text-forest mb-6">What We Don't Do</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             We do not perform hair transplants. Hair transplantation is a surgical procedure and should be handled by an appropriately qualified transplant surgeon. If your hair loss has reached a stage where surgical treatment may be appropriate, we will be honest about that.
@@ -208,7 +213,7 @@ export default function About() {
           <p className="founder-quote-text">
             "Sometimes the best place to start is simply understanding what your body actually needs."
           </p>
-          <p className="founder-quote-signature">Dr. Shikha Garg</p>
+          <p ref={signatureRef} className={`founder-quote-signature${signatureVisible ? " is-signing" : ""}`}><span>Dr. Shikha Garg</span></p>
           <p className="founder-quote-role">Founder, Ouransh Diet &amp; Skin Care Clinic</p>
           </div>
         </div>

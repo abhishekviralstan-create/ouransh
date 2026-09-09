@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import hairHeroBanner from "../assets/hair-hero-banner.webp";
 import ServiceCta from "../components/ServiceCta";
 import ServiceLandingHero from "../components/ServiceLandingHero";
 import Faq from "../components/Faq";
 import { hairServices } from "./HairServiceDetail";
 
-const hairServiceCards = [
-  { slug: "gfc-treatment", title: hairServices["gfc-treatment"].shortTitle, img: hairHeroBanner, summary: hairServices["gfc-treatment"].summary },
-  { slug: "prp-therapy", title: hairServices["prp-therapy"].shortTitle, img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=900&auto=format&fit=crop", summary: hairServices["prp-therapy"].summary },
-  { slug: "hair-fall-causes", title: hairServices["hair-fall-causes"].shortTitle, img: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop", summary: hairServices["hair-fall-causes"].summary },
+export const hairServiceCards = [
+  { slug: "gfc-treatment", title: hairServices["gfc-treatment"].shortTitle, img: "/Subservices/GFC-Treatment.jpg", summary: hairServices["gfc-treatment"].summary },
+  { slug: "prp-therapy", title: hairServices["prp-therapy"].shortTitle, img: "/Subservices/PRP%20therapy.jpg", summary: hairServices["prp-therapy"].summary },
+  { slug: "hair-fall-causes", title: hairServices["hair-fall-causes"].shortTitle, img: "/Subservices/hair%20fall%20causes.avif", summary: hairServices["hair-fall-causes"].summary },
 ];
 
 const approach = [

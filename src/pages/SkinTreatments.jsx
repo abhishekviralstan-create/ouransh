@@ -19,7 +19,7 @@ export const treatments = [
     shortTitle: "HIFU",
     metaTitle: "HIFU Treatment in Mohali | Skin Tightening | Ouransh",
     metaDescription: "Explore HIFU skin tightening at Ouransh in Mohali for a firmer, more lifted-looking appearance. Personalised consultation for Mohali and the Tricity.",
-    img: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/HIFU.jpg",
     summary: "Focused ultrasound-based skin tightening for a firmer, more lifted-looking appearance.",
     details: [
       "HIFU stands for high-intensity focused ultrasound. The technology delivers focused ultrasound energy beneath the skin surface at selected depths. The controlled thermal effect is intended to trigger a natural repair response and support new collagen formation over time.",
@@ -52,7 +52,7 @@ export const treatments = [
     shortTitle: "RF Skin Tightening",
     metaTitle: "RF Skin Tightening in Mohali | Ouransh Skin Clinic",
     metaDescription: "Discover radiofrequency skin tightening at Ouransh, Mohali. A personalised option for improving the look of firmness, texture and facial contours.",
-    img: "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/RF%20skin%20titeginging.webp",
     summary: "Radiofrequency-based care designed to improve the look of skin firmness and texture.",
     details: [
       "Radiofrequency, commonly shortened to RF, is an energy-based aesthetic technology used to heat selected layers of skin in a controlled way. That warmth can support the skin's natural collagen and elastin remodelling process, which may improve the appearance of firmness and texture over time.",
@@ -85,7 +85,7 @@ export const treatments = [
     shortTitle: "HydraFacial",
     metaTitle: "HydraFacial in Mohali | Deep Cleanse & Hydrate | Ouransh",
     metaDescription: "Book a HydraFacial in Mohali at Ouransh for deep cleansing, exfoliation and hydration tailored to your skin. Serving Mohali, Chandigarh and Tricity.",
-    img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/hydrafacial.jpg",
     summary: "A multi-step facial focused on cleansing, exfoliation, extraction and hydration.",
     details: [
       "HydraFacial is a device-assisted facial treatment that combines cleansing, exfoliation, extraction and hydration in a structured sequence. It is popular with clients who want a polished, refreshed appearance without the recovery associated with more intensive procedures.",
@@ -118,7 +118,7 @@ export const treatments = [
     shortTitle: "Laser Hair Reduction",
     metaTitle: "Laser Hair Reduction in Mohali | Face & Body | Ouransh",
     metaDescription: "Reduce unwanted facial and body hair with personalised laser hair reduction at Ouransh in Mohali. Consultation-led plans for women and men across Tricity.",
-    img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/laser%20hair%20reduction.jpg",
     summary: "Consultation-led plans for reducing unwanted facial and body hair over a series of sessions.",
     details: [
       "Laser hair reduction uses light energy that is absorbed by pigment in the hair. The energy converts to heat and can impair the follicle's ability to produce hair. Because only a portion of hairs are in the most responsive growth phase at any one time, multiple sessions are normally needed.",
@@ -153,7 +153,7 @@ export const treatments = [
     shortTitle: "Acne Correction",
     metaTitle: "Acne Correction in Mohali | Personalised Skin Care | Ouransh",
     metaDescription: "Get a personalised acne correction plan at Ouransh in Mohali for active breakouts, marks and uneven texture. Consultation-led skin care for Tricity clients.",
-    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/acne%20correction.jpg",
     summary: "Personalised care for active breakouts, congestion, acne marks and texture concerns, with referral when medical assessment is needed.",
     helpsTitle: "What an Acne Consultation Should Review",
     details: [
@@ -189,7 +189,7 @@ export const treatments = [
     shortTitle: "Pigmentation Correction",
     metaTitle: "Pigmentation Correction in Mohali | Even-Tone Skin | Ouransh",
     metaDescription: "Explore personalised pigmentation correction at Ouransh in Mohali for dark spots, tanning and uneven tone, with a skin-first plan and sun-care guidance.",
-    img: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/pigmentation%20correction.webp",
     summary: "A targeted approach for dark spots, tanning and uneven-looking tone, supported by sun protection and home care.",
     details: [
       "Pigmentation can have several causes, including sun exposure, inflammation, hormones and nutritional factors. Identifying the pattern — melasma, sun damage, post-inflammatory marks or general unevenness — helps us select an appropriate plan.",
@@ -215,6 +215,37 @@ export const treatments = [
       { name: "Ritika Chopra", text: "Appreciated that they didn't promise instant results and instead explained why pigmentation needs patience. My skin tone looks far more even now." },
     ],
   },
+  {
+    slug: "inch-loss-therapy",
+    title: "Inch Loss Therapy in Mohali for Targeted Body Contouring",
+    shortTitle: "Inch Loss Therapy",
+    metaTitle: "Inch Loss Therapy in Mohali | Body Contouring | Ouransh",
+    metaDescription: "Explore inch loss therapy at Ouransh in Mohali for targeted body contouring, paired with nutrition guidance for realistic, sustainable results.",
+    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop",
+    summary: "Targeted body-contouring sessions to help reduce stubborn inches, paired with nutrition guidance for lasting results.",
+    details: [
+      "Inch loss therapy uses targeted, non-surgical techniques to help reduce circumference in specific areas such as the abdomen, waist, thighs or arms, where stubborn fat can be resistant to diet and exercise alone.",
+      "This is a contouring approach, not a weight-loss substitute. It works best as part of a broader plan that includes appropriate nutrition, hydration and activity, which is why we assess your overall health and habits before starting sessions.",
+      "The number of sessions and expected inch reduction depend on the treatment area, your body composition and how consistently you follow the accompanying lifestyle guidance.",
+    ],
+    helps: [
+      "Localised fat and inch reduction in areas resistant to diet and exercise",
+      "Post-pregnancy or post-weight-loss body contouring, where appropriate",
+      "Supporting overall body shape as part of a broader nutrition and lifestyle plan",
+    ],
+    note: "Inch loss therapy is not a substitute for medical weight management. Suitability, session count and realistic expectations are discussed at your consultation.",
+    faqs: [
+      { q: "Is inch loss therapy the same as weight loss?", a: "No. It targets circumference reduction in specific areas rather than overall body weight, and works best alongside appropriate nutrition and activity." },
+      { q: "How many sessions will I need?", a: "This depends on the treatment area, your body composition and goals. A personalised plan is confirmed after assessment." },
+      { q: "Are the results permanent?", a: "Results can be maintained with consistent nutrition and lifestyle habits. Significant weight gain afterwards can affect the outcome." },
+      { q: "Is there any downtime?", a: "Most clients return to their routine the same day. Any temporary sensation or redness in the treated area is discussed beforehand." },
+    ],
+    reviews: [
+      { name: "Neha Bhatia", text: "Stubborn belly fat after my second pregnancy wasn't moving with diet alone. Combining inch loss sessions with their nutrition guidance finally showed real inches lost." },
+      { name: "Karan Mehta", text: "They were upfront that this isn't a shortcut to weight loss, which I appreciated. My waistline has visibly reduced with consistent sessions and diet changes." },
+      { name: "Simar Anand", text: "Honest about how many sessions I'd realistically need instead of overselling. Comfortable process and noticeable difference around my thighs." },
+    ],
+  },
 ];
 
 const skinFaqs = [
@@ -237,7 +268,7 @@ export default function SkinTreatments() {
   return (
     <Layout>
       <Seo title="Skin Treatments in Mohali | Aesthetic Care | Ouransh" description="Explore personalised skin and aesthetic treatments at Ouransh in Mohali, including HIFU, RF tightening, HydraFacial, laser hair reduction, acne and pigmentation care." breadcrumbs={[{ name: "Home", path: "/" }, { name: "Skin Treatments" }]} schema={skinItemListSchema} />
-      <section className="skin-banner skin-showcase"><div className="container-x skin-banner-inner skin-banner-grid"><div className="skin-banner-content"><span className="skin-showcase-eyebrow">Personalised skin care</span><h1>Personalised Skin & Aesthetic Treatments in Mohali</h1><p className="skin-banner-description">Explore consultation-led options for skin firmness, hydration, unwanted hair, acne, pigmentation and overall skin quality at Ouransh in Sector 117, Mohali — serving clients across Chandigarh, Panchkula and the Tricity.</p><div className="skin-banner-contact"><Link to="/contact?service=skin">Book a Skin Consultation <span aria-hidden="true">→</span></Link><a href="tel:+916239557417"><span aria-hidden="true">☎</span> 062395 57417</a></div><div className="skin-showcase-features"><div><span><FeatureIcon type="person" /></span><p>Personalised<br />plans</p></div><div><span><FeatureIcon type="shield" /></span><p>Expert<br />consultation</p></div><div><span><FeatureIcon type="leaf" /></span><p>Evidence-led<br />treatments</p></div></div></div><div className="skin-showcase-visual"><div className="skin-banner-comparison"><BeforeAfterSlider src="/before-after/acne-correction.png" title="Acne correction" /></div></div></div></section>
+      <section className="skin-banner skin-showcase"><div className="container-x skin-banner-inner skin-banner-grid"><div className="skin-banner-content"><span className="skin-showcase-eyebrow">Personalised skin care</span><h1>Personalised Skin & Aesthetic Treatments in Mohali</h1><p className="skin-banner-description">Explore consultation-led options for skin firmness, hydration, unwanted hair, acne, pigmentation and overall skin quality at Ouransh in Sector 117, Mohali — serving clients across Chandigarh, Panchkula and the Tricity.</p><div className="skin-banner-contact"><Link to="/contact?service=skin">Book a Skin Consultation <span aria-hidden="true">→</span></Link><a href="tel:+916239557417"><span aria-hidden="true">☎</span> 062395 57417</a></div><div className="skin-showcase-features"><div><span><FeatureIcon type="person" /></span><p>Personalised<br />plans</p></div><div><span><FeatureIcon type="shield" /></span><p>Expert<br />consultation</p></div><div><span><FeatureIcon type="leaf" /></span><p>Evidence-led<br />treatments</p></div></div></div><div className="skin-showcase-visual"><div className="skin-banner-comparison"><BeforeAfterSlider src="/before-after/microneedling-bb-glow.png" title="Microneedling BB glow" /></div></div></div></section>
 
       <section className="py-14 bg-white"><div className="container-x max-w-4xl"><h2 className="font-serif text-xl text-forest mb-3">Start With Your Skin Concern</h2><p className="text-sm text-forest/70 leading-relaxed mb-3">Good aesthetic care starts with understanding what you want to improve — not simply choosing a machine or a trending treatment. At Ouransh, we begin with your current skin condition, routine, medical history and expectations before recommending an appropriate plan.</p><p className="text-sm text-forest/70 leading-relaxed">Whether your goal is brighter-looking skin, better hydration, smoother texture, improved firmness, fewer breakouts, more even-looking tone or reduced unwanted hair, the right approach can differ from person to person.</p></div></section>
 

@@ -31,7 +31,7 @@ export default function Contact() {
     "pigmentation-correction": "Pigmentation Correction",
     hair: "Hair Treatment",
     diet: "Diet & Nutrition",
-    "inch-loose": "Inch Loose Therapy",
+    "inch-loss-therapy": "Inch Loss Therapy",
   };
   const selectedService = serviceNames[searchParams.get("service")] || "";
   const [form, setForm] = useState({ name: "", phone: "", topic: selectedService, message: "" });
@@ -166,7 +166,7 @@ export default function Contact() {
                   <option value="Pigmentation Correction">Pigmentation Correction</option>
                   <option value="Hair Treatment">Hair Treatment</option>
                   <option value="Diet & Nutrition">Diet &amp; Nutrition</option>
-                  <option value="Inch Loose Therapy">Inch Loose Therapy</option>
+                  <option value="Inch Loss Therapy">Inch Loss Therapy</option>
                   <option value="Combination Consultation">Combination Consultation</option>
                 </select>
                 <textarea

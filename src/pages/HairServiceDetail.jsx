@@ -5,12 +5,11 @@ import ServiceCta from "../components/ServiceCta";
 import ServiceLandingHero from "../components/ServiceLandingHero";
 import Faq from "../components/Faq";
 import Testimonials from "../components/Testimonials";
-import hairHeroBanner from "../assets/hair-hero-banner.webp";
 
 // oxlint-disable-next-line react/only-export-components -- shared with the hair hub route
 export const hairServices = {
   "gfc-treatment": {
-    img: hairHeroBanner,
+    img: "/Subservices/GFC-Treatment.jpg",
     title: "GFC Hair Treatment in Mohali for Selected Hair-Fall Concerns",
     shortTitle: "GFC Treatment",
     metaTitle: "GFC Hair Treatment in Mohali | Ouransh",
@@ -40,7 +39,7 @@ export const hairServices = {
     ],
   },
   "prp-therapy": {
-    img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/PRP%20therapy.jpg",
     title: "PRP Hair Therapy in Mohali for Selected Hair-Loss Patterns",
     shortTitle: "PRP Therapy",
     metaTitle: "PRP Hair Treatment in Mohali | Ouransh",
@@ -70,7 +69,7 @@ export const hairServices = {
     ],
   },
   "hair-fall-causes": {
-    img: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=900&auto=format&fit=crop",
+    img: "/Subservices/hair%20fall%20causes.avif",
     title: "Hair Fall Causes: Why Am I Losing More Hair?",
     shortTitle: "Hair Fall Causes",
     metaTitle: "Hair Fall Causes in Mohali | Assessment | Ouransh",
