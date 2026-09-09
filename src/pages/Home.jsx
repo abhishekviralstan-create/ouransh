@@ -42,7 +42,7 @@ const reviews = [
   ["AOne QualityService", "I am really happy with this clinic. The doctors actually listen to you. Care about your skin. My acne improved a lot in a few weeks. I have tried clinics before but this one is different. They explain everything in words so you understand what they are doing. The results are real not promises."],
   ["Lovepreet Kaur", "I had a wonderful experience at the Ouransh Skin & diet. Dr. Shika is very kind and professional. She guided me the right treatment plan and their staff was very friendly. Highly recommended"],
   ["Sawamber Verma", "I had a wonderful experience at Ouransh diet & skin care. Shikha Ma'am explained everything very clearly and made me feel comfortable throughout the treatment. The clinic is clean, hygienic, and well maintained. Highly recommended!"],
-  ["Richa Sharma", "I had a great experience with Dr. Shikha Garg at Shikha's Diet Clinic in Mohali. She listened carefully, understood my routine, and suggested a practical diet plan that was easy to follow. Her guidance was supportive and helped me improve my eating habits without extreme dieting. Highly recommended for anyone looking for a trusted dietitian in Mohali."],
+  ["Richa Sharma", "I had a great experience with Dt Shikha Garg at Shikha's Diet Clinic in Mohali. She listened carefully, understood my routine, and suggested a practical diet plan that was easy to follow. Her guidance was supportive and helped me improve my eating habits without extreme dieting. Highly recommended for anyone looking for a trusted dietitian in Mohali."],
 ];
 
 const homeFaqs = [

@@ -379,14 +379,15 @@ main.page-contact > section:nth-of-type(4) { padding-top:64px; padding-bottom:64
 @keyframes founder-signature-underline{to{width:104%}}
 @media(prefers-reduced-motion:reduce){.founder-signoff .founder-quote-signature span{clip-path:inset(-20% -8% -30% -8%)}.founder-signoff .founder-quote-signature::after{width:104%}.founder-signoff .founder-quote-signature.is-signing span,.founder-signoff .founder-quote-signature.is-signing::after{animation:none}}
 .founder-signoff .founder-quote-role{margin:0;color:rgba(255,255,255,.62);font-family:'Poppins',sans-serif;font-size:10px;font-style:normal;letter-spacing:.13em;text-transform:uppercase}
-@media(max-width:640px){.founder-signoff{padding:28px 14px 24px!important}.founder-signoff-card{padding:42px 22px 36px;border-radius:19px}.founder-signoff .founder-quote-text{font-size:21px}.founder-signoff .founder-quote-signature{font-size:44px}.founder-signoff .founder-quote-role{font-size:8px;line-height:1.7}}
+@media(max-width:640px){.founder-signoff{padding:28px 14px 24px!important}.founder-signoff-card{padding:42px 18px 36px;border-radius:19px}.founder-signoff .founder-quote-text{font-size:21px}.founder-signoff .founder-quote-signature{width:fit-content;max-width:100%;padding:0 3px 8px;transform:rotate(-1.5deg);font-size:clamp(31px,10vw,40px)}.founder-signoff .founder-quote-signature span{padding:4px 3px 6px}.founder-signoff .founder-quote-signature::after{left:1%}.founder-signoff .founder-quote-role{font-size:8px;line-height:1.7}}
+@media(max-width:380px){.founder-signoff-card{padding-left:14px;padding-right:14px}.founder-signoff .founder-quote-signature{font-size:clamp(28px,9.5vw,36px)}}
 
 /* About page — clean card rhythm without a decorative page background. */
 .page-about>section{background:none!important;background-image:none!important}
 .page-about .about-content-section{padding:34px 24px}
 .page-about .about-content-card{position:relative;padding:46px 50px;border:0;border-radius:0;background:none;box-shadow:none}
-.page-about .about-content-card::before{content:"";position:absolute;left:50px;top:96px;width:68px;height:2px;border-radius:2px;background:linear-gradient(90deg,#b5893a,#e1bd70)}
 .page-about .about-content-card h2{margin-bottom:32px!important;font-size:clamp(26px,3vw,36px)!important;line-height:1.2}
+.page-about .about-content-card h2::after{content:"";display:block;width:68px;height:2px;margin-top:15px;border-radius:2px;background:linear-gradient(90deg,#b5893a,#e1bd70)}
 .page-about .about-content-card p{max-width:900px;font-size:14px!important;line-height:1.85!important}
 .page-about .about-services-section,.page-about .about-expect-section{padding:60px 24px}
 .page-about .about-expect-section .section-heading{max-width:760px;margin:0 auto 42px;text-align:center}
@@ -404,17 +405,18 @@ main.page-contact > section:nth-of-type(4) { padding-top:64px; padding-bottom:64
 .page-about .about-promise-section{padding:34px 24px}
 .page-about .about-promise-section .founder-quote{border:1px solid rgba(218,177,96,.28);border-radius:22px!important;box-shadow:0 18px 44px rgba(23,51,40,.15)}
 .page-about .founder-signoff{padding-top:34px!important;padding-bottom:64px!important}
-@media(max-width:640px){.page-about .about-content-section{padding:18px 14px}.page-about .about-content-card{padding:30px 22px;border-radius:17px}.page-about .about-content-card::before{left:22px;top:78px;width:54px}.page-about .about-content-card h2{margin-bottom:27px!important}.page-about .about-content-card p{font-size:12.5px!important}.page-about .about-services-section,.page-about .about-expect-section{padding:44px 14px}.page-about .about-expect-section .section-heading{margin-bottom:24px}.page-about .about-expect-section .belief-grid::before{left:24px}.page-about .about-expect-section .belief-grid article{grid-template-columns:49px 1fr;gap:16px;padding:19px 0}.page-about .about-expect-section .belief-grid article>span{width:49px;height:49px;box-shadow:0 0 0 5px rgba(251,247,239,.82),0 7px 18px rgba(23,51,40,.13);font-size:13px}.page-about .about-expect-section .belief-grid h3{font-size:18px}.page-about .about-expect-section .belief-grid p{font-size:11.5px}.page-about .about-promise-section{padding:18px 14px}.page-about .about-promise-section .founder-quote{padding:28px 24px!important}}
+@media(max-width:640px){.page-about .about-content-section{padding:18px 14px}.page-about .about-content-card{padding:30px 22px;border-radius:17px}.page-about .about-content-card h2{margin-bottom:27px!important}.page-about .about-content-card h2::after{width:54px;margin-top:12px}.page-about .about-content-card p{font-size:12.5px!important}.page-about .about-services-section,.page-about .about-expect-section{padding:44px 14px}.page-about .about-expect-section .section-heading{margin-bottom:24px}.page-about .about-expect-section .belief-grid::before{left:24px}.page-about .about-expect-section .belief-grid article{grid-template-columns:49px 1fr;gap:16px;padding:19px 0}.page-about .about-expect-section .belief-grid article>span{width:49px;height:49px;box-shadow:0 0 0 5px rgba(251,247,239,.82),0 7px 18px rgba(23,51,40,.13);font-size:13px}.page-about .about-expect-section .belief-grid h3{font-size:18px}.page-about .about-expect-section .belief-grid p{font-size:11.5px}.page-about .about-promise-section{padding:18px 14px}.page-about .about-promise-section .founder-quote{padding:28px 24px!important}}
 
 /* FAQ — chat-bubble style, transparent background */
 .faq-section{padding:70px 0}
 .faq-container{box-sizing:border-box;max-width:760px!important;width:100%;margin:0 auto!important;padding-left:1.5rem;padding-right:1.5rem}
-.faq-title{margin-bottom:36px;color:#173328;font-family:'Playfair Display',serif;font-size:30px;text-align:center}
+.faq-title{width:100%;margin:0 auto 36px;color:#173328;font-family:'Playfair Display',serif;font-size:30px;text-align:center}
+.faq-title::after{content:"";display:block;width:72px;height:2px;margin:12px auto 0;border-radius:999px;background:linear-gradient(90deg,transparent,#b5893a 18%,#d8ad58 82%,transparent)}
 .faq-list{display:flex;flex-direction:column;gap:26px}
 .faq-item{position:relative;padding-left:28px}
 .faq-question{position:relative;z-index:2;display:inline-block;max-width:100%;margin-bottom:-14px;padding:14px 22px;border-radius:16px 16px 16px 4px;color:#fff;background:linear-gradient(120deg,#1f4536,#173328);font-size:14px;font-weight:600;box-shadow:0 10px 24px rgba(23,51,40,.18)}
 .faq-answer{position:relative;z-index:1;max-width:100%;padding:26px 22px 16px;border:1px solid rgba(181,137,58,.22);border-radius:16px 16px 16px 4px;color:#536158;background:#fff;font-size:13px;line-height:1.75;box-shadow:0 12px 30px rgba(37,43,35,.08)}
-@media(max-width:640px){.faq-item{padding-left:14px}.faq-question{font-size:13px;padding:12px 18px}.faq-title{font-size:24px}}
+@media(max-width:640px){.faq-container{max-width:100%!important;padding-left:18px;padding-right:18px}.faq-list{width:100%}.faq-item{width:100%;padding-left:0}.faq-question{font-size:13px;padding:12px 18px}.faq-answer{width:100%}.faq-title{display:block;width:100%;font-size:24px;text-align:center}}
 @media(max-width:900px){.skin-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skin-detail-grid,.skin-detail-content>.container-x{grid-template-columns:1fr}.skin-detail-image{height:420px}.skin-detail-grid,.skin-detail-content>.container-x{gap:38px}}
 @media(max-width:640px){.skin-service-grid{grid-template-columns:1fr}.skin-service-card{min-height:410px}.skin-service-image{height:220px}.skin-detail-hero{padding:45px 0}.skin-detail-image{height:350px;border-radius:70px 14px 70px 14px}.skin-detail-copy h1{font-size:38px}.skin-detail-actions{width:100%;flex-direction:column}.skin-detail-actions>*{justify-content:center}.skin-detail-content{padding:55px 0}.skin-detail-content article h2{font-size:29px}}
 
@@ -427,6 +429,16 @@ main.page-contact > section:nth-of-type(4) { padding-top:64px; padding-bottom:64
 /* Skin services appear only as a nested flyout from Skin Treatments. */
 .nav-skin-submenu,.nav-service-submenu{display:none}
 .nav-skin-parent:hover>.nav-skin-submenu,.nav-skin-parent:focus-within>.nav-skin-submenu,.nav-service-parent:hover>.nav-service-submenu,.nav-service-parent:focus-within>.nav-service-submenu{display:block}
+.mobile-service-groups{display:grid;gap:6px;margin-top:10px;padding:8px;border:1px solid rgba(181,137,58,.18);border-radius:12px;background:rgba(255,255,255,.48)}
+.mobile-service-group{overflow:hidden;border-bottom:1px solid rgba(181,137,58,.14)}
+.mobile-service-group:last-child{border-bottom:0}
+.mobile-service-group-head{display:grid;grid-template-columns:1fr 36px;align-items:center;min-height:38px}
+.mobile-service-group-head>a{padding:9px 8px;color:#173328;font-size:12px;font-weight:600}
+.mobile-service-group-head>button{width:32px;height:32px;display:grid;place-items:center;border:0;border-radius:50%;color:#9c6c25;background:transparent}
+.mobile-service-group-head>button span{display:block;font-size:18px;line-height:1;transition:transform .2s ease}
+.mobile-service-group.is-open .mobile-service-group-head>button span{transform:rotate(180deg)}
+.mobile-service-children{display:grid;gap:2px;padding:2px 8px 10px 18px;border-left:1px solid rgba(181,137,58,.3)}
+.mobile-service-children a{padding:6px 8px;color:rgba(23,51,40,.72);font-size:11px;font-weight:500}
 [id]{scroll-margin-top:100px}
 .hair-detail-highlight{display:flex;min-height:330px;align-items:center;justify-content:center;flex-direction:column;padding:45px;text-align:center;border-radius:90px 18px 90px 18px;color:#fff;background:radial-gradient(circle at 50% 20%,rgba(222,180,99,.22),transparent 38%),#173328;box-shadow:0 24px 55px rgba(44,35,23,.16)}
 .hair-detail-highlight span{color:#deb463;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.hair-detail-highlight h2{margin:12px 0;color:#fff;font-family:'Playfair Display',serif;font-size:34px}.hair-detail-highlight p{max-width:330px;color:rgba(255,255,255,.72);font-size:13px;line-height:1.8}

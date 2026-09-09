@@ -38,6 +38,7 @@ const serviceGroups = services.map((service, index) => ({
 export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServiceGroup, setMobileServiceGroup] = useState(null);
   const [pastHero, setPastHero] = useState(false);
   const { pathname } = useLocation();
 
@@ -148,17 +149,21 @@ export default function Navbar() {
               </svg>
             </button>
             {servicesOpen && (
-              <div className="flex flex-col gap-3 mt-3 pl-3">
-                <Link to="/skin-treatments" onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest">Skin Treatments</Link>
-                <div className="flex flex-col gap-2 pl-4 border-l border-gold/25">
-                  {skinServices.map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-xs font-medium text-forest/70 hover:text-gold">{s.label}</Link>)}
-                </div>
-                {serviceGroups.slice(1).map((group) => <div key={group.to} className="flex flex-col gap-2">
-                  <Link to={group.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-sm font-medium text-forest/80 hover:text-gold">{group.label}</Link>
-                  <div className="flex flex-col gap-2 pl-4 border-l border-gold/25">
-                    {group.children.map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); }} className="text-xs font-medium text-forest/70 hover:text-gold">{s.label}</Link>)}
-                  </div>
-                </div>)}
+              <div className="mobile-service-groups">
+                {serviceGroups.map((group) => {
+                  const groupOpen = mobileServiceGroup === group.to;
+                  return <div key={group.to} className={`mobile-service-group${groupOpen ? " is-open" : ""}`}>
+                    <div className="mobile-service-group-head">
+                      <Link to={group.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); setMobileServiceGroup(null); }}>{group.label}</Link>
+                      <button type="button" onClick={() => setMobileServiceGroup(groupOpen ? null : group.to)} aria-expanded={groupOpen} aria-label={`${groupOpen ? "Close" : "Open"} ${group.label} services`}>
+                        <span aria-hidden="true">⌄</span>
+                      </button>
+                    </div>
+                    {groupOpen && <div className="mobile-service-children">
+                      {group.children.map((s) => <Link key={s.to} to={s.to} onClick={() => { setMobileOpen(false); setServicesOpen(false); setMobileServiceGroup(null); }}>{s.label}</Link>)}
+                    </div>}
+                  </div>;
+                })}
               </div>
             )}
           </div>

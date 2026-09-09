@@ -13,8 +13,8 @@ const allServices = [
 ];
 
 const info = [
-  ["Founder", "Dr. Shikha Garg — Clinic Dietitian & Aesthetic Expert"],
-  ["Qualification", "DDHN, PGDDN, PGDBA, M.A. (PSY.), DIPBNC, CERT. PROF. ESTH & Skin Care, FMC, F/Ship in Med. Cosmetology"],
+  ["Founder", "Dt Shikha Garg — Clinical Dietitian & Aesthetic Expert"],
+  ["Qualification", "DDHN, PGDDN, PGDBA, M.A. (PSY.), DIPBNC, CERT. PROF. ESTH & Skin Care, F/Ship in Med. Cosmetology"],
 ];
 
 const expect = [
@@ -44,11 +44,11 @@ export default function About() {
     <Layout>
       <Seo
         title="About Ouransh | Skin, Hair & Diet Clinic in Mohali"
-        description="A personal introduction from Dr. Shikha Garg, Founder of Ouransh — Clinic Dietitian & Aesthetic Expert bringing practical nutrition and skin care together in Sector 117, Mohali."
+        description="A personal introduction from Dt Shikha Garg, Founder of Ouransh — Clinical Dietitian & Aesthetic Expert bringing practical nutrition and skin care together in Sector 117, Mohali."
         breadcrumbs={[{ name: "Home", path: "/" }, { name: "About Us" }]}
         schema={[
           { "@type": "AboutPage", name: "About Ouransh", url: "https://ouransh.in/about" },
-          { "@type": "Person", name: "Dr. Shikha Garg", jobTitle: "Clinic Dietitian & Aesthetic Expert", worksFor: { "@type": "MedicalBusiness", name: "Ouransh Diet and Skin Care" }, url: "https://ouransh.in/about" },
+          { "@type": "Person", name: "Dt Shikha Garg", jobTitle: "Clinical Dietitian & Aesthetic Expert", worksFor: { "@type": "MedicalBusiness", name: "Ouransh Diet and Skin Care" }, url: "https://ouransh.in/about" },
         ]}
       />
 
@@ -57,7 +57,7 @@ export default function About() {
           <div>
             <span className="skin-showcase-eyebrow">About Us</span>
             <h1 className="font-serif text-4xl md:text-5xl text-forest mb-2">A personal introduction</h1>
-            <p className="founder-role">from Dr. Shikha Garg, Clinic Dietitian &amp; Aesthetic Expert</p>
+            <p className="founder-role">from Dt Shikha Garg, Clinical Dietitian &amp; Aesthetic Expert</p>
 
             <div className="about-hero-quote">
               <span aria-hidden="true">“</span>
@@ -78,7 +78,7 @@ export default function About() {
           <div className="founder-photo">
             <img
               src="/dr-shikha-garg.webp"
-              alt="Dr. Shikha Garg, Founder of Ouransh"
+              alt="Dt Shikha Garg, Founder of Ouransh"
             />
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function About() {
       {/* Hi, I'm Shikha Garg */}
       <section className="about-content-section">
         <div className="container-x max-w-4xl about-content-card">
-          <h2 className="font-serif text-3xl text-forest mb-6">Hi, I'm Dr. Shikha Garg</h2>
+          <h2 className="font-serif text-3xl text-forest mb-6">Hi, I'm Dt Shikha Garg</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I'm the founder of Ouransh Diet &amp; Skin Care Clinic in Mohali.
           </p>
@@ -108,7 +108,7 @@ export default function About() {
         <div className="container-x max-w-4xl about-content-card">
           <h2 className="font-serif text-3xl text-forest mb-6">My Approach to Nutrition</h2>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
-            I am a Clinic Dietitian and Aesthetic Expert with qualifications in nutrition, psychology, professional esthetics, skin care and medical cosmetology.
+            I am a Clinical Dietitian and Aesthetic Expert with qualifications in nutrition, psychology, professional esthetics, skin care and medical cosmetology.
           </p>
           <p className="text-sm text-forest/70 leading-relaxed mb-4">
             I do not believe in giving the same diet chart to everyone. Before creating a plan, I like to understand your medical history, current medications, reports, work schedule, food preferences, family routine and what you can realistically maintain.
@@ -213,7 +213,7 @@ export default function About() {
           <p className="founder-quote-text">
             "Sometimes the best place to start is simply understanding what your body actually needs."
           </p>
-          <p ref={signatureRef} className={`founder-quote-signature${signatureVisible ? " is-signing" : ""}`}><span>Dr. Shikha Garg</span></p>
+          <p ref={signatureRef} className={`founder-quote-signature${signatureVisible ? " is-signing" : ""}`}><span>Dt Shikha Garg</span></p>
           <p className="founder-quote-role">Founder, Ouransh Diet &amp; Skin Care Clinic</p>
           </div>
         </div>
